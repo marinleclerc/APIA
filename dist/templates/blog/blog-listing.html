@@ -1,0 +1,25 @@
+<!--
+  templateType: blog
+  isAvailableForNewContent: true
+  label: MTG Boilerplate Listing
+-->
+{% extends "../layouts/base-blog.html" %}
+{% block body %}
+
+{% if blog_author %}
+{# Author Block Listing  - You can manage it here #}
+
+{% elif tag %}
+{#  Tag Listing - You can manage it here #}
+{% else %}
+<!--Classic Listing - You can manage it here -->
+
+{% endif %}
+
+<!-- Pagination - You can manage it here -->
+{% if next_page_num %}
+
+{% endif %}
+
+
+{% endblock body %}

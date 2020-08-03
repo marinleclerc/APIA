@@ -1,0 +1,22 @@
+[
+  {
+    "type": "group",
+    "name": "typography",
+    "label": "Typography",
+    "children": [
+      {
+        "type": "font",
+        "name": "h1_font",
+        "label": "Heading 1",
+        "load_external_fonts": true,
+        "default": {
+          "color": "#000",
+          "font": "Merriweather",
+          "font_set": "GOOGLE",
+          "variant": "700",
+          "size": "48"
+        }
+      }
+    ]
+  }
+]
