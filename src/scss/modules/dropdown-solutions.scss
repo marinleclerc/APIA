@@ -1,0 +1,94 @@
+.global-dropdown-solutions {
+  .container__content {
+    .container__content--dropdown {
+      .accordion {
+        .card {
+          border: none;
+          .card-header {
+            border: 1px solid $primary-grey;
+            border-radius: 5px;
+            a[aria-expanded='true'] {
+              background-color: white;
+              box-shadow: unset;
+            }
+            a {
+              display: block;
+              font-weight: 700;
+              width: 100%;
+              height: 100%;
+              padding: 15px 30px;
+              text-decoration: none;
+              background-color: rgba(194, 201, 217, 0.15);
+              box-shadow: 0 1px 10px rgba(194, 201, 217, 0.35);
+              border-radius: 5px;
+              &::before {
+                content: '';
+                background-image: url(https://f.hubspotusercontent20.net/hubfs/3489921/images/down_arrow.svg);
+                background-size: 8px 8px;
+                height: 8px;
+                width: 8px;
+                display: inline-block;
+                margin-right: 8px;
+                margin-bottom: 2px;
+              }
+            }
+          }
+          .card-body {
+            padding: 0;
+          }
+          .dropdown-body-list {
+            list-style-type: none;
+            padding-left: 55px;
+            margin: 30px 0;
+            li + li {
+              margin-top: 10px;
+            }
+            li {
+              a {
+                position: relative;
+                padding-bottom: 3px;
+                &::before {
+                  content: '';
+                  background-image: url('https://f.hubspotusercontent20.net/hubfs/3489921/images/down_arrow.svg');
+                  background-size: 8px 8px;
+                  height: 8px;
+                  width: 8px;
+                  display: inline-block;
+                  margin-right: 8px;
+                  transform: rotate(270deg);
+                  margin-bottom: 2px;
+                }
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 1px;
+                  background-image: linear-gradient(90deg, #c2c9d9 50%, transparent 0);
+                  background-size: 18px 1px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .global-dropdown-solutions {
+    .container__content {
+      .container__content--dropdown {
+        .accordion {
+          .card {
+            .dropdown-body-list {
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

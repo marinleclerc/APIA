@@ -1,0 +1,172 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "img_position_left",
+        "label": "Image à gauche",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text": "Title can describe your content properly.",
+        "default": "<h2>La manutention des poudres pour toutes les filières de l’industrie alimentaire<h2><p>L’optimisation du circuit des pulvérulents s’avère toujours rentable à condition de prendre en compte la totalité de votre process. Nos solutions ont démontré leurs performances en matière d’hygiène, de sécurité des opérateurs, de productivité, ou encore de flexibilité.</p>"
+      },
+      {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image"
+      },
+      {
+        "type": "group",
+        "name": "solutions_group",
+        "label": "Groupe Solution",
+        "occurrence": {
+          "min": 1,
+          "default": 1
+        },
+        "children": [
+          {
+            "name": "solution_title",
+            "label": "Contenu textuel du lien",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "default": "Alimenter une conditionneuse"
+          },
+          {
+            "type": "group",
+            "name": "sub_solutions_group",
+            "label": "Groupe de Solutions",
+            "occurrence": {
+              "min": 1,
+              "default": 1
+            },
+            "children": [
+              {
+                "name": "link_title",
+                "label": "Contenu textuel du lien",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "default": "Alimenter une conditionneuse"
+              },
+              {
+                "name": "link_url",
+                "label": "URL du bouton",
+                "required": false,
+                "locked": false,
+                "supported_types": ["EXTERNAL", "CONTENT"],
+                "type": "url",
+                "default": {
+                  "content_id": null,
+                  "href": "",
+                  "type": "EXTERNAL"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "external_link_title",
+        "label": "Contenu textuel du bouton",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "default": "Toutes nos solutions"
+      },
+      {
+        "name": "external_link_url",
+        "label": "URL du bouton",
+        "required": false,
+        "locked": false,
+        "supported_types": ["EXTERNAL", "CONTENT"],
+        "type": "url",
+        "default": {
+          "content_id": null,
+          "href": "",
+          "type": "EXTERNAL"
+        }
+      }
+    ]
+  }
+]

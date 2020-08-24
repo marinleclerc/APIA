@@ -1,0 +1,28 @@
+.global-hero-section {
+  .container__hero {
+    align-items: center;
+    position: relative;
+    .container__hero--content {
+      z-index: 50;
+      h1 {
+        margin-top: 0;
+      }
+    }
+    .container__hero--img {
+      position: absolute;
+      max-width: 800px;
+      height: 100%;
+      right: 0;
+      z-index: 0;
+      figure {
+        img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+          font-family: 'object-fit:cover';
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

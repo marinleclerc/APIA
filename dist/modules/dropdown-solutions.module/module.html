@@ -1,0 +1,66 @@
+<div id="{{module.module_identity}}"
+    class="global-dropdown-solutions {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+            </div>
+        </div>
+        <div class="row container__content">
+            <div
+                class="col-md-5 {% if module.content_style.img_position_left == false%} offset-md-1 {% endif %} mb-1 mb-md-0">
+                {% if module.content_group.image.src %}
+                <figure class="figure m-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}" />
+                </figure>
+                {% else %}
+                <figure class="figure m-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                        data-src="https://via.placeholder.com/600x600/D20E43/ffffff.png?text=600x600">
+                </figure>
+                {% endif %}
+            </div>
+            <div
+                class="col-md-6 {% if module.content_style.img_position_left == false%} order-first {% else %} offset-md-1 {% endif %} container__content--dropdown mb-1 mb-md-0">
+                <!--Accordion wrapper-->
+                <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                    <!-- Accordion card -->
+                    {%for item in module.content_group.solutions_group %}
+                    <div class="card">
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="headingOne{{loop.index}}">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne{{loop.index}}"
+                                aria-expanded="false" aria-controls="collapseOne{{loop.index}}">
+                                {{item.solution_title}}
+                            </a>
+                        </div>
+                        <!-- Card body -->
+                        <div id="collapseOne{{loop.index}}" class="collapse" role="tabpanel"
+                            aria-labelledby="headingOne{{loop.index}}" data-parent="#accordionEx">
+                            <div class="card-body">
+                                <ul class="dropdown-body-list">
+                                    {%for sub_item in item.sub_solutions_group %}
+                                    <li>
+                                        <a href="{{sub_item.link_url}}" class="apia_link">{{sub_item.link_title}}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion card -->
+                    {% endfor %}
+                </div>
+                <!-- Accordion wrapper -->
+                {% if module.content_group.external_link_url.href %}
+                <a class="secondary-button mt-3" href="{{module.content_group.external_link_url.href}}"
+                    target="_blank">{{module.content_group.external_link_title}}<span
+                        class="icon-external-link"></span></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

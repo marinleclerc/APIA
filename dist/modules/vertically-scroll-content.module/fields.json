@@ -1,0 +1,144 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "subtitle",
+        "label": "Sous titre",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Sous titre / catégorie de contenu",
+        "default": "La technique"
+      },
+      {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text": "Title can describe your content properly.",
+        "default": "<h2>La manutention des poudres alimentaires</h2><p>Les équipements de transfert par vis souple automatisent le remplissage des big bags avec une linéarité et une précision sans égale.</p>"
+      },
+      {
+        "name": "content_link_title",
+        "label": "Content Button Link",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "default": "Planifier un audit"
+      },
+      {
+        "name": "content_link_url",
+        "label": "Link to the activity page",
+        "required": false,
+        "locked": false,
+        "supported_types": ["EXTERNAL", "CONTENT"],
+        "type": "url",
+        "default": {
+          "content_id": null,
+          "href": "https://www.apia-sa.com/en/",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "type": "group",
+        "name": "list_content_group",
+        "label": "Liste de Points Importants",
+        "occurrence": {
+          "min": 1,
+          "default": 1
+        },
+        "children": [
+          {
+            "name": "image",
+            "label": "Image",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "size_type": "auto",
+              "alt": "Example of an image used in your module"
+            }
+          },
+          {
+            "name": "text_content",
+            "label": "Text",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<h3>Régularité de flux de +/- 5%</h3><p>Un flux de matière régulier évite les arrêts de ligne et minimise le interventions humaines.</p>"
+          }
+        ]
+      }
+    ]
+  }
+]

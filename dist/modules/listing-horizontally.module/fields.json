@@ -1,0 +1,172 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "margin_type",
+        "label": "Margin Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["my-0", "None"],
+          ["my-2", "Small"],
+          ["my-4", "Normal"],
+          ["my-6", "Big"],
+          ["my-8", "Giant"]
+        ],
+        "type": "choice",
+        "default": "my-0"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "design_choice",
+        "label": "Choix d'Affichage",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["bg_show", "Avec Background"],
+          ["classic", "Classique"],
+          ["bg_grey", "Background Gris"]
+        ],
+        "type": "choice",
+        "default": "bg_show"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Title can describe your content properly.",
+        "default": "L’ingénierie"
+      },
+      {
+        "type": "group",
+        "name": "content_group",
+        "label": "Liste",
+        "occurrence": {
+          "min": 1,
+          "default": 1
+        },
+        "children": [
+          {
+            "name": "img_left",
+            "label": "Image à Gauche",
+            "sortable": false,
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "image",
+            "label": "Image",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "size_type": "auto",
+              "alt": "Example of an image used in your module"
+            }
+          },
+          {
+            "name": "text_content",
+            "label": "Text",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<h3>Etude Projet</h3><p>Quam voluptatum eum tenetur tempora quia quod voluptate autem. Sapiente pariatur laudantium et harum. Odit culpa vitae dolore.</p>"
+          },
+          {
+            "name": "content_link_title",
+            "label": "Content Button Link",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "default": "Notre savoir-faire"
+          },
+          {
+            "name": "content_link_url",
+            "label": "Link to the activity page",
+            "required": false,
+            "locked": false,
+            "supported_types": ["EXTERNAL", "CONTENT"],
+            "type": "url",
+            "default": {
+              "content_id": null,
+              "type": "EXTERNAL"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

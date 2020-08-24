@@ -1,0 +1,86 @@
+.global-timeline {
+  h2 {
+    margin-top: 0;
+  }
+  .container__content {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+      width: 1px;
+      background-color: #b5bbcc;
+    }
+    span {
+      color: $primary-red;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .container__content--timeline {
+      position: relative;
+      h3 {
+        margin-top: 0;
+      }
+      &.left-content {
+        text-align: right;
+        .timeline--unit--intro {
+          margin-right: 50px;
+        }
+        figure {
+          top: 25px;
+          width: inherit;
+          position: absolute;
+          right: -30px;
+        }
+        ul {
+          padding: 0;
+          list-style-type: none;
+          li {
+            padding-right: 50px;
+            line-height: 1;
+            padding-bottom: 15px;
+            &::after {
+              content: '\25CF'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+              color: #b5bbcc; /* Change the color */
+              font-weight: 900; /* If you want it to be bold */
+              position: absolute;
+              right: -6px; /* Also needed for space (tweak if needed) */
+            }
+          }
+        }
+      }
+      &.right-content {
+        text-align: left;
+        .timeline--unit--intro {
+          margin-left: 50px;
+        }
+        figure {
+          top: 25px;
+          width: inherit;
+          position: absolute;
+          left: -30px;
+        }
+        ul {
+          padding: 0;
+          list-style-type: none;
+          li {
+            padding-left: 50px;
+            line-height: 1;
+            padding-bottom: 15px;
+            &::before {
+              content: '\25CF'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+              color: #b5bbcc; /* Change the color */
+              font-weight: 900; /* If you want it to be bold */
+              position: absolute;
+              left: -6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

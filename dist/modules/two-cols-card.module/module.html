@@ -1,0 +1,63 @@
+<div id="{{module.module_identity}}"
+    class="global-two-cols-card {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container-lg">
+        <div class="row container__content">
+            <div class="col-12 mb-md-2">
+                <div class="container__content--title text-center">
+                    <h2>{{module.content_group.title}}</h2>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.content }}" %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="single-card">
+                    {% if module.content_group.card_group_one.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_one.image.src }}"
+                            alt="{{ module.content_group.card_group_one.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/615x250/1d3b74/ffffff.png?text=615x250">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_one.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_one.content }}" %}
+                    {% if module.content_group.card_group_one.content_link_url %}
+                    <a class="secondary-button"
+                        href="{{activity.activity_link.href}}">{{module.content_group.card_group_one.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="single-card">
+                    {% if module.content_group.card_group_scd.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_scd.image.src }}"
+                            alt="{{ module.content_group.card_group_scd.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/615x250/1d3b74/ffffff.png?text=615x250">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_scd.content }}" %}
+                    {% if module.content_group.card_group_scd.content_link_url %}
+                    <a class="secondary-button"
+                        href="{{activity.activity_link.href}}">{{module.content_group.card_group_scd.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

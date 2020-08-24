@@ -1,0 +1,64 @@
+<div id="{{module.module_identity}}"
+    class="global-timeline {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="text-center">
+        {% if module.content_group.subtitle %}
+        <span class="subtitle">{{module.content_group.subtitle}}</span>
+        {% endif %}
+        <h2>{{module.content_group.title}}</h2>
+    </div>
+    <div class="container container__content my-3">
+        <div class="row no-gutters">
+            <div class="col-md-6 container__content--timeline left-content">
+                <div class="timeline--unit">
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/60x60/1d3b74/ffffff.png?text=60x60">
+                    </figure>
+                    <div class="timeline--unit--intro">
+                        <span>étape 1.</span>
+                        <h3>Necessitatibus quaerat et est et sed qui</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            Quam voluptatem harum quas architecto
+                        </li>
+                        <li>
+                            Quam voluptatem harum quas architecto
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-6 container__content--timeline offset-md-6 right-content">
+                <div class="timeline--unit">
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/60x60/1d3b74/ffffff.png?text=60x60">
+                    </figure>
+                    <div class="timeline--unit--intro">
+                        <span>étape 2.</span>
+                        <h3>Illum dolorem omnis autem</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            Quam voluptatem harum quas architecto
+                        </li>
+                        <li>
+                            Quam voluptatem harum quas architecto
+                        </li>
+                        <li>
+                            Quam voluptatem harum quas architecto
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if module.content_group.external_link_url.href %}
+    <a class="primary-button mx-auto" href="{{module.content_group.external_link_url.href}}"
+        target="_blank">{{module.content_group.external_link_title}}<span class="icon-external-link"></span></a>
+    {% endif %}
+</div>

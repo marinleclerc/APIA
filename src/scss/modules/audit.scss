@@ -1,0 +1,39 @@
+.global-audit {
+  .container__content {
+    position: relative;
+    .container__content--text {
+      width: 69%;
+      h2 {
+        margin-top: 0;
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+    .container__content--img {
+      position: absolute;
+      height: 100%;
+      width: 30%;
+      right: 0;
+      overflow: hidden;
+      border-radius: 10px !important;
+      figure {
+        position: relative;
+        height: 160%;
+        width: 200%;
+        border-radius: 50%;
+        overflow: hidden;
+        top: 50%;
+        transform: translate(0px, -50%);
+        img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+          font-family: 'object-fit:cover';
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

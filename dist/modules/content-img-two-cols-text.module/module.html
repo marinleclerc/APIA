@@ -1,0 +1,40 @@
+<div id="{{module.module_identity}}"
+    class="global-content-img-txt-cols {{module.content_style.background_type}} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container-{{module.content_style.container_type}}">
+        <div class="row no-gutters container__content bg-medium-white p-1 p-md-4">
+            <div class="col-12">
+                <div class="container__content--intro text-center">
+                    {% if module.content_group.subtitle %}
+                    <span class="subtitle">{{module.content_group.subtitle}}</span>
+                    {% endif %}
+                    <h2>{{module.content_group.title}}</h2>
+                </div>
+                {% if module.content_group.image.src %}
+                <div class="container__content--img mb-2">
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.image.src }}"
+                            alt="{{ module.content_group.image.alt }}" />
+                    </figure>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-6">
+                        {% inline_rich_text field="rich_text" value="{{ module.content_group.first_col_content }}" %}
+                    </div>
+                    <div class="col-md-6">
+                        {% inline_rich_text field="rich_text" value="{{ module.content_group.scd_col_content }}" %}
+                    </div>
+                    <div class="col-12">
+                        {% if module.content_group.content_link_url.href %}
+                        <a class="{% if module.content_style.design_choice == 'bg_show' %}secondary-button{% else %}primary-button{% endif%} mx-auto"
+                            href="{{module.content_group.content_link.href}}">{{module.content_group.content_link_title}}<span
+                                class="icon-arrowright"></span></a>
+                        {% endif %}
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

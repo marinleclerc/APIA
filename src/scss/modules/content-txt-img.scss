@@ -1,0 +1,28 @@
+.global-content-txt-img {
+  .container__content {
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(194, 201, 217, 0.25);
+    border: 1px solid #f1f2f5;
+    &.bg-medium-white {
+      &::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+      }
+    }
+    .container__content--txt {
+      h2 {
+        margin-top: 0;
+      }
+    }
+    .container__content--img {
+      .wrapper-img {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+      }
+    }
+  }
+}

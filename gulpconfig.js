@@ -3,7 +3,7 @@
  */
 
 const config = {
-  project: 'mtg-hs-boilerplate',
+  project: 'apia',
   dest: {
     scss: 'dist/css',
     theme: 'dist/',

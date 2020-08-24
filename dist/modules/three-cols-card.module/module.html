@@ -1,0 +1,84 @@
+<div id="{{module.module_identity}}"
+    class="global-three-cols-card {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row container__content">
+            <div class="col-12">
+                <div class="container__content--title d-flex">
+                    <h2>Les équipements de remplissage BigBags</h2>
+                    <a class="apia_link" href="javascript:;">Tous nos produits</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-card">
+                    {% if module.content_group.card_group_one.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_one.image.src }}"
+                            alt="{{ module.content_group.card_group_one.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_one.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_one.content }}" %}
+                    {% if module.content_group.card_group_one.content_link_url %}
+                    <a class="secondary-button"
+                        href="{{activity.activity_link.href}}">{{module.content_group.card_group_one.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-4">
+                {% if module.content_group.card_group_scd.image.src %}
+                <figure class="figure mb-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.content_group.card_group_scd.image.src }}"
+                        alt="{{ module.content_group.card_group_scd.image.alt }}" />
+                </figure>
+                {% else %}
+                <figure class="figure mb-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                        data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
+                </figure>
+                {% endif %}
+                <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>
+                {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_scd.content }}" %}
+                {% if module.content_group.card_group_scd.content_link_url %}
+                <a class="secondary-button"
+                    href="{{activity.activity_link.href}}">{{module.content_group.card_group_scd.content_link_title}}<span
+                        class="icon-arrowright"></span></a>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                {% if module.content_group.card_group_third.image.src %}
+                <figure class="figure mb-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.content_group.card_group_third.image.src }}"
+                        alt="{{ module.content_group.card_group_third.image.alt }}" />
+                </figure>
+                {% else %}
+                <figure class="figure mb-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                        data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
+                </figure>
+                {% endif %}
+                <h3 class="my-1 mb-0">{{module.content_group.card_group_third.title}}</h3>
+                {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_third.content }}" %}
+                {% if module.content_group.card_group_third.content_link_url %}
+                <a class="secondary-button"
+                    href="{{activity.activity_link.href}}">{{module.content_group.card_group_third.content_link_title}}<span
+                        class="icon-arrowright"></span></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

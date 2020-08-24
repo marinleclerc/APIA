@@ -1,0 +1,15 @@
+.global-vertically-scroll-content {
+  .container__content {
+    .container__content--intro {
+      h2 {
+        margin-top: 0;
+      }
+    }
+    .container__content--list {
+      h3 {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

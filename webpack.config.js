@@ -1,13 +1,14 @@
-const path = require('path')
+const path = require('path');
+var glob = require('glob');
 
 module.exports = {
   mode: 'production',
   entry: {
-    main: './src/js/main.js'
+    main: glob.sync('./src/js/**/*.js'),
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist/js')
+    path: path.resolve(__dirname, 'dist/js'),
   },
   module: {
     rules: [
@@ -17,10 +18,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
-    ]
-  }
-}
+    ],
+  },
+};

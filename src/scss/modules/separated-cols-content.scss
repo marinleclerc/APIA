@@ -1,0 +1,22 @@
+.global-separated-cols {
+  .container__content {
+    .container__content--img {
+      figure {
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+          font-family: 'object-fit:cover';
+          object-fit: cover;
+          position: absolute;
+        }
+      }
+    }
+    .container__content--text {
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+}

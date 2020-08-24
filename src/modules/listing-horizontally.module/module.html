@@ -1,0 +1,41 @@
+<div id="{{module.module_identity}}"
+    class="global-listing-horizontally {% if module.content_style.design_choice == 'bg_show' %} bg-extra-shape {% elif module.content_style.design_choice == 'bg_grey' %} bg-medium-grey {% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %} {% if module.content_style.margin_type != 'none' %} {{module.content_style.margin_type}} {% endif %}">
+    <div class="container">
+        <div
+            class="row no-gutters container__content {% if module.content_style.design_choice == 'bg_show' %} bg-medium-white special_display p-1 p-md-4 {% endif%}">
+            <div class="col-12">
+                <h2>{{module.content_group.title}}</h2>
+            </div>
+
+            {% for item in module.content_group.content_group %}
+            <div class="col-12 container__content--unit">
+                <div class="row no-gutters">
+                    <div class="col-md-6 {% if item.img_left == true %}offset-md-1 order-last {% endif %}">
+                        {% inline_rich_text field="rich_text" value="{{ item.text_content }}" %}
+                        {% if item.content_link_url.href %}
+                        <a class="{% if module.content_style.design_choice == 'bg_show' %}secondary-button{% else %}primary-button{% endif%}"
+                            href="{{item.content_link.href}}">{{item.content_link_title}}<span
+                                class="icon-arrowright"></span></a>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-5 {% if item.img_left == true %} order-first {% else %} offset-md-1 {% endif %}">
+                        {% if item.image.src %}
+                        <figure class="figure h-100">
+                            <img class="img-fluid lazy rounded"
+                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
+                                data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                        </figure>
+                        {% else %}
+                        <figure class="figure h-100">
+                            <img class="img-fluid lazy rounded"
+                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                                data-src="https://via.placeholder.com/385x315/919388/ffffff.png?text=385x315">
+                        </figure>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

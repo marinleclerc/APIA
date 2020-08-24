@@ -1,0 +1,20 @@
+<!-- module html  -->
+<div class="global-newsletter">
+    <div class="bg-light-green pattern-light text-white py-5">
+        <div class="container">
+            <div class="row no-gutters container__content py-2 px-4">
+                <div class="col-md-6">
+                    {% if module.content_group.subtitle %}
+                    <span class="subtitle">{{module.content_group.subtitle}}</span>
+                    {% endif %}
+                    {{ module.content_group.text }}
+                </div>
+                <div class="col-md-6">
+                    <div class="subscribe-form">
+                        {% form "my_form" form_to_use='9e2d1b16-443c-4fa1-8342-af8fb54f317e', title='My Form' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

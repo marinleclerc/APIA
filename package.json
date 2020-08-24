@@ -1,7 +1,7 @@
 {
-  "name": "mtg-boilerplate",
+  "name": "apia",
   "version": "1.0.0",
-  "description": "Quickstart new projects with this boilerplate",
+  "description": "APIA development from MTG",
   "main": "index.js",
   "author": "MTG Team",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "gen:fields": "gulp generate-fields",
     "gen:module": "yarn plop; yarn gen:fields",
     "hs:auth": "hs auth personalaccesskey",
-    "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=prod  dist MTG-HS-Boilerplate",
-    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-lab-1  dist MTG-HS-Boilerplate",
+    "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=apia  dist APIA",
+    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-lab-1  dist APIA",
     "hs:module": "yarn plop; yarn gen:fields",
-    "hs:watch": "hs watch --portal=mtg-lab-1 dist MTG-HS-Boilerplate",
+    "hs:watch": "hs watch --portal=mtg-lab-1 dist APIA",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
     "deploy:dev": "yarn build && yarn hs:sync-dev"
   },

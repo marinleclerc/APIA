@@ -1,1 +1,97 @@
 // Here you can setup all the SASS of your buttons.
+.primary-button {
+  color: #fff;
+  background-color: #d20e43;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0.5);
+  padding: 15px 30px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: table;
+  position: relative;
+  transition: all 0.3s;
+  &::after {
+    content: '';
+    display: none;
+    position: absolute;
+    right: -22px;
+    top: -20px;
+    background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 21px;
+    transition: all 0.3s;
+  }
+  &:hover {
+    box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0);
+  }
+  &:hover::after {
+    display: block;
+  }
+}
+
+.secondary-button {
+  color: #d20e43;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  display: table;
+  padding: 15px 30px;
+  border: 2px solid #d20e43;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.15;
+  &:hover {
+    background-color: #d20e43;
+    color: #fff;
+  }
+}
+
+.tertiary-button {
+  color: #000;
+  background-color: rgba(194, 201, 217, 0.15);
+  border: 1px solid rgba(194, 201, 217, 0.3);
+  box-shadow: 0 1px 10px 0 rgba(194, 201, 217, 0.35);
+  display: table;
+  &:hover {
+    border: 1px solid rgba(194, 201, 217, 1);
+    background-color: #fff;
+    &:before {
+      content: '-';
+    }
+  }
+}
+
+.anchor-link {
+  color: #000;
+  background-color: rgba(194, 201, 217, 0.15);
+  border: 1px solid rgba(194, 201, 217, 0.3);
+  box-shadow: 0 1px 10px 0 rgba(194, 201, 217, 0.35);
+  display: table;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 350px;
+  &:nth-child(2) {
+    margin: 0 30px;
+  }
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .primary-button {
+    font-size: 12px;
+  }
+}

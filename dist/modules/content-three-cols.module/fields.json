@@ -1,0 +1,138 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "subtitle",
+        "label": "Sous titre",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Sous titre / catégorie de contenu",
+        "default": "Nos services"
+      },
+      {
+        "name": "content_intro",
+        "label": "Contenu Première Colonne",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "default": "<h2>Une optimisation sensible du process poudres<h2><p>Et voluptatibus qui sint. Velit eum laudantium excepturi ipsam. Sint architecto ut consectetur qui et expedita id laudantium. Eos minus facilis qui esse sint.</p>"
+      },
+      {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+          "size_type": "auto",
+          "src": "https://via.placeholder.com/600",
+          "alt": "Example of an image used in your module"
+        }
+      },
+      {
+        "type": "group",
+        "name": "column_group",
+        "label": "Colonne Groupe",
+        "children": [
+          {
+            "name": "content_first_col",
+            "label": "Contenu Première Colonne",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<h3>Gains de productivité</h3><p>Le remplissage automatique des big bags augmente significativement les cadences de production. Les lignes de production gagnent en autonomie et en fiabilité grâce au remplissage linéaire. Les tâches répétitives sont automatisées les temps improductifs de maintenance et de nettoyage.</p>"
+          },
+          {
+            "name": "content_scd_col",
+            "label": "Contenu Deuxième Colonne",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<h3>Gains de productivité</h3><p>Le remplissage automatique des big bags augmente significativement les cadences de production. Les lignes de production gagnent en autonomie et en fiabilité grâce au remplissage linéaire. Les tâches répétitives sont automatisées les temps improductifs de maintenance et de nettoyage.</p>"
+          },
+          {
+            "name": "content_third_col",
+            "label": "Contenu Deuxième Colonne",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<h3>Gains de productivité</h3><p>Le remplissage automatique des big bags augmente significativement les cadences de production. Les lignes de production gagnent en autonomie et en fiabilité grâce au remplissage linéaire. Les tâches répétitives sont automatisées les temps improductifs de maintenance et de nettoyage.</p>"
+          }
+        ]
+      }
+    ]
+  }
+]

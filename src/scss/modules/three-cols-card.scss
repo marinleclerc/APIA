@@ -1,0 +1,22 @@
+.global-three-cols-card {
+  .container__content {
+    .container__content--title {
+      justify-content: space-between;
+      align-items: baseline;
+      h2 {
+        margin-top: 0;
+      }
+      a {
+        display: table;
+      }
+    }
+    .single-card {
+      figure {
+        border: rgba(194, 201, 217, 0.5);
+        img {
+          box-shadow: 0 5px 5px rgba(194, 201, 217, 0.3);
+        }
+      }
+    }
+  }
+}

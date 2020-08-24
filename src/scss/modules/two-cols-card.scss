@@ -1,0 +1,28 @@
+.global-two-cols-card {
+  background-color: #f1f2f5;
+  .container__content {
+    .container__content--title {
+      h2 {
+        margin-top: 0;
+      }
+    }
+    .single-card {
+      h3 {
+        margin-top: 0;
+      }
+      figure {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+          font-family: 'object-fit:cover';
+          object-fit: cover;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div id="{{module.module_identity}}"
+    class="global-anchor-listing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row container__content">
+            <div class="col-12 container__content--listing">
+                {% for item in module.content_group.anchor_group %}
+                <a href="#{{item.content_id_link}}" class="anchor-link">{{ item.content_link_title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

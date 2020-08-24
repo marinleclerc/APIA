@@ -1,0 +1,109 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Title can describe your content properly.",
+        "default": "Notre expertise alimentaire"
+      },
+      {
+        "type": "group",
+        "name": "content_group",
+        "label": "Liste de Bloc Texte",
+        "occurrence": {
+          "min": 1,
+          "default": 1
+        },
+        "children": [
+          {
+            "name": "image",
+            "label": "Image",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "size_type": "auto",
+              "src": "https://via.placeholder.com/600",
+              "alt": "Example of an image used in your module"
+            }
+          },
+          {
+            "name": "content",
+            "label": "Contenu",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<h3>Conception hygiénique</h3><p>Odio et explicabo nisi qui animi. Eum ratione consectetur labore ea quis tenetur id. Qui quo sed magnam. Cum sint soluta aut adipisci consequatur. Nobis ipsa eligendi consequuntur iusto maxime quis soluta dolor voluptatibus.</p>"
+          }
+        ]
+      }
+    ]
+  }
+]

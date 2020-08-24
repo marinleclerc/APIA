@@ -1,0 +1,11 @@
+.global-anchor-listing {
+  .container__content {
+    .container__content--listing {
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        width: 350px;
+      }
+    }
+  }
+}

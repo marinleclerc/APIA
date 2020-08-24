@@ -1,0 +1,27 @@
+<div id="{{module.module_identity}}"
+    class="global-actu-blog {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row header_actu_blog mb-2">
+            <div class="col-12 d-md-flex justify-content-between">
+                <h2 class="mb-1 mb-md-0">{{module.content_group.title}}</h2>
+                <a class="apia_link" href="javascript:;">Voir tous les articles</a>
+            </div>
+        </div>
+        <div class="row container__content">
+            {% set blog_posts = blog_recent_posts('default', limit=3) %}
+            {% for post in blog_posts %}
+            <div class="col-md-4 container__content--post">
+                <div class="single-post">
+                    {% for tag in post.tag_list|first %}
+                    <a href="" class="single-tag"><span class="label label-grey">{{ tag.name }}</span></a>
+                    {% if not loop.last %}{% endif %}{% endfor %}
+                    <a class="feat-img" href="#"><img class="rounded w-100" src="{{ post.featured_image }}"
+                            alt="{{ post.name }}">
+                    </a>
+                    <h3><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
