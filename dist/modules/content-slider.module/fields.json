@@ -48,6 +48,21 @@
         "locked": false,
         "type": "boolean",
         "default": true
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "fourth"
       }
     ]
   },
@@ -137,8 +152,8 @@
             }
           },
           {
-            "name": "text_content",
-            "label": "Text",
+            "name": "title",
+            "label": "Titre",
             "required": false,
             "locked": false,
             "validation_regex": "",
@@ -146,6 +161,29 @@
             "show_emoji_picker": false,
             "type": "text",
             "default": "Biscuiterie & Viennoiserie"
+          },
+          {
+            "name": "content",
+            "label": "Contenu",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "richtext",
+            "default": "<p>Lorem ipsum</p>"
+          },
+          {
+            "name": "content_link_url",
+            "label": "Link to the activity page",
+            "required": false,
+            "locked": false,
+            "supported_types": ["EXTERNAL", "CONTENT"],
+            "type": "url",
+            "default": {
+              "content_id": null,
+              "type": "EXTERNAL"
+            }
           }
         ]
       }

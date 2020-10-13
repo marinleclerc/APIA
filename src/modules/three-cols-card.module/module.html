@@ -1,18 +1,35 @@
 <div id="{{module.module_identity}}"
-    class="global-three-cols-card {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
-    <div class="container">
+    class="global-three-cols-card overflow-hidden {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container position-relative">
+        <div class="container_shape position-absolute bg_shape_col-cards">
+            <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Homepage---Mockup---V5.3" transform="translate(-41.000000, -2205.000000)" fill="#F1F2F5">
+                        <g id="solution" transform="translate(41.000000, 1718.000000)">
+                            <path
+                                d="M107.399566,708.242946 C623.91791,333.590835 1116.3536,494.342472 896.051051,751.755223 C655.642724,1023.3109 -321.274909,1081.93468 107.399566,708.242946 Z"
+                                id="Path"
+                                transform="translate(475.000000, 729.500000) scale(-1, -1) translate(-475.000000, -729.500000) ">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
         <div class="row container__content">
             <div class="col-12">
-                <div class="container__content--title d-flex">
-                    <h2>Les équipements de remplissage BigBags</h2>
-                    <a class="apia_link" href="javascript:;">Tous nos produits</a>
+                <div class="container__content--title d-flex flex-wrap mb-2 mb-md-0">
+                    <h2>{{module.content_group.title}}</h2>
+                    <a class="apia_link"
+                        href="{{module.content_group.content_link_url.href}}">{{module.content_group.content_link_title}}</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="single-card">
+                <div class="single-card mb-2 mb-md-0">
                     {% if module.content_group.card_group_one.image.src %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded"
+                        <img class="img-fluid lazy"
                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
                             data-src="{{ module.content_group.card_group_one.image.src }}"
                             alt="{{ module.content_group.card_group_one.image.alt }}" />
@@ -21,63 +38,67 @@
                     <figure class="figure mb-0">
                         <img class="img-fluid lazy rounded"
                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
+                            data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=image">
                     </figure>
                     {% endif %}
                     <h3 class="my-1 mb-0">{{module.content_group.card_group_one.title}}</h3>
                     {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_one.content }}" %}
                     {% if module.content_group.card_group_one.content_link_url %}
-                    <a class="secondary-button"
-                        href="{{activity.activity_link.href}}">{{module.content_group.card_group_one.content_link_title}}<span
+                    <a class="{{module.content_style.button_type}}-button"
+                        href="{{module.content_group.card_group_one.content_link_url.href}}">{{module.content_group.card_group_one.content_link_title}}<span
                             class="icon-arrowright"></span></a>
                     {% endif %}
                 </div>
             </div>
             <div class="col-md-4">
-                {% if module.content_group.card_group_scd.image.src %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                        data-src="{{ module.content_group.card_group_scd.image.src }}"
-                        alt="{{ module.content_group.card_group_scd.image.alt }}" />
-                </figure>
-                {% else %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                        data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
-                </figure>
-                {% endif %}
-                <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>
-                {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_scd.content }}" %}
-                {% if module.content_group.card_group_scd.content_link_url %}
-                <a class="secondary-button"
-                    href="{{activity.activity_link.href}}">{{module.content_group.card_group_scd.content_link_title}}<span
-                        class="icon-arrowright"></span></a>
-                {% endif %}
+                <div class="single-card mb-2 mb-md-0">
+                    {% if module.content_group.card_group_scd.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_scd.image.src }}"
+                            alt="{{ module.content_group.card_group_scd.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=image">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_scd.content }}" %}
+                    {% if module.content_group.card_group_scd.content_link_url %}
+                    <a class="{{module.content_style.button_type}}-button"
+                        href="{{module.content_group.card_group_scd.content_link_url.href}}">{{module.content_group.card_group_scd.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
             </div>
             <div class="col-md-4">
-                {% if module.content_group.card_group_third.image.src %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                        data-src="{{ module.content_group.card_group_third.image.src }}"
-                        alt="{{ module.content_group.card_group_third.image.alt }}" />
-                </figure>
-                {% else %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                        data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
-                </figure>
-                {% endif %}
-                <h3 class="my-1 mb-0">{{module.content_group.card_group_third.title}}</h3>
-                {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_third.content }}" %}
-                {% if module.content_group.card_group_third.content_link_url %}
-                <a class="secondary-button"
-                    href="{{activity.activity_link.href}}">{{module.content_group.card_group_third.content_link_title}}<span
-                        class="icon-arrowright"></span></a>
-                {% endif %}
+                <div class="single-card mb-2 mb-md-0">
+                    {% if module.content_group.card_group_third.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_third.image.src }}"
+                            alt="{{ module.content_group.card_group_third.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=image">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_third.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_third.content }}" %}
+                    {% if module.content_group.card_group_third.content_link_url %}
+                    <a class="{{module.content_style.button_type}}-button"
+                        href="{{module.content_group.card_group_third.content_link_url.href}}">{{module.content_group.card_group_third.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

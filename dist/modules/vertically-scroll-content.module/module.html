@@ -1,34 +1,60 @@
+{% set url = request.query %}
 <div id="{{module.module_identity}}"
     class="global-vertically-scroll-content {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
-    <div class="container">
-        <div class="row container__content">
-            <div class="col-md-6 container__content--intro">
-                {% if module.content_group.subtitle %}
-                <span class="subtitle">{{module.content_group.subtitle}}</span>
-                {% endif %}
-                {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
-                {% if module.content_group.content_link_url %}
-                <a class="primary-button"
-                    href="{{activity.activity_link.href}}">{{module.content_group.content_link_title}}<span
-                        class="icon-arrowright"></span></a>
-                {% endif %}
+    <div class="container target_scroll">
+        <div class="row container__content position-relative">
+            <div id="fixed_el" class="col-md-6 container__content--intro mb-2 mb-md-0">
+                <div class="inner_fixed_el">
+                    {% if module.content_group.subtitle %}
+                    <span class="subtitle">{{module.content_group.subtitle}}</span>
+                    {% endif %}
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+                    {% if module.content_group.content_link_url %}
+                    <a class="{{module.content_style.button_type}}-button mt-2"
+                        href="{{module.content_group.content_link_url.href}}">{{module.content_group.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                    <div class="container-pictos d-flex align-items-center flex-wrap mt-2">
+
+                        <img class="img-fluid lazy rounded loaded"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_4.png"
+                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_4.png" alt="picto_4"
+                            data-ll-status="loaded">
+                        <img class="img-fluid lazy rounded loaded"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_3.png"
+                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_3.png" alt="picto_3"
+                            data-ll-status="loaded">
+
+                        <img class="img-fluid lazy rounded loaded"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_2.png"
+                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_2.png" alt="picto_2"
+                            data-ll-status="loaded">
+                        <img class="img-fluid lazy rounded loaded"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_1.png"
+                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_1.png" alt="picto_1"
+                            data-ll-status="loaded">
+
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 container__content--list">
+            <div class="col-md-6 container__content--list mt-2 mt-md-0">
                 {% for item in module.content_group.list_content_group %}
-                {% if item.image.src %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
-                        data-src="{{ module.content_group.card_group_third.image.src }}" alt="{{ item.image.alt }}" />
-                </figure>
-                {% else %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                        data-src="https://via.placeholder.com/65x65/1d3b74/ffffff.png?text=65x65">
-                </figure>
-                {% endif %}
-                {% inline_rich_text field="rich_text" value="{{ item.text_content }}" %}
+                <div class="list-unit">
+                    {% if item.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/65x65/1d3b74/ffffff.png?text=image">
+                    </figure>
+                    {% endif %}
+                    {% inline_rich_text field="rich_text" value="{{ item.text_content }}" %}
+                </div>
                 {% endfor %}
             </div>
         </div>

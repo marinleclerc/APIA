@@ -9,8 +9,8 @@
                     {% endif %}
                     {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
                     {% if module.content_group.external_link_url.href %}
-                    <a class="primary-button" href="{{module.content_group.external_link_url.href}}"
-                        target="_blank">{{module.content_group.external_link_title}}<span
+                    <a class="{{module.content_style.button_type}}-button mt-2"
+                        href="{{module.content_group.external_link_url.href}}">{{module.content_group.external_link_title}}<span
                             class="icon-external-link"></span></a>
                     {% endif %}
                 </div>
@@ -28,7 +28,7 @@
                     <figure class="figure mb-0">
                         <img class="img-fluid lazy rounded"
                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/420x300/1d3b74/ffffff.png?text=420x300">
+                            data-src="https://via.placeholder.com/420x300/1d3b74/ffffff.png?text=image">
                     </figure>
                     {% endif %}
                 </div>

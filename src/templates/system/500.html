@@ -1,17 +1,33 @@
 <!--
   templateType: error_page
   isAvailableForNewContent: true
-  label: 500 Error Page
+  label: APIA 500 Error Page
 -->
-{% extends "../layouts/base.html" %}
+{% extends "../layouts/base-system.html" %}
+
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="error-page" data-error="500">
-    <h1 class="error-page_heading">
-      Something isn't quite right
-    </h1>
-    <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
-  </div>
-</div>
+<main class="body-container-wrapper">
+  <section class="content-wrapper">
+    <div class="systems-page password-prompt">
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 mx-auto text-center">
+              <div class="error-page" data-error="500">
+                <h2 class="error-title mb-0">500</h2>
+                <h1 class="error-page_heading mb-1 mt-2">
+                  Nous avons rencontré un problème
+                </h1>
+                <p class="mb-0">Désolé, nous ne pouvons pas accéder à cette information pour l'instant.</p>
+                <p>Merci de réessayer plus tard.</p>
+                <a class="primary-button mt-1" href="javascript:;">Retourner à l'accueil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 {% endblock body %}

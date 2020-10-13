@@ -1,0 +1,27 @@
+<div id="{{module.module_identity}}"
+    class="global-hero-video-section {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container-lg">
+        <div class="row container__hero">
+            <div class="col-md-8 container__hero--content">
+                <div class="copy-wrapper pr-2 py-3 bg-light-white bg_blur my-2 rounded">
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+                    {% if module.content_group.external_link_url.href %}
+                    <a class="{{module.content_style.button_type}}-button mt-1"
+                        href="{{module.content_group.external_link_url.href}}">{{module.content_group.external_link_title}}<span
+                            class="icon-external-link"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="container__hero--img d-none d-md-block">
+                <div id="section_module_1536743783061160" class="hero">
+                    <div class="hero-background">
+                        <video autoplay="" loop="" muted="" preload="none" poster="{{module.content_group.image.src}}">
+                            <source src="{{module.content_group.url_video}}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{request.query_dict|pprint}}

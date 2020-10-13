@@ -1,0 +1,193 @@
+.header-blog-listing {
+  background: url('https://f.hubspotusercontent20.net/hubfs/8191022/Website-Page-Photos-Home-Page/savoir-faire-apia-technologie-poudres-granules.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  .container-header-listing {
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(194, 201, 217, 0.25);
+    border: 1px solid #f1f2f5;
+  }
+}
+
+.blog-listing {
+  .categories-menu {
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      li {
+        text-align: center;
+        a {
+          font-weight: 700;
+          text-decoration: none;
+          color: $primary-red;
+          background-color: $white;
+          border: 1px solid $primary-red;
+          display: table;
+          padding: 5px 15px;
+          text-decoration: none;
+          font-weight: 700;
+          border-radius: 5px;
+          font-size: 12px;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+          &:hover {
+            background-color: $primary-red;
+            color: $white;
+          }
+        }
+      }
+      li + li {
+        margin: 0 15px;
+      }
+    }
+  }
+  .last-post {
+    a.feat-img {
+      position: relative;
+      display: block;
+      height: 300px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
+  .classic-post {
+    a.feat-img {
+      position: relative;
+      display: block;
+      height: 200px;
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
+  .single-post {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid rgba(194, 201, 217, 0.5);
+    box-shadow: 0 5px 5px 0 rgba(194, 201, 217, 0.3);
+    background-color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      box-shadow: none;
+      h2 a {
+        text-decoration: underline;
+      }
+    }
+    .container-tags {
+      z-index: 10;
+      position: relative;
+      margin-top: -17px;
+      .single-tag {
+        background-color: $primary-red;
+        padding: 5px;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+        border-radius: 5px;
+        z-index: 100;
+      }
+    }
+    .single-post-info {
+      a {
+        text-decoration: none;
+      }
+      h2 {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+.blog-pagination {
+  .container__content--pagination {
+    a {
+      text-decoration: none;
+    }
+    .blog-pagination__number-link {
+      width: 54px;
+      height: 54px;
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $black;
+      border-radius: 3px;
+      font-weight: 700;
+      color: $black;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: $primary-red;
+        border-color: $primary-red;
+        color: $white;
+      }
+      & + .blog-pagination__number-link {
+        margin-left: 15px;
+      }
+    }
+    .blog-pagination__link--active {
+      border-color: $primary-red;
+      color: $primary-red;
+    }
+    .blog-pagination__prev-link,
+    .blog-pagination__next-link {
+      margin: 0 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 2px;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-image: linear-gradient(90deg, #c2c9d9 50%, transparent 0);
+        background-size: 18px 1px;
+      }
+      &:hover {
+        color: $primary-red;
+        &::after {
+          background-image: linear-gradient(90deg, $primary-red 50%, transparent 0);
+        }
+      }
+    }
+    .blog-pagination__prev-link {
+      svg {
+        transform: rotate(90deg) scaleX(-1);
+      }
+    }
+  }
+}

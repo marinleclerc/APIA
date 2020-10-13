@@ -1,0 +1,68 @@
+.global-actu-blog {
+  .header_actu_blog {
+    div {
+      align-items: flex-end;
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+  .container__content {
+    .container__content--post {
+      &:hover {
+        h3 a {
+          background-size: 100% 100%;
+        }
+        .feat-img {
+          img {
+            transform: scale(0.97);
+          }
+        }
+      }
+    }
+    .single-post {
+      position: relative;
+      .container-tags {
+        z-index: 10;
+        position: relative;
+        margin-top: -17px;
+      }
+      .label {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 50;
+      }
+      h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      a {
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(transparent 95%, #000 0);
+        background-size: 0 100%;
+        will-change: background-size;
+        transition: background-size 0.3s;
+        color: #1f2735;
+      }
+      .feat-img {
+        position: relative;
+        display: block;
+        height: 220px;
+        border-radius: 5px;
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+          font-family: 'object-fit:cover';
+          object-fit: cover;
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+}

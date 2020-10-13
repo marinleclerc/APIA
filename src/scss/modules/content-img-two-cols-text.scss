@@ -1,5 +1,10 @@
 .global-content-img-txt-cols {
   .container__content {
+    &.bg-medium-white {
+      box-shadow: 0 2px 20px rgba(194, 201, 217, 0.25);
+      border: 1px solid #f1f2f5;
+      border-radius: 10px;
+    }
     .container__content--intro {
       h2 {
         margin-top: 0;
@@ -20,5 +25,8 @@
         }
       }
     }
+  }
+  .primary-button:after {
+    z-index: 10;
   }
 }

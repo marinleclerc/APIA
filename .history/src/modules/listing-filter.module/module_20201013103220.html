@@ -1,0 +1,150 @@
+<div id="{{module.module_identity}}"
+    class="global-listing-filter overflow-hidden {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container position-relative">
+        <div class="container_shape position-absolute bg-drowdown-listing-filter">
+            <svg width="1362px" height="695px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Homepage---Mockup---V5.3" transform="translate(-446.000000, -3041.000000)" fill="#F1F2F5">
+                        <g id="produits" transform="translate(144.000000, 2714.000000)">
+                            <path
+                                d="M409.399566,548.242946 C925.91791,173.590835 1418.3536,334.342472 1198.05105,591.755223 C957.642724,863.3109 -19.2749092,921.934684 409.399566,548.242946 Z"
+                                id="Path-Copy"
+                                transform="translate(777.000000, 569.500000) scale(1, -1) translate(-777.000000, -569.500000) ">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="row mb-2 mb-md-4">
+            <div class="col-12">
+                <h2 class="text-center">{{module.content_group.title}}</h2>
+                <div class="container__filter filters d-flex flex-wrap">
+
+                    <!-- Variable Nom de Domaine -->
+                    {% set domain = "https://apia-sa-1.hubspotpagebuilder.com" %}
+
+                    <!-- Début Filtre Besoin -->
+
+                    {% set needs_label_column = hubdb_table_column(module.content_group.hubdb_id, "needs_label").options %}
+                    {% set array_needs_label = [] %}
+                    {% for choice in needs_label_column %}
+                    {% do array_needs_label.append(choice.name) %}
+                    {% endfor %}
+
+                    {% set needs_name_column  = hubdb_table_column(module.content_group.hubdb_id, "needs_name").options %}
+                    {% set array_needs_name = [] %}
+                    {% for choice_2 in needs_name_column  %}
+                    {% do array_needs_name.append(choice_2.name) %}
+                    {% endfor %}
+
+                    <div class="container__filter--unit mb-1 mb-xl-0">
+                        <label for="need-select">Quel est votre besoin ?</label>
+                        <select class="filter-select" value-group="needs">
+                            <option class="no-value" value="">Non précisé</option>
+                            {% set iterations = range(0, array_needs_label|length) %}
+                            {% for i in iterations %}
+                            <option value=".{{array_needs_name[i]}}">{{array_needs_label[i]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Fin Filtre Besoin -->
+
+                    <!-- Début Filtre Equipement -->
+
+                    {% set equipment_label_column = hubdb_table_column(module.content_group.hubdb_id, "equipment_label").options %}
+                    {% set array_equipment_label = [] %}
+                    {% for choice in equipment_label_column %}
+                    {% do array_equipment_label.append(choice.name) %}
+                    {% endfor %}
+
+                    {% set equipment_name_column  = hubdb_table_column(module.content_group.hubdb_id, "equipment_name").options %}
+                    {% set array_equipment_name = [] %}
+                    {% for choice_2 in equipment_name_column  %}
+                    {% do array_equipment_name.append(choice_2.name) %}
+                    {% endfor %}
+
+                    <div class=" container__filter--unit mb-1 mb-xl-0">
+                        <label for="pet-select">Depuis / Vers quel équipement</label>
+                        <select class="filter-select" value-group="equipment">
+                            <option class="no-value" value="">Non précisé</option>
+                            {% set iterations_equipment = range(0, array_equipment_label|length) %}
+                            {% for i in iterations_equipment %}
+                            <option value=".{{array_equipment_name[i]}}">{{array_equipment_label[i]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Fin Filtre Besoin -->
+
+
+                    <!-- Début Filtre Product -->
+
+                    {% set product_label_column = hubdb_table_column(module.content_group.hubdb_id, "product_label").options %}
+                    {% set array_product_label = [] %}
+                    {% for choice in product_label_column %}
+                    {% do array_product_label.append(choice.name) %}
+                    {% endfor %}
+
+                    {% set product_name_column  = hubdb_table_column(module.content_group.hubdb_id, "product_name").options %}
+                    {% set array_product_name = [] %}
+                    {% for choice_2 in product_name_column  %}
+                    {% do array_product_name.append(choice_2.name) %}
+                    {% endfor %}
+
+                    <div class="container__filter--unit mb-1 mb-xl-0">
+                        <label for="pet-select">Quel produit à traiter ?</label>
+                        <select class="filter-select" value-group="product">
+                            <option class="no-value" value="">Non précisé</option>
+                            {% set iterations_product = range(0, array_product_label|length) %}
+                            {% for i in iterations_product %}
+                            <option value=".{{array_product_name[i]}}">{{array_product_label[i]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row grid hide">
+            {% set table = hubdb_table_rows(module.content_group.hubdb_id) %}
+
+            {% if table == [] %}
+            <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
+            {% else %}
+            {% for row in table %}
+            {% if loop.index < 20 %}
+            <div
+                class="solution-unit {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %}col-lg-6">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <a href="{{domain}}{{ row['url']}}">
+                            <figure class="mb-0">
+                                <img class="w-100 rounded-flex" src="{{ row['image'].url}}" alt="" />
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="py-1 py-md-0 px-md-1 px-lg-2 d-flex flex-column h-100 justify-content-center">
+                            <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}">{{ row['name']}}</a></h3>
+                            <p class="mb-0">{{ row['description']}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="container-transition text-center">
+                    <button id="{{module.content_group.button_id}}">{{module.content_group.button_content}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

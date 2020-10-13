@@ -11,11 +11,19 @@
         font-weight: 700;
         font-size: 14px;
         text-decoration: none;
+        &:hover {
+          color: $primary-red;
+        }
       }
     }
   }
   .social-link {
     text-decoration: none;
+    &:hover {
+      p {
+        color: $primary-red;
+      }
+    }
     .social-container {
       p {
         margin-left: 5px;
@@ -37,6 +45,10 @@
     color: $white;
     text-decoration: none;
     text-transform: uppercase;
+    transition: all 0.4s ease;
+    &:hover {
+      box-shadow: none;
+    }
   }
   .container-sub-footer {
     border-top: 1px solid rgba(194, 201, 217, 0.5);
@@ -54,6 +66,9 @@
         font-size: 14px;
         color: $black;
         font-weight: 700;
+        &:hover {
+          color: $primary-red;
+        }
       }
     }
   }

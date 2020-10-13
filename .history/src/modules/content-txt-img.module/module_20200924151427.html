@@ -1,0 +1,39 @@
+<div id="{{module.module_identity}}"
+    class="global-content-txt-img bg-extra-shape {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row no-gutters container__content bg-medium-white bg_blur p-1 p-md-4">
+            <div class="col-md-7 container__content--txt mb-2 mb-md-0">
+                <div class="copy-wrapper pr-md-4">
+                    {% if module.content_group.subtitle %}
+                    <span class="subtitle">{{module.content_group.subtitle}}</span>
+                    {% endif %}
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+                    {% if module.content_group.external_link_url.href %}
+                    <a class="{{module.content_style.button_type}}-button mt-2"
+                        href="{{module.content_group.external_link_url.href}}"
+                        target="_blank">{{module.content_group.external_link_title}}<span
+                            class="icon-external-link"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-5 container__content--img">
+                <div class="wrapper-img">
+                    {% if module.content_group.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.image.src }}"
+                            alt="{{ module.content_group.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/420x300/1d3b74/ffffff.png?text=image">
+                    </figure>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

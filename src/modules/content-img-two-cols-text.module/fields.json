@@ -67,7 +67,7 @@
       },
       {
         "name": "background_type",
-        "label": "Background Type",
+        "label": "Background Type", 
         "sortable": false,
         "required": false,
         "locked": false,
@@ -79,6 +79,21 @@
         ],
         "type": "choice",
         "default": "bg_classic"
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "primary"
       }
     ]
   },

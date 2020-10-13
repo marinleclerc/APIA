@@ -1,4 +1,13 @@
 .global-three-cols-card {
+  .container_shape {
+    &.bg_shape_col-cards {
+      width: 100%;
+      left: -430px;
+      svg {
+        position: absolute;
+      }
+    }
+  }
   .container__content {
     .container__content--title {
       justify-content: space-between;
@@ -12,10 +21,23 @@
     }
     .single-card {
       figure {
-        border: rgba(194, 201, 217, 0.5);
         img {
-          box-shadow: 0 5px 5px rgba(194, 201, 217, 0.3);
+          border: 1px solid rgba(194, 201, 217, 0.5);
+          box-shadow: 0 5px 5px rgba(194, 201, 217, 0.6);
+          border-radius: 5px;
         }
+      }
+    }
+    figure {
+      position: relative;
+      height: 350px;
+      width: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        font-family: 'object-fit:cover';
+        object-fit: cover;
       }
     }
   }

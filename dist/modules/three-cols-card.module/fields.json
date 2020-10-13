@@ -48,6 +48,21 @@
         "locked": false,
         "type": "boolean",
         "default": true
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "fourth"
       }
     ]
   },
@@ -57,16 +72,39 @@
     "label": "Content Group",
     "children": [
       {
-        "name": "text",
-        "label": "Text",
+        "name": "title",
+        "label": "Titre",
         "required": false,
         "locked": false,
         "validation_regex": "",
         "allow_new_line": false,
         "show_emoji_picker": false,
-        "type": "richtext",
-        "help_text": "Title can describe your content properly.",
-        "default": "<h1>Example of title used in your module, it is a rich text<h1><p>Here is the paragraph you can custom aswell :) </p>"
+        "type": "text",
+        "default": "Lorem ipsum title"
+      },
+      {
+        "name": "content_link_title",
+        "label": "Content Button Link",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "default": "En savoir plus"
+      },
+      {
+        "name": "content_link_url",
+        "label": "Link to the activity page",
+        "required": false,
+        "locked": false,
+        "supported_types": ["EXTERNAL", "CONTENT"],
+        "type": "url",
+        "default": {
+          "content_id": null,
+          "href": "https://www.apia-sa.com/en/",
+          "type": "EXTERNAL"
+        }
       },
       {
         "name": "image",

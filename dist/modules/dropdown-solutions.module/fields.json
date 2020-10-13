@@ -57,6 +57,36 @@
         "locked": false,
         "type": "boolean",
         "default": true
+      },
+      {
+        "name": "background_type",
+        "label": "Background Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["bg-drowdown-first", "Background Image à Gauche"],
+          ["bg-drowdown-scd", "Background Image à Droite"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "fourth"
       }
     ]
   },
@@ -65,6 +95,20 @@
     "name": "content_group",
     "label": "Content Group",
     "children": [
+      {
+        "name": "category_choice",
+        "label": "Choix de référence",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["produits", "Nos produits"],
+          ["solutions", "Nos solutions"]
+        ],
+        "type": "choice",
+        "default": "produits"
+      },
       {
         "name": "text",
         "label": "Text",
@@ -115,6 +159,26 @@
               "default": 1
             },
             "children": [
+              {
+                "name": "img_solution",
+                "label": "Solution Image",
+                "required": false,
+                "locked": false,
+                "responsive": true,
+                "resizable": true,
+                "type": "image"
+              },
+              {
+                "name": "id_solution",
+                "label": "ID Solution",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "default": ""
+              },
               {
                 "name": "link_title",
                 "label": "Contenu textuel du lien",

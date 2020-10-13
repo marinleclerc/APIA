@@ -7,14 +7,22 @@
       h3 {
         margin-top: 0;
       }
+      p:last-child {
+        margin-bottom: 0;
+      }
       figure {
+        min-height: 350px;
         img {
           height: 100%;
           width: 100%;
           -o-object-fit: cover;
           font-family: 'object-fit:cover';
           object-fit: cover;
+          position: absolute;
         }
+      }
+      .btn {
+        margin-top: 30px;
       }
     }
     .container__content--unit:nth-child(3),
