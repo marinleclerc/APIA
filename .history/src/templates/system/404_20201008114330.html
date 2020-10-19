@@ -1,0 +1,32 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: APIA 404 Error Page
+-->
+{% extends "../layouts/base-system.html" %}
+
+
+{% block body %}
+<main class="body-container-wrapper">
+  <section class="content-wrapper">
+    <div class="systems-page password-prompt">
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 mx-auto text-center">
+              <div class="error-page" data-error="404">
+                <h2 class="error-title mb-0">404</h2>
+                <h1 class="error-page_heading mb-1 mt-2">
+                  Page non trouvée !
+                </h1>
+                <p>Nous sommes désolés, la page que vous avez demandée n'existe pas ou plus.</p>
+                <a class="primary-button mt-1" href="javascript:;">Retourner à l'accueil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock body %} 

@@ -22,19 +22,22 @@
                 <span class="subtitle">{{module.content_group.subtitle}}</span>
                 {% endif %}
                 {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
-                <div class="container__content--data d-flex justify-content-between mt-2 mt-md-3">
+                <div id="counter" class="container__content--data d-flex justify-content-between mt-2 mt-md-3">
 
                     {% for item in module.content_group.data_infos %}
                     <div class="data--item d-flex flex-column align-items-center mb-2 mb-md-1 mb-lg-0">
-                        <span>{{item.number_info}}</span>
+                        <div class="d-flex">
+                            <span class="data--unit counter-value" data-count="{{item.number_info}}">0</span>
+                            <span>{{item.number_unit}}</span>
+                        </div>
                         <p class="h6 mt-1">{{item.text_info}}</p>
                     </div>
                     {% endfor %}
 
                 </div>
-                {% if module.content_group.pdf_url.href %}
+                {% if module.content_group.external_link_url.href %}
                 <a class="{{module.content_style.button_type}}-button mt-md-3 mx-auto"
-                    href="{{module.content_group.pdf_url.href}}">{{module.content_group.pdf_content}}<span
+                    href="{{module.content_group.external_link_url.href}}">{{module.content_group.external_link_title}}<span
                         class="icon-external-link"></span></a>
                 {% endif %}
             </div>

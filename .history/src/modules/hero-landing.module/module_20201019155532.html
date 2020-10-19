@@ -1,0 +1,60 @@
+<div id="{{module.module_identity}}"
+    class="global-hero-landing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="global-intro pt-4 pb-8">
+        <div class="container__bg">
+            {% if module.content_group.image.src %}
+            <figure class="figure h-100">
+                <img class="img-fluid lazy"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                    data-src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}" />
+            </figure>
+            {% else %}
+            <figure class="figure h-100">
+                <img class="img-fluid lazy"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                    data-src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+            </figure>
+            {% endif %}
+        </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <div class="hero-introduction">
+                        {{module.content_group.hero_text}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="container-body-left mt-4">
+                    {{module.content_group.content_left}}
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="container__form py-2 px-1 px-md-4 rounded-sm mt-md-n4">
+                    <h3 class="text-center mt-0">{{module.content_group.form_title}}</h3>
+                    <!-- {% form
+                        form_to_use="{{module.content_group.form_id}}"
+                        response_response_type="{{ module.content_group.response_type }}"
+                        response_message="{{ module.content_group.message }}"
+                        response_redirect_id="{{ module.content_group.redirect_id }}"
+                        response_redirect_url="{{ module.content_group.redirect_url}}"
+                        gotowebinar_webinar_key="{{ module.content_group.gotowebinar_webinar_key }}"
+                    %} -->
+                    {% form "my_form" form_to_use='{{module.content_group.form.form_id}}' %}
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}

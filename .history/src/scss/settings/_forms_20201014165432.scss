@@ -1,0 +1,326 @@
+// Here you can setup your form options
+
+h3.form-title {
+  display: none;
+}
+
+form.hs-form,
+.submitted-message {
+  background: rgba(white, 1); //set the color here
+}
+
+form.hs-form fieldset {
+  max-width: none;
+  width: 100%;
+}
+
+form.hs-form fieldset:first-child {
+  margin-top: -25px;
+}
+
+form.hs-form .hs-form-field {
+  margin-top: 25px;
+}
+
+form span.hs-form-required {
+  font-size: 12px;
+}
+
+form.hs-form > .hs-form-field:first-child {
+  margin-top: 0;
+}
+
+form.hs-form fieldset.form-columns-2 .field {
+  width: 47.5%;
+}
+
+form.hs-form fieldset.form-columns-2 .field + .field {
+  margin-left: 5%;
+}
+
+form.hs-form fieldset.form-columns-3 .field {
+  width: 30%;
+}
+
+form.hs-form fieldset.form-columns-3 .field + .field {
+  margin-left: 5%;
+}
+
+form.hs-form label {
+  font-size: 16px;
+  margin: 0;
+}
+
+form.hs-form label span + span {
+  color: $white;
+  margin-left: 2px;
+}
+
+form.hs-form legend {
+  color: grey;
+  display: block !important;
+  font-size: 80%;
+  margin: 0 0 6px 0;
+}
+
+form.hs-form .hs-form-field .input {
+  margin: 0;
+}
+
+form.hs-form .hs-form-field input:not([type='checkbox']):not([type='radio']):not([type='file']),
+form.hs-form .hs-form-field select,
+form.hs-form .hs-form-field textarea {
+  width: 100% !important;
+  color: rgba($baseFontColor, 1);
+  background: #ffffff;
+  border: 1px solid $white;
+  border-radius: 0;
+  padding: 15px;
+  outline: none;
+  border-radius: 3px;
+  -webkit-transition: 0.3s border, 0.3s box-shadow;
+  -moz-transition: 0.3s border, 0.3s box-shadow;
+  transition: 0.3s border, 0.3s box-shadow;
+}
+
+form.hs-form .hs-form-field textarea {
+  height: 160px;
+  margin-bottom: -7px;
+}
+
+form.hs-form .hs-form-field input:not([type='checkbox']):not([type='radio']):not([type='file']):focus,
+form.hs-form .hs-form-field select:focus,
+form.hs-form .hs-form-field textarea:focus {
+  border-color: rgba($primary-grey, 1);
+  outline: 0;
+}
+
+form.hs-form .hs-form-field select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='8px' height='14px' viewBox='0 0 8 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg fill='%23000000'%3E %3Cpolygon transform='translate(4.000000, 11.500000) scale(1, -1) translate(-4.000000, -11.500000) ' points='4 9 8 14 0 14'%3E%3C/polygon%3E %3Cpolygon points='4 0 8 5 0 5'%3E%3C/polygon%3E %3C/g%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  background-size: 8px auto;
+  padding-right: 38px;
+}
+
+form.hs-form .hs-form-field select::-ms-expand {
+  display: none;
+}
+
+form.hs-form .hs-form-field select option {
+  font-weight: normal;
+}
+
+form.hs-form .hs-form-field input[type='file'] {
+  width: 100% !important;
+  background: #ffffff;
+  border: 1px dashed rgba($borderColor, 1);
+  border-radius: 0;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+form.hs-form .hs-form-field input:not([type='checkbox']):not([type='radio']):not([type='file']).error,
+form.hs-form .hs-form-field select.error,
+form.hs-form .hs-form-field textarea.error {
+  border-color: rgba(210, 14, 67, 1);
+  box-shadow: inset 0 0 5px 0 rgba(210, 14, 67, 0.3);
+}
+
+form.hs-form .hs-form-field input:not([type='checkbox']):not([type='radio']):not([type='file']).error:focus,
+form.hs-form .hs-form-field select.error:focus,
+form.hs-form .hs-form-field textarea.error:focus {
+  outline: 0;
+}
+
+form.hs-form .hs-form-field ul.inputs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form.hs-form .hs-form-field ul.multi-container li {
+  margin-top: 8px;
+}
+
+form.hs-form .hs-form-field input[type='checkbox'],
+form.hs-form .hs-form-field input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+}
+
+form.hs-form .hs-form-field input[type='checkbox'] + span,
+form.hs-form .hs-form-field input[type='radio'] + span {
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  padding: 0 0 0 20px;
+  margin-left: 20px;
+}
+
+form.hs-form .hs-form-field input[type='checkbox'] + span:before,
+form.hs-form .hs-form-field input[type='radio'] + span:before {
+  content: '';
+  margin-right: 6px;
+  margin-top: 3px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border: 1px solid rgba($borderColor, 1);
+}
+
+.hs_error_rollup {
+  
+}
+
+form.hs-form .hs-form-field input[type='radio'] + span:before {
+  border-radius: 100%;
+}
+
+form.hs-form .hs-form-field input[type='checkbox'] + span:hover:before,
+form.hs-form .hs-form-field input[type='radio'] + span:hover:before {
+  border-color: rgba($charcoal, 1);
+}
+
+form.hs-form .hs-form-field input[type='checkbox']:focus + span:before,
+form.hs-form .hs-form-field input[type='radio']:focus + span:before {
+  border-color: rgba($primary-grey, 1);
+}
+
+form.hs-form .hs-form-field input[type='checkbox']:checked + span:before,
+form.hs-form .hs-form-field input[type='radio']:checked + span:before {
+  background: rgba($charcoal, 1);
+  border-color: rgba($charcoal, 1);
+}
+
+form.hs-form .hs-form-field input[type='checkbox']:checked + span:after,
+form.hs-form .hs-form-field input[type='radio']:checked + span:after {
+  content: '';
+  position: absolute;
+}
+
+form.hs-form .hs-form-field input[type='checkbox']:checked + span:after {
+  display: block;
+  left: -15px;
+  top: 10px !important;
+  width: 5px;
+  height: 9px;
+  border: solid $primary-red;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+form.hs-form .hs-form-field input[type='radio']:checked + span:after {
+  display: block;
+  background: #fff;
+  left: 5px;
+  top: 8px;
+  border-radius: 100%;
+  width: 7px;
+  height: 7px;
+}
+
+form.hs-form .hs-form-field input[type='checkbox']:disabled + span,
+form.hs-form .hs-form-field input[type='radio']:disabled + span {
+  color: #b8b8b8;
+  cursor: auto;
+}
+
+form.hs-form .hs-form-field input[type='checkbox']:disabled + span:before,
+form.hs-form .hs-form-field input[type='radio']:disabled + span:before {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #ddd;
+  border-color: rgba($borderColor, 1);
+}
+
+form.hs-form .legal-consent-container {
+  margin-top: 30px;
+}
+
+form.hs-form .legal-consent-container .hs-fieldtype-booleancheckbox {
+  margin: 5px 0 20px 0;
+}
+
+form.hs-form .legal-consent-container .hs-form-booleancheckbox-display > span {
+  margin: 0;
+}
+
+form.hs-form .legal-consent-container .hs-form-booleancheckbox-display p {
+  margin: 0;
+  display: inline;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(39, 51, 71, 0.5);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+form.hs-form .legal-consent-container input[type='checkbox'] + span {
+  //font-size: 80%;
+}
+
+form.hs-form .legal-consent-container input[type='checkbox'] + span:before {
+  position: absolute;
+  margin-top: 6px;
+  left: -20px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #1f2735;
+}
+
+form.hs-form .legal-consent-container input[type='checkbox'] + span:after {
+  margin-top: -2px;
+}
+
+form.hs-form .hs-error-msgs {
+  color: rgba($burnt-sienna, 1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+form.hs-form .hs-error-msgs label {
+  font-size: 80%;
+  color: $primary-red !important;
+}
+
+form.hs-form .hs-richtext {
+  margin-top: 15px;
+}
+
+form.hs-form .legal-consent-container .hs-richtext {
+  font-size: 80%;
+  padding-left: 40px;
+}
+
+.legal-consent-container .hs-error-msgs label {
+  padding-left: 40px;
+}
+
+form.hs-form .hs_recaptcha,
+form.hs-form .hs-submit {
+  margin-top: 30px;
+  text-align: center;
+}
+
+form.hs-form input {
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  form.hs-form fieldset.form-columns-2 .field,
+  form.hs-form fieldset.form-columns-3 .field {
+    width: 100%;
+  }
+
+  form.hs-form fieldset.form-columns-2 .field + .field,
+  form.hs-form fieldset.form-columns-3 .field + .field {
+    margin-left: 0;
+  }
+}

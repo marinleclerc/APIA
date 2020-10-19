@@ -64,8 +64,7 @@
                   data-src="{{ content.blog_post_author.avatar }}" alt="Photo de {{ blog_author.display_name }}" />
               </figure>
               <div class="container-author-info ml-md-1">
-                <a class="h6 text-decoration-none"
-                  href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_post_author.display_name }}</a>
+                <p class="h6 m-0">{{ content.blog_post_author.display_name }}</p>
                 <p class="m-0">
                   {{ content.blog_post_author.bio }}
                 </p>
@@ -79,23 +78,46 @@
                 <p class="mb-2">Vous avez un projet d'optimisation de vos lignes industrielles ? Profitez de
                   l'expérience des
                   équipes APIA Technologie spécialiste de l'agroalimentaire.</p>
-                <a href="#" class="btn primary-button">prendre rendez-vous</a>
+                <a href="/contacter" class="btn primary-button">prendre rendez-vous</a>
                 {% end_widget_attribute %}
                 {% end_widget_block %}
               </div>
               <div class="container-share-social my-1">
                 <span class="subtitle">Partager l'article</span>
-                <a class="mt-1" href="#" title="Linkedin">
-                  <svg class="l-footer__icon" width="20" height="20">
-                    <path
-                      d="M17 17h-2.8v-4.9c0-1.343-.593-2.093-1.656-2.093-1.157 0-1.844.781-1.844 2.094V17H7.9V7.9h2.8v1.023s.878-1.541 2.858-1.541S17 8.59 17 11.091V17zM4.71 6.445C3.764 6.445 3 5.673 3 4.722 3 3.772 3.765 3 4.71 3c.943 0 1.708.771 1.708 1.722S5.653 6.445 4.71 6.445zM3 17h3.5V7.9H3V17z"
-                      fill="currentColor" fill-rule="evenodd"></path>
-                  </svg>
-                </a>
+                <div class="d-flex mt-1">
+                  <a href="https://www.linkedin.com/shareArticle/?mini=true&url={{content.absolute_url}}"
+                    title="Linkedin">
+                    <svg class="l-footer__icon" width="20" height="20">
+                      <path
+                        d="M17 17h-2.8v-4.9c0-1.343-.593-2.093-1.656-2.093-1.157 0-1.844.781-1.844 2.094V17H7.9V7.9h2.8v1.023s.878-1.541 2.858-1.541S17 8.59 17 11.091V17zM4.71 6.445C3.764 6.445 3 5.673 3 4.722 3 3.772 3.765 3 4.71 3c.943 0 1.708.771 1.708 1.722S5.653 6.445 4.71 6.445zM3 17h3.5V7.9H3V17z"
+                        fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-1" href="http://twitter.com/share?url={{content.absolute_url}}" title="Twitter">
+                    <svg class="l-footer__icon" width="20" height="20">
+                      <path
+                        d="M7.718 16c5.66 0 8.756-4.617 8.756-8.62 0-.132 0-.263-.01-.393A6.198 6.198 0 0018 5.419a6.205 6.205 0 01-1.767.477 3.053 3.053 0 001.353-1.677 6.227 6.227 0 01-1.954.736 3.115 3.115 0 00-4.355-.132 3.004 3.004 0 00-.89 2.896 8.788 8.788 0 01-6.343-3.166 3.004 3.004 0 00.953 4.044A3.091 3.091 0 013.6 8.22v.038c0 1.442 1.033 2.684 2.469 2.97-.453.122-.929.14-1.389.052a3.075 3.075 0 002.875 2.104A6.236 6.236 0 013 14.64a8.815 8.815 0 004.718 1.359"
+                        fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-1" href="http://www.facebook.com/sharer.php?u={{content.absolute_url}}" title="Facebook">
+                    <svg class="l-footer__icon" width="20" height="20">
+                      <path
+                        d="M11.457 18v-7.2h2.186L14 7.6h-2.543V6.042c0-.824.021-1.642 1.173-1.642h1.166V2.112c0-.034-1.002-.112-2.015-.112-2.117 0-3.442 1.326-3.442 3.76V7.6H6v3.2h2.339V18h3.118z"
+                        fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-1" href="mailto:%20?body={{content.absolute_url}}" title="mail">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 22 22">
+                      <path
+                        d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
+                    </svg>
+                  </a>
+                </div>
               </div>
               <span class="subtitle">Nous suivre sur les réseaux</span>
               <div class="container-social-link mt-1">
-                <a class="social-link" href="javascript:;">
+                <a class="social-link" href="https://www.linkedin.com/company/apia-technologie/" target="_blank">
                   <div class="social-container d-flex align-items-center">
                     <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"
                       height="20px">
@@ -121,14 +143,18 @@
         {% do topic_array.append( topic.slug ) %}
         {% endfor %}
         {% set related_posts =
-              blog_recent_topic_posts('default', topic_array, 3 ) %}
+              blog_recent_topic_posts('default', topic_array, 4 ) %}
 
+        {% set my_num = 0 %}
         {% if related_posts|length > 1 %}
         <div class="col-12">
           <h2 class="title-related-posts mt-0 pt-2 pt-md-4">Ces articles peuvent vous intéresser</h2>
         </div>
-        {% for post in related_posts %} {% unless
+        {% for post in related_posts %}
+        {% if my_num < 3 %}
+        {% if
               content.absolute_url == post.absolute_url %}
+        {% else if %}
         <div class="col-md-4">
           <div class="single-post">
 
@@ -148,7 +174,9 @@
               <!-- {{ post.post_list_content|truncatehtml(20) }} -->
           </div>
         </div>
-        {% endunless %}
+        {% set my_num = my_num + 1 %}
+        {% endif %}
+        {% endif %}
         {% endfor %}
         {% endif %}
       </div>
@@ -159,7 +187,7 @@
       <div class="container">
         <div class="row no-gutters container__content p-1 p-md-2 py-lg-2 px-lg-4">
           <div class="col-md-6">
-            <span class="subtitle">Newsletter</span>
+            <span class="subtitle">Actualités</span>
             <p class="h2">Rejoignez-nous,</p>
             <p class="h3">en vous abonnant à notre newsletter</p>
           </div>

@@ -29,12 +29,12 @@
             {% for post in blog_posts %}
             <div class="col-md-4 container__content--post">
                 <div class="single-post">
-                    <a class="feat-img" href="#"><img class="rounded w-100" src="{{ post.featured_image }}"
-                            alt="{{ post.name }}">
+                    <a class="feat-img" href="{{ post.absolute_url }}"><img class="rounded w-100"
+                            src="{{ post.featured_image }}" alt="{{ post.name }}">
                     </a>
                     <div class="container-tags ml-1">
                         {% for tag in post.tag_list %}
-                        <a href="" class="single-tag">{{ tag.name }}</a>
+                        <span class="single-tag">{{ tag.name }}</span>
                         {% endfor %}
                     </div>
                     <h3><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>

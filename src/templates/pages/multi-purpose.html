@@ -7,15 +7,12 @@
 {% block body %}
 
 {% if request.query_dict.term  %}
-
 {% module "global_search" path="../../modules/global-search-result.module" %}
-
 {% else %}
 
 {% widget_container "flexible_column" %}
 {% end_widget_container %}
 
 {% endif %}
-
 <!-- Sticky arrow-up -->
 {% endblock body %}

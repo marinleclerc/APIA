@@ -1,0 +1,166 @@
+.global-timeline {
+  &#methodo {
+    scroll-margin-top: 100px;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  .container__content {
+    position: relative;
+    .row:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    .row:last-child {
+      ul {
+        margin-bottom: 0;
+        li:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+      width: 1px;
+      background-color: #b5bbcc;
+      height: 99%;
+    }
+    span {
+      color: $primary-red;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .container__content--timeline {
+      position: relative;
+      h3 {
+        margin-top: 0;
+      }
+      &.left-content {
+        text-align: right;
+        .timeline--unit--intro {
+          margin-right: 50px;
+          transform: translateY(-25px);
+        }
+        figure {
+          top: 0px;
+          width: inherit;
+          position: absolute;
+          right: -30px;
+          background-color: #1d3b74;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 60px;
+          height: 60px;
+          img {
+            max-width: 40px;
+          }
+        }
+        ul {
+          padding: 0;
+          list-style-type: none;
+          li {
+            padding-right: 50px;
+            line-height: 1;
+            padding-bottom: 15px;
+            &::after {
+              content: '\25CF'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+              color: #b5bbcc; /* Change the color */
+              font-weight: 900; /* If you want it to be bold */
+              position: absolute;
+              right: -6px; /* Also needed for space (tweak if needed) */
+            }
+          }
+        }
+      }
+      &.right-content {
+        text-align: left;
+        .timeline--unit--intro {
+          margin-left: 50px;
+          transform: translateY(-25px);
+        }
+        figure {
+          top: 0px;
+          width: inherit;
+          position: absolute;
+          left: -30px;
+          background-color: #1d3b74;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 60px;
+          height: 60px;
+          img {
+            max-width: 40px;
+          }
+        }
+        ul {
+          padding: 0;
+          list-style-type: none;
+          li {
+            padding-left: 50px;
+            line-height: 1;
+            padding-bottom: 15px;
+            &::before {
+              content: '\25CF'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+              color: #b5bbcc; /* Change the color */
+              font-weight: 900; /* If you want it to be bold */
+              position: absolute;
+              left: -6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .global-timeline {
+    .container__content {
+      &::before {
+        left: calc(8.0001% + 15px);
+      }
+      .left-content {
+        text-align: left !important;
+        .timeline--unit {
+          figure {
+            left: -30px;
+            right: inherit;
+          }
+          .timeline--unit--intro {
+            margin-left: 50px;
+            margin-right: 0;
+          }
+          ul {
+            li {
+              padding-left: 50px;
+              padding-right: 0;
+              &::after {
+                left: -6px;
+                right: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .global-timeline {
+    .container__content {
+      &::before {
+        left: 11.7%;
+      }
+    }
+  }
+}

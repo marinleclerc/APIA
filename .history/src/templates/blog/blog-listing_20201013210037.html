@@ -1,0 +1,334 @@
+<!--
+  templateType: blog
+  isAvailableForNewContent: true
+  label: APIA Blog Listing
+-->
+{% extends "../layouts/base-blog.html" %}
+{% block body %}
+
+{% if request.query_dict.term  %}
+{% module "global_search" path="../../modules/global-search-result.module" %}
+{% else %}
+
+{% if blog_author %}
+{# Author Block Listing  - You can manage it here #}
+{% elif tag %}
+{#  Tag Listing - You can manage it here #}
+<div class="blog-listing">
+  {% for content in contents %}
+  {% if (loop.first && current_page_num == 1) && !blog_author %}
+  <div class="categories-menu text-center">
+    <div class="container">
+      <div class="col-12 menu-wrapper my-4">
+        {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root", flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <div class="header-blog-listing">
+    <div class="section">
+      <div class="container container__content">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="container-header-listing bg-light-white bg_blur text-center p-2">
+              <h1 class="mt-0">Le blog APIA Technologie</h1>
+              <p>L'industrie et l'artisanat alimentaires sont en perpétuel mouvement : nouvelles attentes consommateurs,
+                sécurité alimentaire, pénibilité et risques professionnels. Retrouvez ici nos cas d'études, les actualités
+                de la filière ou encore nos partages d'expérience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container position-relative">
+    <div class="container_shape position-absolute bg-drowdown-first">
+      <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Homepage---Mockup---V5.3" transform="translate(-41.000000, -2205.000000)" fill="#F1F2F5">
+            <g id="solution" transform="translate(41.000000, 1718.000000)">
+              <path
+                d="M107.399566,708.242946 C623.91791,333.590835 1116.3536,494.342472 896.051051,751.755223 C655.642724,1023.3109 -321.274909,1081.93468 107.399566,708.242946 Z"
+                id="Path"
+                transform="translate(475.000000, 729.500000) scale(-1, -1) translate(-475.000000, -729.500000) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Homepage---Mockup---V5.3" transform="translate(-446.000000, -3041.000000)" fill="#F1F2F5">
+            <g id="produits" transform="translate(144.000000, 2714.000000)">
+              <path
+                d="M409.399566,548.242946 C925.91791,173.590835 1418.3536,334.342472 1198.05105,591.755223 C957.642724,863.3109 -19.2749092,921.934684 409.399566,548.242946 Z"
+                id="Path-Copy"
+                transform="translate(777.000000, 569.500000) scale(1, -1) translate(-777.000000, -569.500000) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="row">
+      {% for content in contents %}
+      {% if (loop.first && current_page_num == 1) %}
+      <div class="col-md-8 last-post">
+        <div class="single-post p-1 mb-2">
+          {% if content.featured_image %}
+          <a class="feat-img m-0" href="{{ content.absolute_url }}">
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+              data-src="{{ content.featured_image }}">
+          </a>
+          {% endif %}
+          <div class="container-tags ml-1">
+            {% for tag in content.tag_list %}
+            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <div class="single-post-info p-1">
+            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
+            <p>
+              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-md-4 classic-post">
+        <div class="single-post p-1 mb-2">
+          {% if content.featured_image %}
+          <a class="feat-img m-0" href="{{ content.absolute_url }}">
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+              data-src="{{ content.featured_image }}">
+          </a>
+          {% endif %}
+          <div class="container-tags ml-1">
+            {% for tag in content.tag_list %}
+            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <div class="single-post-info p-1">
+            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
+            <p>
+              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
+            {# {{ content.post_list_content|truncatehtml(128) }} #}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% else %}
+<!--Classic Listing - You can manage it here -->
+<div class="header-blog-listing">
+  <div class="section">
+    <div class="container container__content">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="container-header-listing bg-light-white bg_blur text-center p-2">
+            <h1 class="mt-0">Le blog APIA Technologie</h1>
+            <p>L'industrie et l'artisanat alimentaires sont en perpétuel mouvement : nouvelles attentes consommateurs,
+              sécurité alimentaire, pénibilité et risques professionnels. Retrouvez ici nos cas d'études, les actualités
+              de la filière ou encore nos partages d'expérience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blog-listing">
+  {% for content in contents %}
+  {% if (loop.first && current_page_num == 1) && !blog_author %}
+  <div class="categories-menu text-center">
+    <div class="container">
+      <div class="col-12 menu-wrapper my-4">
+        {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root", flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+
+  <div class="container position-relative">
+    <div class="container_shape position-absolute bg-drowdown-first">
+      <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Homepage---Mockup---V5.3" transform="translate(-41.000000, -2205.000000)" fill="#F1F2F5">
+            <g id="solution" transform="translate(41.000000, 1718.000000)">
+              <path
+                d="M107.399566,708.242946 C623.91791,333.590835 1116.3536,494.342472 896.051051,751.755223 C655.642724,1023.3109 -321.274909,1081.93468 107.399566,708.242946 Z"
+                id="Path"
+                transform="translate(475.000000, 729.500000) scale(-1, -1) translate(-475.000000, -729.500000) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Homepage---Mockup---V5.3" transform="translate(-446.000000, -3041.000000)" fill="#F1F2F5">
+            <g id="produits" transform="translate(144.000000, 2714.000000)">
+              <path
+                d="M409.399566,548.242946 C925.91791,173.590835 1418.3536,334.342472 1198.05105,591.755223 C957.642724,863.3109 -19.2749092,921.934684 409.399566,548.242946 Z"
+                id="Path-Copy"
+                transform="translate(777.000000, 569.500000) scale(1, -1) translate(-777.000000, -569.500000) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="row">
+      {% for content in contents %}
+      {% if (loop.first && current_page_num == 1) %}
+      <div class="col-md-8 last-post">
+        <div class="single-post p-1 mb-2">
+          {% if content.featured_image %}
+          <a class="feat-img m-0" href="{{ content.absolute_url }}">
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+              data-src="{{ content.featured_image }}">
+          </a>
+          {% endif %}
+          <div class="container-tags ml-1">
+            {% for tag in content.tag_list %}
+            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <div class="single-post-info p-1">
+            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
+            <p>
+              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-md-4 classic-post">
+        <div class="single-post p-1 mb-2">
+          {% if content.featured_image %}
+          <a class="feat-img m-0" href="{{ content.absolute_url }}">
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+              data-src="{{ content.featured_image }}">
+          </a>
+          {% endif %}
+          <div class="container-tags ml-1">
+            {% for tag in content.tag_list %}
+            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <div class="single-post-info p-1">
+            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
+            <p>
+              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
+            {# {{ content.post_list_content|truncatehtml(128) }} #}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% if contents.total_page_count > 1 %}
+<div class="blog-pagination mt-md-3 mt-md-5 mb-1 mb-md-3">
+  <div class="container__content--pagination d-flex justify-content-center align-items-center">
+    {% set page_list = [-2, -1, 0, 1, 2] %}
+    {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+    {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+    {% elif current_page_num == 2 %}{% set offset = 1 %}
+    {% elif current_page_num == 1 %}{% set offset = 2 %}
+    {% else %}{% set offset = 0 %}{% endif %}
+
+    <a class="blog-pagination__link blog-pagination__prev-link {{ "blog-pagination__prev-link--disabled" if !last_page_num }}"
+      href="{{ blog_page_link(last_page_num) }}">
+      <svg width="14px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#d20e43"
+            fill-rule="nonzero">
+            <g id="filters" transform="translate(165.000000, 772.000000)">
+              <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                <path
+                  d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                  id="Path"
+                  transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                </path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      Précédent
+    </a>
+    {% for page in page_list %}
+    {% set this_page = current_page_num + page + offset %}
+    {% if this_page > 0 and this_page <= contents.total_page_count %}
+    <a class="blog-pagination__link blog-pagination__number-link {{ "blog-pagination__link--active" if this_page == current_page_num }}"
+      href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+    {% endif %}
+    {% endfor %}
+    <a class="blog-pagination__link blog-pagination__next-link {{ "blog-pagination__next-link--disabled" if !next_page_num }}"
+      href="{{ blog_page_link(current_page_num + 1) }}">
+      Suivant
+      <svg width="14px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#d20e43"
+            fill-rule="nonzero">
+            <g id="filters" transform="translate(165.000000, 772.000000)">
+              <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                <path
+                  d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                  id="Path"
+                  transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                </path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      {# {% icon name="chevron-right" style="SOLID", width="13", no_wrapper=True %} #}
+    </a>
+  </div>
+  {% endif %}
+  {% endif %}
+</div>
+
+
+<div class="global-newsletter">
+  <div class="bg-light-green pattern-light text-white py-5">
+    <div class="container">
+      <div class="row no-gutters container__content p-1 p-md-2 py-lg-2 px-lg-4">
+        <div class="col-md-6">
+          <span class="subtitle">Newsletter</span>
+          <p class="h2">Rejoignez-nous,</p>
+          <p class="h3">en vous abonnant à notre newsletter</p>
+        </div>
+        <div class="col-md-6">
+          <div class="subscribe-form">
+            {% form "my_form" form_to_use='9e2d1b16-443c-4fa1-8342-af8fb54f317e', title='My Form' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination - You can manage it here -->
+{% if next_page_num %}
+
+{% endif %}
+{% endif %}
+
+{% endblock body %}

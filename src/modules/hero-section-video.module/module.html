@@ -3,7 +3,7 @@
     <div class="container-lg">
         <div class="row container__hero">
             <div class="col-md-8 container__hero--content">
-                <div class="copy-wrapper pr-2 py-3 bg-light-white bg_blur my-2 rounded">
+                <div class="copy-wrapper pr-md-2 py-md-3 bg-light-white bg_blur my-md-2 rounded">
                     {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
                     {% if module.content_group.external_link_url.href %}
                     <a class="{{module.content_style.button_type}}-button mt-1"

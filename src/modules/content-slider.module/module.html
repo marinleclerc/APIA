@@ -10,7 +10,7 @@
                 {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
                 {% if module.content_group.content_link_url.href %}
                 <a class="mt-1 {{module.content_style.button_type}}-button mx-auto"
-                    href="{{module.content_group.content_link.href}}">{{module.content_group.content_link_title}}<span
+                    href="{{module.content_group.content_link_url.href}}">{{module.content_group.content_link_title}}<span
                         class="icon-arrowright"></span></a>
                 {% endif %}
             </div>

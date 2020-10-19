@@ -18,7 +18,7 @@
         </div>
         <div class="container text-center">
             <div class="row">
-                <div class="col-9 mx-auto">
+                <div class="col-md-9 mx-auto">
                     <div class="hero-introduction">
                         {{module.content_group.hero_text}}
                     </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-7">
                 <div class="container__form py-2 px-1 px-md-4 rounded-sm mt-md-n4">
-                    <h3 class="text-center mt-0">Formulaire de contact</h3>
+                    <h3 class="text-center mt-0">{{module.content_group.form_title}}</h3>
                     <!-- {% form
                         form_to_use="{{module.content_group.form_id}}"
                         response_response_type="{{ module.content_group.response_type }}"
@@ -44,7 +44,7 @@
                         response_redirect_url="{{ module.content_group.redirect_url}}"
                         gotowebinar_webinar_key="{{ module.content_group.gotowebinar_webinar_key }}"
                     %} -->
-                    {% form "my_form" form_to_use='{{module.content_group.form.form_id}}', title='Form' %}
+                    {% form "my_form" form_to_use='{{module.content_group.form.form_id}}' %}
                 </div>
             </div>
         </div>

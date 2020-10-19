@@ -14,6 +14,114 @@
 {# Author Block Listing  - You can manage it here #}
 {% elif tag %}
 {#  Tag Listing - You can manage it here #}
+<div class="header-blog-listing">
+  <div class="section">
+    <div class="container container__content">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="container-header-listing bg-light-white bg_blur text-center p-2">
+            <h1 class="my-1">{{tag|capitalize}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="blog-listing">
+  {% for content in contents %}
+  {% if (loop.first && current_page_num == 1) && !blog_author %}
+  <div class="categories-menu text-center">
+    <div class="container">
+      <div class="col-12 menu-wrapper my-4">
+        {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root", flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <div class="container position-relative">
+    <div class="container_shape position-absolute bg-drowdown-first">
+      <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Homepage---Mockup---V5.3" transform="translate(-41.000000, -2205.000000)" fill="#F1F2F5">
+            <g id="solution" transform="translate(41.000000, 1718.000000)">
+              <path
+                d="M107.399566,708.242946 C623.91791,333.590835 1116.3536,494.342472 896.051051,751.755223 C655.642724,1023.3109 -321.274909,1081.93468 107.399566,708.242946 Z"
+                id="Path"
+                transform="translate(475.000000, 729.500000) scale(-1, -1) translate(-475.000000, -729.500000) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Homepage---Mockup---V5.3" transform="translate(-446.000000, -3041.000000)" fill="#F1F2F5">
+            <g id="produits" transform="translate(144.000000, 2714.000000)">
+              <path
+                d="M409.399566,548.242946 C925.91791,173.590835 1418.3536,334.342472 1198.05105,591.755223 C957.642724,863.3109 -19.2749092,921.934684 409.399566,548.242946 Z"
+                id="Path-Copy"
+                transform="translate(777.000000, 569.500000) scale(1, -1) translate(-777.000000, -569.500000) ">
+              </path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="row">
+      {% for content in contents %}
+      {% if (loop.first && current_page_num == 1) %}
+      <div class="col-md-8 last-post">
+        <div class="single-post p-1 mb-2">
+          {% if content.featured_image %}
+          <a class="feat-img m-0" href="{{ content.absolute_url }}">
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+              data-src="{{ content.featured_image }}">
+          </a>
+          {% endif %}
+          <div class="container-tags ml-1">
+            {% for tag in content.tag_list %}
+            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <div class="single-post-info p-1">
+            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
+            <p>
+              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="col-md-4 classic-post">
+        <div class="single-post p-1 mb-2">
+          {% if content.featured_image %}
+          <a class="feat-img m-0" href="{{ content.absolute_url }}">
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+              data-src="{{ content.featured_image }}">
+          </a>
+          {% endif %}
+          <div class="container-tags ml-1">
+            {% for tag in content.tag_list %}
+            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+          <div class="single-post-info p-1">
+            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
+            <p>
+              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
+            {# {{ content.post_list_content|truncatehtml(128) }} #}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% else %}
 <!--Classic Listing - You can manage it here -->
 <div class="header-blog-listing">
@@ -22,7 +130,10 @@
       <div class="row">
         <div class="col-md-10 offset-md-1">
           <div class="container-header-listing bg-light-white bg_blur text-center p-2">
-            <h1 class="mt-0">Le blog APIA Technologie</h1>
+            <span class="breadcrumb">
+              {% menu "my_menu" id=36098716027, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', flow='horizontal', label='Advanced Menu' %}
+            </span>
+            <h1 class="mt-2">Le blog APIA Technologie</h1>
             <p>L'industrie et l'artisanat alimentaires sont en perpétuel mouvement : nouvelles attentes consommateurs,
               sécurité alimentaire, pénibilité et risques professionnels. Retrouvez ici nos cas d'études, les actualités
               de la filière ou encore nos partages d'expérience.</p>
@@ -200,7 +311,7 @@
     <div class="container">
       <div class="row no-gutters container__content p-1 p-md-2 py-lg-2 px-lg-4">
         <div class="col-md-6">
-          <span class="subtitle">Newsletter</span>
+          <span class="subtitle">Actualités</span>
           <p class="h2">Rejoignez-nous,</p>
           <p class="h3">en vous abonnant à notre newsletter</p>
         </div>

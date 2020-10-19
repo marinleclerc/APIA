@@ -118,8 +118,8 @@
             <div
                 class="solution-unit {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %}col-lg-6">
                 <div class="row no-gutters">
-                    <div class="col-md-4"> 
-                        <a href="{{domain}}{{ row['url']}}">
+                    <div class="col-md-4">
+                        <a href="{{ row['url']}}">
                             <figure class="mb-0">
                                 <img class="w-100 rounded-flex" src="{{ row['image'].url}}" alt="" />
                             </figure>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="py-1 py-md-0 px-md-1 px-lg-2 d-flex flex-column h-100 justify-content-center">
-                            <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}">{{ row['name']}}</a></h3>
+                            <h3 class="mt-0 mb-1"><a href="{{ row['url']}}">{{ row['name']}}</a></h3>
                             <p class="mb-0">{{ row['description']}}</p>
                         </div>
                     </div>

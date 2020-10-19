@@ -1,0 +1,75 @@
+<div id="{{module.module_identity}}"
+    class="global-two-cols-carrousel {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="container-carousel">
+                    <!-- Flickity HTML init -->
+                    <div class="carousel carousel-main mb-1" data-flickity>
+                        {% for item in module.content_group.carousel_group %}
+                        <div class="carousel-cell">
+                            {% if item.image.src %}
+                            <figure class="figure {% if item.portrait == true %} full-h {% endif %}">
+                                <img class="img-fluid lazy rounded"
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
+                                    data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                            </figure>
+                            {% else %}
+                            <figure class="figure {% if item.portrait == true %} full-h {% endif %}">
+                                <img class="img-fluid lazy rounded"
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                                    data-src="https://via.placeholder.com/445x445/919388/ffffff.png?text=image">
+                            </figure>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel carousel-nav" data-flickity>
+                        {% for item in module.content_group.carousel_group %}
+                        <div class="carousel-cell">
+                            {% if item.image.src %}
+                            <figure class="figure">
+                                <img class="img-fluid lazy rounded"
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
+                                    data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                            </figure>
+                            {% else %}
+                            <figure class="figure">
+                                <img class="img-fluid lazy rounded"
+                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                                    data-src="https://via.placeholder.com/445x445/919388/ffffff.png?text=image">
+                            </figure>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <!-- {% if module.content_group.image.src %}
+                <figure class="figure mb-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}" />
+                </figure>
+                {% else %}
+                <figure class="figure mb-0">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                        data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=500x500">
+                </figure>
+                {% endif %} -->
+            </div>
+            <div class="col-md-6 offset-md-1 mt-2 mt-md-0 container-text">
+                {% if module.content_group.subtitle %}
+                <span class="subtitle">{{module.content_group.subtitle}}</span>
+                {% endif %}
+                {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+                {% if module.content_group.content_link_url %}
+                <a class="{{module.content_style.button_type}}-button mt-2"
+                    href="{{module.content_group.content_link_url.href}}">{{module.content_group.content_link_title}}<span
+                        class="icon-arrowright"></span></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

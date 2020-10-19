@@ -95,6 +95,18 @@
         "default": "<h2>Et aut quos est maiores</h2><p>Nulla laboriosam laboriosam quia quas fuga possimus voluptate aut. Beatae magnam voluptatum debitis. Tempore veniam unde qui culpa ut. Rerum repellat aliquam quae ipsum ea molestiae consequatur. Sed necessitatibus voluptas et excepturi et rerum.</p>"
       },
       {
+        "name": "form_title",
+        "label": "Titre formulaire",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Title can describe your content properly.",
+        "default": "Titre formulaire"
+      },
+      {
         "name" : "form",
         "label" : "Form",
         "required" : false,
