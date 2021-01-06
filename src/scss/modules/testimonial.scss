@@ -1,0 +1,30 @@
+.global-testimonial {
+  .container-testimonial {
+    svg {
+      opacity: 0.7;
+    }
+    #Capa_1 {
+      margin-bottom: 10px;
+      path {
+        fill: #e8e8e8;
+      }
+    }
+    blockquote {
+      font-size: 22px;
+      font-weight: 600;
+    }
+    #Capa_2 {
+      position: absolute;
+      transform: rotate(180deg);
+      right: 0;
+      bottom: -20px;
+      path {
+        fill: #e8e8e8;
+      }
+    }
+  }
+  .infos {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}

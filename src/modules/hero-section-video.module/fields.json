@@ -1,0 +1,138 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "primary"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text": "Title can describe your content properly.",
+        "default": "<h1>Transfert et dosage des poudres pour l'industrie alimentaire<h1><p>APIA Technologie conçoit et réalise des installations dédiées à la manutention des produits secs en vrac et au dosage d'ingrédients en poudre. Nos équipes accompagnent au quotidien les projets d’optimisation du process industriel des usines agroalimentaires.</p>"
+      },
+      {
+        "name": "external_link_title",
+        "label": "Contenu textuel du bouton",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "default": "Rencontrez un expert"
+      },
+      {
+        "name": "external_link_url",
+        "label": "URL du bouton",
+        "required": false,
+        "locked": false,
+        "supported_types": ["EXTERNAL", "CONTENT"],
+        "type": "url",
+        "default": {
+          "content_id": null,
+          "href": "https://www.apia-sa.com/en/",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "name": "url_video",
+        "label": "Url Video MP4",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Url de la video au format mp4",
+        "default": ""
+      },
+      {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+          "size_type": "auto",
+          "src": "https://via.placeholder.com/600",
+          "alt": "Example of an image used in your module"
+        }
+      }
+    ]
+  }
+]

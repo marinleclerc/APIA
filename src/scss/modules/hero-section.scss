@@ -1,4 +1,40 @@
 .global-hero-section {
+  .container-breadcrumb {
+    z-index: 50;
+    top: 0;
+    left: 0;
+    @media screen and (max-width: 768px) {
+      position: relative !important;
+      margin-bottom: 15px;
+    }
+  }
+  #section_module_1536743783061160 {
+    background: url('https://f.hubspotusercontent00.net/hubfs/2659857/img/Dilepix/featured_img_video.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    min-height: 260px;
+    .hero-background {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      video {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        background: #232a34;
+        display: inline-block;
+      }
+    }
+  }
+  &.scrolled-fixed {
+    margin-top: 106px;
+  }
   .container__hero {
     align-items: center;
     position: relative;
@@ -12,8 +48,9 @@
       position: absolute;
       max-width: 800px;
       height: 100%;
-      right: 0;
+      right: 15px;
       z-index: 0;
+      width: 50%;
       figure {
         img {
           height: 100%;

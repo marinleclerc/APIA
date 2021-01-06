@@ -1,6 +1,6 @@
 // Here you can setup all the SASS of your buttons.
 .primary-button {
-  color: #fff;
+  /* color: #fff;
   background-color: #d20e43;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -13,10 +13,55 @@
   text-transform: uppercase;
   display: table;
   position: relative;
-  transition: all 0.3s;
+  overflow: hidden;
+  transition: all 0.2s; */
+  background-color: #d20e43;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0.5);
+  display: inline-block;
+  position: relative;
+  transition: 0.4s ease;
+  &:before {
+    /*  content: '';
+    background-image: url('https://f.hubspotusercontent00.net/hubfs/2659857/APIA/svg/down-arrow_apia-white.svg');
+    background-size: 8px 8px;
+    height: 8px;
+    width: 8px;
+    display: block;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg); */
+    content: '';
+    transform: rotate(270deg);
+    display: block;
+    background-image: url('https://f.hubspotusercontent00.net/hubfs/2659857/APIA/svg/down-arrow_apia-white.svg');
+    background-size: 12px 14px;
+    height: 14px;
+    width: 12px;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    transform: translate(0, -50%) rotate(270deg);
+    left: 0px;
+    transition: 0.4s ease;
+  }
   &::after {
     content: '';
-    display: none;
     position: absolute;
     right: -22px;
     top: -20px;
@@ -26,13 +71,22 @@
     background-size: cover;
     width: 30px;
     height: 21px;
-    transition: all 0.3s;
+    transition: all 0.2s;
+    z-index: auto;
   }
   &:hover {
-    box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0);
-  }
-  &:hover::after {
-    display: block;
+    padding-left: 35px;
+    padding-right: 25px;
+    box-shadow: none;
+    &::before {
+      opacity: 1;
+      left: 18px;
+    }
+    /* &::after {
+      opacity: 0;
+      right: 5px;
+      top: 10px;
+    } */
   }
 }
 
@@ -42,7 +96,7 @@
   background-color: #fff;
   font-size: 16px;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 3px;
   letter-spacing: 1px;
   display: table;
   padding: 15px 30px;
@@ -50,10 +104,35 @@
   text-transform: uppercase;
   text-decoration: none;
   line-height: 1.15;
+  transition: 0.4s ease;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -22px;
+    top: -20px;
+    background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 21px;
+    transition: all 0.4s ease;
+    z-index: auto;
+    opacity: 1;
+  }
   &:hover {
     background-color: #d20e43;
     color: #fff;
   }
+  &:hover::after {
+    z-index: auto;
+    opacity: 1;
+  }
+}
+
+.secondary-button.reverse-border {
+  border-color: white;
 }
 
 .tertiary-button {
@@ -71,22 +150,49 @@
   }
 }
 
-.anchor-link {
-  color: #000;
-  background-color: rgba(194, 201, 217, 0.15);
-  border: 1px solid rgba(194, 201, 217, 0.3);
-  box-shadow: 0 1px 10px 0 rgba(194, 201, 217, 0.35);
-  display: table;
-  padding: 15px 30px;
-  text-decoration: none;
+.fourth-button {
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  border-radius: 5px;
-  width: 350px;
-  &:nth-child(2) {
-    margin: 0 30px;
+  line-height: 1;
+  padding: 5px 15px;
+  color: #d20e43;
+  background-color: #fff;
+  border: 2px solid #d20e43;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.15;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: inline-block;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -22px;
+    top: -20px;
+    background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 21px;
+    transition: all 0.4s ease;
+    z-index: -5;
+    opacity: 0;
   }
   &:hover {
-    background-color: transparent;
+    background-color: #d20e43;
+    border-color: #d20e43;
+    color: #fff;
+    &::after {
+      z-index: auto;
+      opacity: 1;
+    }
   }
 }
 

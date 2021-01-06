@@ -4317,6 +4317,14 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
   integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
 
+flickity-as-nav-for@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/flickity-as-nav-for/-/flickity-as-nav-for-2.0.1.tgz#64edcc3b27ccdfcbc89bab9c086bd6cac4651b1b"
+  integrity sha1-ZO3MOyfM38vIm6ucCGvWysRlGxs=
+  dependencies:
+    fizzy-ui-utils "^2.0.0"
+    flickity "^2.0.0"
+
 flickity-fullscreen@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flickity-fullscreen/-/flickity-fullscreen-1.1.1.tgz#76d8c621ff45f086d5f4eab841f788e1fc48169b"
@@ -5867,6 +5875,18 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
+
+jquery-bridget@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jquery-bridget/-/jquery-bridget-2.0.1.tgz#784d17a85e641780c5d89ac3f8a7eb47b0bce1fc"
+  integrity sha1-eE0XqF5kF4DF2JrD+KfrR7C84fw=
+  dependencies:
+    jquery ">=1.4.2 <4"
+
+"jquery@>=1.4.2 <4":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
+  integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
 
 jquery@^3.4.1:
   version "3.4.1"

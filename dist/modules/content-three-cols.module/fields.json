@@ -89,7 +89,7 @@
         "type": "image",
         "default": {
           "size_type": "auto",
-          "src": "https://via.placeholder.com/600",
+          "src": "https://f.hubspotusercontent20.net/hubfs/8191022/Single%20Page/apia-technologie.jpg",
           "alt": "Example of an image used in your module"
         }
       },

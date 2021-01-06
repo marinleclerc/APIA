@@ -1,0 +1,48 @@
+<div id="{{module.module_identity}}"
+    class="global-hero-section {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container-lg">
+        <div class="row container__hero">
+            <div class="col-12">
+                <div class="container-breadcrumb mb-2">
+                    <span class="breadcrumb">
+                        {% menu "my_menu" id=36098716027, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', flow='horizontal', label='Advanced Menu' %}
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-8 container__hero--content">
+                <div class="copy-wrapper py-3 bg-light-white bg_blur my-2 rounded">
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
+                    {% if module.content_group.external_link_url.href %}
+                    <a class="{{module.content_style.button_type}}-button mt-2"
+                        href="{{module.content_group.external_link_url.href}}">{{module.content_group.external_link_title}}<span
+                            class="icon-external-link"></span></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="container__hero--img d-none d-md-block">
+                <!--                 <div id="section_module_1536743783061160" class="hero">
+                    <div class="hero-background">
+                        <video autoplay="" loop="" muted="" poster="{{module.video_player.video_cover.src}}">
+                            <source
+                                src="https://f.hubspotusercontent20.net/hubfs/8191022/video/1-HOME%20HEADER_SiteAPIA2020_Visuels.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div> -->
+                {% if module.content_group.image.src %}
+                <figure class="figure h-100">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}" />
+                </figure>
+                {% else %}
+                <figure class="figure h-100">
+                    <img class="img-fluid lazy rounded"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                        data-src="https://via.placeholder.com/600x600/919388/ffffff.png?text=image">
+                </figure>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,11 +3,6 @@
   label: Page Header Blog
 -->
 
-<!--
-  templateType: global_partial
-  label: Page Header
--->
-
 <div class="global-nav bg-white">
   <div class="subnav-apia bg-primary-blue">
     <div class="container">
@@ -25,7 +20,7 @@
               <div class="container-right">
                 <div class="container-search-bar">
                   <!-- Search form -->
-                  <form id="search-bar" class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                  <!-- <form id="search-bar" class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
                     <svg id="search-submit" aria-hidden="true" width="14" height="22" viewBox="0 0 28 28" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <circle cx="11.3648" cy="11.3649" r="7.03739" transform="rotate(-46.0022 11.3648 11.3649)"
@@ -48,7 +43,31 @@
                         </div>
                       </button>
                     </div>
+                  </form> -->
+
+
+
+                  <form action="/{{ site_settings.content_search_results_page_path }}" id="search-bar"
+                    class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                    <div class="form-control-container">
+                      <input class="form-control form-control-sm" type="text" placeholder="Search" aria-label="Search"
+                        name="term">
+                      <input type="hidden" name="type" value="SITE_PAGE">
+                      <button type="submit" class="btn btn-search">
+                        <div class="container-test d-flex align-items-center justify-content-center"><span
+                            class="text-white">Rechercher</span>
+                        </div>
+                      </button>
+                    </div>
+                    <svg id="search-submit" aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11.3648" cy="11.3649" r="7.03739" transform="rotate(-46.0022 11.3648 11.3649)"
+                        stroke="#006FFF" stroke-width="2" />
+                      <path d="M17.1465 16.9478L21.7719 21.4142" stroke="#006FFF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                   </form>
+
                 </div>
                 {% if content.translated_content|length %}
                 <div class="header__language-switcher header--element d-flex align-items-center">
@@ -76,8 +95,8 @@
     <div class="row">
       <div class="col-12">
         <ul class="nav-mobile m-0">
-          <li><a class="navbar-brand p-0" href="/">
-              <img src="https://f.hubspotusercontent00.net/hubfs/2659857/APIA/logo_apia_unofficial.png" alt="logo APIA">
+          <li><a class="navbar-brand p-0" href="https://www.apia-sa.com/fr/">
+              <img src="https://f.hubspotusercontent20.net/hubfs/8191022/logo/logo-baseline-apia.svg" alt="logo APIA">
             </a></li>
           <li class="menu-container">
             <input id="menu-toggle" type="checkbox">

@@ -1,0 +1,73 @@
+.global-form-module {
+  h2 {
+    margin-top: 0;
+  }
+  .container__form {
+    background-color: $primary-blue;
+    h3 {
+      color: $white;
+    }
+    form {
+      background-color: $primary-blue;
+      text-align: left;
+      label {
+        color: $white;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
+        p {
+          text-transform: initial;
+          color: $white;
+          font-size: 12px;
+          line-height: 1;
+        }
+      }
+      .legal-consent-container {
+        margin-top: 30px;
+        & input[type='checkbox'] + span:before {
+          position: absolute;
+          margin-top: 6px;
+          left: -20px;
+          border-radius: 3px;
+          background-color: white;
+        }
+        p {
+          color: $white;
+          font-size: 12px;
+          line-height: 1.4;
+          display: inline;
+        }
+      }
+      .actions {
+        input {
+          background-color: #d20e43;
+          font-family: Open Sans, sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          border-radius: 3px;
+          border: 0;
+          color: #fff;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 15px 30px;
+          transition: all 0.4s ease;
+          cursor: pointer;
+          box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0.5);
+          display: inline-block;
+          position: relative;
+          transition: 0.4s ease;
+          &:hover {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  svg {
+    position: absolute;
+    bottom: -80px;
+    z-index: -1;
+    right: 70px;
+  }
+}

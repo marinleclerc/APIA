@@ -81,6 +81,18 @@
         "default": "<h2>Bien choisir son BigBag</h2><p>Il existe de nombreux types de big bags : le poids de la toile, la qualité de l’enduction, le type de doublure et de sache intérieures, le type d’ouverture et de fermeture, ainsi que les autres options. Nous pouvons vous aider à faire le meilleur choix en fonction des ingrédients à stocker.</p>"
       },
       {
+        "name": "form_title",
+        "label": "Titre formulaire",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Title can describe your content properly.",
+        "default": "Un nouveau projet ?"
+      },
+      {
         "name": "form_id",
         "label": "Form ID",
         "required": false,
@@ -89,7 +101,7 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "text",
-        "default": ""
+        "default": "e0ebf794-e5cd-4be6-ad3c-c5e3dc8ace1f"
       }
     ]
   }

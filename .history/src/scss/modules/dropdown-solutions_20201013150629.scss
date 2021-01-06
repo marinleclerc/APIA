@@ -1,0 +1,168 @@
+.global-dropdown-solutions {
+  .container__content {
+    figure {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        font-family: 'object-fit:cover';
+        object-fit: cover;
+        position: absolute;
+      }
+    }
+    .container__content--dropdown {
+      &.order-first {
+        .card-toggle::after {
+          transform: scaleX(-1);
+          left: -22px;
+          right: inherit;
+        }
+      }
+      .accordion {
+        & > .card + .card {
+          margin-top: 25px;
+        }
+        .card {
+          border: none;
+          overflow: initial !important;
+          cursor: pointer;
+          .collapse {
+            height: 0%;
+            position: relative;
+            overflow: hidden;
+            transition: height 0.35s ease;
+          }
+          .show {
+            height: auto; 
+            position: relative;
+            overflow: hidden;
+            transition: height 0.35s ease;
+          }
+          .card-toggle {
+            overflow: hidden;
+            border: 1px solid rgba(194, 201, 217, 0.3);
+            border-radius: 5px;
+            display: block;
+            font-weight: 700;
+            width: 100%;
+            height: 100%;
+            padding: 15px 30px 15px 55px;
+            text-decoration: none;
+            background-color: rgba(194, 201, 217, 0.15);
+            box-shadow: 0 1px 10px rgba(194, 201, 217, 0.35) inset;
+            border-radius: 5px;
+            position: relative;
+            transition: all 0.3s ease;
+            &::after {
+              opacity: 0;
+              content: '';
+              position: absolute;
+              right: -22px;
+              top: -20px;
+              background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 30px;
+              height: 21px;
+              transition: all 0.3s;
+              z-index: -5;
+            }
+            &:hover {
+              background-color: transparent;
+              svg {}
+            }
+            &[aria-expanded='true'] {
+              background-color: white;
+              box-shadow: unset;
+              transition: all 0.3s ease;
+            }
+            &[aria-expanded='false'] {
+              svg {
+                transform: translate(0, -50%) rotate(270deg);
+                transition: all 0.3s ease;
+              }
+            }
+            &::before {
+              /* content: ''; */
+              background-image: url('https://f.hubspotusercontent20.net/hubfs/3489921/images/down_arrow.svg');
+              background-size: 8px 8px;
+              height: 8px;
+              width: 8px;
+              display: inline-block;
+              margin-right: 8px;
+              margin-bottom: 2px;
+            }
+            svg {
+              position: absolute;
+              transition: all 0.3s ease;
+              top: 50%;
+              transform: translateY(-50%) rotate(360deg);
+              left: 30px;
+            }
+          }
+          .card-body {
+            padding: 0;
+          }
+          .dropdown-body-list {
+            list-style-type: none;
+            padding-left: 55px;
+            margin: 30px 0;
+            li + li {
+              margin-top: 10px;
+            }
+            li {
+              a {
+                position: relative;
+                padding-bottom: 3px;
+                &::before {
+                  /*                   content: '';
+                  background-image: url('https://f.hubspotusercontent20.net/hubfs/3489921/images/down_arrow.svg');
+                  background-size: 8px 8px;
+                  height: 8px;
+                  width: 8px;
+                  display: inline-block;
+                  margin-right: 8px;
+                  transform: rotate(270deg);
+                  margin-bottom: 2px; */
+                }
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 1px;
+                  background-image: linear-gradient(90deg, #c2c9d9 50%, transparent 0);
+                  background-size: 18px 1px;
+                }
+                &:hover::after {
+                  background-image: linear-gradient(90deg, $primary-red 50%, transparent 0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .global-dropdown-solutions {
+    .container__content {
+      .container__content--dropdown {
+        .accordion {
+          .card {
+            .dropdown-body-list {
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

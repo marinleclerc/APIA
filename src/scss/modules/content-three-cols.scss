@@ -8,4 +8,37 @@
   h3 {
     margin-bottom: 15px;
   }
+  h2 {
+    margin-top: 15px;
+  }
+  .container__bg--img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    figure {
+      img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        font-family: 'object-fit:cover';
+        object-fit: cover;
+      }
+    }
+  }
+  &:after {
+    content: '';
+    background-color: rgba(31, 39, 53, 0.82);
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .container-content {
+    z-index: 50;
+    position: relative;
+  }
 }

@@ -1,23 +1,40 @@
 <div id="{{module.module_identity}}"
-    class="global-content-three-cols bg-dark {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    class="global-content-three-cols bg-dark position-relative {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container__bg--img">
+        {% if module.content_group.image.src %}
+        <figure class="figure h-100">
+            <img class="img-fluid lazy rounded"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                data-src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}" />
+        </figure>
+        {% else %}
+        <figure class="figure h-100">
+            <img class="img-fluid lazy rounded"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                data-src="https://via.placeholder.com/1400x1400/919388/ffffff.png?text=image">
+        </figure>
+        {% endif %}
+    </div>
     <div class="container-lg">
-        <div class="row">
-            <div class="col-md-10 text-center container__content--intro mx-auto">
-                {% if module.content_group.subtitle %}
-                <span class="subtitle">{{module.content_group.subtitle}}</span>
-                {% endif %}
-                {% inline_rich_text field="rich_text" value="{{ module.content_group.content_intro }}" %}
+        <div class="container-content">
+            <div class="row">
+                <div class="col-md-10 text-center container__content--intro mx-auto">
+                    {% if module.content_group.subtitle %}
+                    <span class="subtitle">{{module.content_group.subtitle}}</span>
+                    {% endif %}
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.content_intro }}" %}
+                </div>
             </div>
-        </div>
-        <div class="row container__content--cols">
-            <div class="col-md-4">
-                {{module.content_group.column_group.content_first_col}}
-            </div>
-            <div class="col-md-4">
-                {{module.content_group.column_group.content_scd_col}}
-            </div>
-            <div class="col-md-4">
-                {{module.content_group.column_group.content_third_col}}
+            <div class="row container__content--cols">
+                <div class="col-md-4">
+                    {{module.content_group.column_group.content_first_col}}
+                </div>
+                <div class="col-md-4">
+                    {{module.content_group.column_group.content_scd_col}}
+                </div>
+                <div class="col-md-4">
+                    {{module.content_group.column_group.content_third_col}}
+                </div>
             </div>
         </div>
     </div>

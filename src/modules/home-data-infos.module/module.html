@@ -11,30 +11,34 @@
         <figure class="figure h-100">
             <img class="img-fluid lazy rounded"
                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                data-src="https://via.placeholder.com/1400x1400/919388/ffffff.png?text=1400x1400">
+                data-src="https://via.placeholder.com/1400x1400/919388/ffffff.png?text=image">
         </figure>
         {% endif %}
     </div>
-    <div class="container-md text-center">
+    <div class="container-lg text-center">
         <div class="row container__content">
             <div class="col-12">
                 {% if module.content_group.subtitle %}
                 <span class="subtitle">{{module.content_group.subtitle}}</span>
                 {% endif %}
                 {% inline_rich_text field="rich_text" value="{{ module.content_group.text }}" %}
-                <div class="container__content--data d-flex justify-content-between">
+                <div id="counter" class="container__content--data d-flex justify-content-between mt-2 mt-md-3">
 
                     {% for item in module.content_group.data_infos %}
-                    <div class="data--item d-flex flex-column align-items-center mb-2 mb-md-0">
-                        <span>{{item.number_info}}</span>
-                        <h5>{{item.text_info}}</h5>
+                    <div class="data--item d-flex flex-column align-items-center mb-2 mb-md-1 mb-lg-0">
+                        <div class="d-flex">
+                            <span class="data--unit counter-value" data-count="{{item.number_info}}">0</span>
+                            <span>{{item.number_unit}}</span>
+                        </div>
+                        <p class="h6 mt-1">{{item.text_info}}</p>
                     </div>
                     {% endfor %}
 
                 </div>
-                {% if module.content_group.pdf_url.href %}
-                <a class="primary-button mt-3 mx-auto" href="{{module.content_group.pdf_url.href}}"
-                    target="_blank">{{module.content_group.pdf_content}}<span class="icon-external-link"></span></a>
+                {% if module.content_group.external_link_url.href %}
+                <a class="{{module.content_style.button_type}}-button mt-md-3 mx-auto"
+                    href="{{module.content_group.external_link_url.href}}">{{module.content_group.external_link_title}}<span
+                        class="icon-external-link"></span></a>
                 {% endif %}
             </div>
         </div>

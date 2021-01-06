@@ -1,0 +1,160 @@
+<!--
+  templateType: global_partial
+  label: Page Header Blog
+-->
+
+<div class="global-nav bg-white">
+  <div class="subnav-apia bg-primary-blue">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="top-navbar navbar">
+            <div class="container-subnav w-100 d-flex justify-content-between">
+              <div class="container-contact">
+                <p class="m-0"><a class="text-white text-decoration-none"
+                    href="mailto:contact@apia-sa.com">contact@apia-sa.com</a></p>
+                <p class="m-0 ml-1"><a class="text-white text-decoration-none" href="tel:+33299146233">+33 2 99 14 62
+                    33</a>
+                </p>
+              </div>
+              <div class="container-right">
+                <div class="container-search-bar">
+                  <!-- Search form -->
+                  <!-- <form id="search-bar" class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                    <svg id="search-submit" aria-hidden="true" width="14" height="22" viewBox="0 0 28 28" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11.3648" cy="11.3649" r="7.03739" transform="rotate(-46.0022 11.3648 11.3649)"
+                        stroke="#fff" stroke-width="2" />
+                      <path d="M17.1465 16.9478L21.7719 21.4142" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                    <div class="form-control-container">
+                      <input class="form-control form-control-sm" type="text" placeholder="Rechercher"
+                        aria-label="Search" name="term">
+                      <input type="hidden" name="type" value="BLOG_POST">
+                      <svg class="close-search-bar" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.50342 11.5148L11.5034 4.49089" stroke="#fff" stroke-linecap="round" />
+                        <path d="M11.5151 11.5028L4.49126 4.50284" stroke="#fff" stroke-linecap="round" />
+                      </svg>
+                      <button type="submit" class="btn btn-search">
+                        <div class="container-test d-flex align-items-center justify-content-center"><span
+                            class="text-white">Rechercher</span>
+                        </div>
+                      </button>
+                    </div>
+                  </form> -->
+
+
+
+                  <form id="search-bar" class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                    <div class="form-control-container">
+                      <input class="form-control form-control-sm" type="text" placeholder="Search" aria-label="Search"
+                        name="term">
+                      <input type="hidden" name="type" value="SITE_PAGE">
+                      <button type="submit" class="btn btn-search">
+                        <div class="container-test d-flex align-items-center justify-content-center"><span
+                            class="text-white">Rechercher</span>
+                        </div>
+                      </button>
+                    </div>
+                    <svg id="search-submit" aria-hidden="true" width="28" height="28" viewBox="0 0 28 28" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11.3648" cy="11.3649" r="7.03739" transform="rotate(-46.0022 11.3648 11.3649)"
+                        stroke="#006FFF" stroke-width="2" />
+                      <path d="M17.1465 16.9478L21.7719 21.4142" stroke="#006FFF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </form>
+
+                </div>
+                {% if content.translated_content|length %}
+                <div class="header__language-switcher header--element d-flex align-items-center">
+                  <div class="container-current-language">
+                    <span class="language-info">{{ content.language.languageTag }}</span>
+                  </div>
+                  <div class="header__language-switcher--label">
+                    {% module "language-switcher" path="@hubspot/language_switcher", display_mode='localized', label="Language Switcher" %}
+                    <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
+                  </div>
+                </div>
+                {% else %}
+                <div class="switcher-link d-flex align-items-center">
+                  <span>FR</span>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="nav-mobile m-0">
+          <li><a class="navbar-brand p-0" href="/">
+              <img src="https://f.hubspotusercontent00.net/hubfs/2659857/APIA/logo_apia_unofficial.png" alt="logo APIA">
+            </a></li>
+          <li class="menu-container">
+            <input id="menu-toggle" type="checkbox">
+            <label for="menu-toggle" class="menu-button">
+              <svg class="icon-open" viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+              </svg>
+              <svg class="icon-close" viewBox="0 0 100 100">
+                <path
+                  d="M83.288 88.13c-2.114 2.112-5.575 2.112-7.69 0L53.66 66.188c-2.113-2.112-5.572-2.112-7.686 0l-21.72 21.72c-2.114 2.113-5.572 2.113-7.687 0l-4.693-4.692c-2.114-2.114-2.114-5.573 0-7.688l21.72-21.72c2.112-2.115 2.112-5.574 0-7.687L11.87 24.4c-2.114-2.113-2.114-5.57 0-7.686l4.842-4.842c2.113-2.114 5.57-2.114 7.686 0l21.72 21.72c2.114 2.113 5.572 2.113 7.688 0l21.72-21.72c2.115-2.114 5.574-2.114 7.688 0l4.695 4.695c2.112 2.113 2.112 5.57-.002 7.686l-21.72 21.72c-2.112 2.114-2.112 5.573 0 7.686L88.13 75.6c2.112 2.11 2.112 5.572 0 7.687l-4.842 4.84z" />
+              </svg>
+            </label>
+            {%- macro render_link_item(link,depth,looop)-%}
+            {%- if link != [] && link.label -%}
+            {%- if link.children -%}
+          <li class="has-child">
+            <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
+            <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}">{{link.label}}</label>
+            <div class="arrow right">&#8250;</div>
+            <ul class="hs-menu-children-wrapper menu-sub menu-sub-lvl-{{depth}}" aria-role="menu">
+              <li class="menu-sub-title">
+                Back
+                <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
+                <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
+                <div class="arrow left">&#8249;</div>
+              </li>
+              {% set depth = depth + 1%}
+              {%- for sublink in link.children -%}
+              {{render_link_item(sublink,depth)}}
+              {%- endfor -%}
+            </ul>
+          </li>
+          {% else %}
+          {% if link.label == "Contact" %}
+          <li class="contact-nav"> <a class="contact-button"
+              href="{{link.url if link.url else '#'}} ">{{link.label}}</a>
+          </li>
+          {% else%}
+          <li> <a href="{{link.url if link.url else '#'}} ">{{link.label}}</a></li>
+          {% endif%}
+          {% endif%}
+          {%- endif -%}
+          {%- endmacro -%}
+
+          {% if request.domain == "agriviz-3489921.hs-sites.com" %}
+          {% set menu = menu( id="33233830413").children %}
+          {% else %}
+          {% set menu = menu( id="33200251073").children %}
+          {% endif %}
+
+          <ul class="menu-sidebar">
+            {% for link in menu %}
+            {{render_link_item(link,1,loop.index)}}
+            {% endfor %}
+          </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

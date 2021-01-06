@@ -48,6 +48,21 @@
         "locked": false,
         "type": "boolean",
         "default": true
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "primary"
       }
     ]
   },
@@ -80,18 +95,37 @@
         "default": "<h1>Remplir un BigBag</h1><p>La technologie Apia de remplissage des big bags permet d’optimiser les flux de production. L’utilisation de ces mini-silos ouvre en effet de nombreuses possibilités d’organisation des ateliers. En gérant ces stocks intermédiaires, vous supprimez, par exemple, les goulots d’étranglement.</p>"
       },
       {
-        "name": "image",
-        "label": "Image",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "type": "image",
-        "default": {
-          "size_type": "auto",
-          "src": "https://via.placeholder.com/600",
-          "alt": "Example of an image used in your module"
-        }
+        "type": "group",
+        "name": "carousel_group",
+        "label": "Carousel Group",
+        "occurrence": {
+          "min": 1,
+          "default": 5
+        },
+        "children": [
+          {
+            "name": "portrait",
+            "label": "Portrait",
+            "sortable": false,
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "name": "image",
+            "label": "Image",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "size_type": "auto",
+              "alt": "Example of an image used in your module"
+            }
+          }
+        ]
       },
       {
         "name": "content_link_title",

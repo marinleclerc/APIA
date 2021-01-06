@@ -1,24 +1,50 @@
 <div id="{{module.module_identity}}"
     class="global-listing-horizontally {% if module.content_style.design_choice == 'bg_show' %} bg-extra-shape {% elif module.content_style.design_choice == 'bg_grey' %} bg-medium-grey {% endif %} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %} {% if module.content_style.margin_type != 'none' %} {{module.content_style.margin_type}} {% endif %}">
-    <div class="container">
+    <div class="container {% if module.content_style.design_choice == 'classic' %}position-relative{% endif %}">
+
+
+        {% if module.content_style.design_choice == 'classic' %}
+        <div class="container_shape position-absolute bg-drowdown-third d-none d-md-block">
+            <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Homepage---Mockup---V5.3" transform="translate(-41.000000, -2205.000000)" fill="#F1F2F5">
+                        <g id="solution" transform="translate(41.000000, 1718.000000)">
+                            <path
+                                d="M107.399566,708.242946 C623.91791,333.590835 1116.3536,494.342472 896.051051,751.755223 C655.642724,1023.3109 -321.274909,1081.93468 107.399566,708.242946 Z"
+                                id="Path"
+                                transform="translate(475.000000, 729.500000) scale(-1, -1) translate(-475.000000, -729.500000) ">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        {% endif %}
         <div
-            class="row no-gutters container__content {% if module.content_style.design_choice == 'bg_show' %} bg-medium-white special_display p-1 p-md-4 {% endif%}">
+            class="row no-gutters container__content {% if module.content_style.design_choice == 'bg_show' %} bg-medium-white special_display bg_blur p-1 p-md-4 {% endif%}">
             <div class="col-12">
-                <h2>{{module.content_group.title}}</h2>
+                <div class="container-introduction mb-2">
+                    <h2>{{module.content_group.title}}</h2>
+                    {% if module.content_group.introduction %}
+                    {{module.content_group.introduction}}
+                    {% endif %}
+                </div>
             </div>
 
             {% for item in module.content_group.content_group %}
             <div class="col-12 container__content--unit">
                 <div class="row no-gutters">
-                    <div class="col-md-6 {% if item.img_left == true %}offset-md-1 order-last {% endif %}">
+                    <div class="col-md-6 {% if item.img_left == true %}offset-md-1 order-last-rp {% endif %}">
                         {% inline_rich_text field="rich_text" value="{{ item.text_content }}" %}
                         {% if item.content_link_url.href %}
-                        <a class="{% if module.content_style.design_choice == 'bg_show' %}secondary-button{% else %}primary-button{% endif%}"
-                            href="{{item.content_link.href}}">{{item.content_link_title}}<span
+                        <a class="btn {{module.content_style.button_type}}-button"
+                            href="{{item.content_link_url.href}}">{{item.content_link_title}}<span
                                 class="icon-arrowright"></span></a>
                         {% endif %}
                     </div>
-                    <div class="col-md-5 {% if item.img_left == true %} order-first {% else %} offset-md-1 {% endif %}">
+                    <div
+                        class="col-md-5 {% if item.img_left == true %} order-first-rp {% else %} offset-md-1 {% endif %} mt-2 mt-md-0">
                         {% if item.image.src %}
                         <figure class="figure h-100">
                             <img class="img-fluid lazy rounded"
@@ -29,13 +55,24 @@
                         <figure class="figure h-100">
                             <img class="img-fluid lazy rounded"
                                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                                data-src="https://via.placeholder.com/385x315/919388/ffffff.png?text=385x315">
+                                data-src="https://via.placeholder.com/640x360/919388/ffffff.png?text=image">
                         </figure>
                         {% endif %}
                     </div>
                 </div>
             </div>
             {% endfor %}
+            {% if module.content_style.picto_choice == true %}
+            <div class="col-md-12 mt-3 mt-md-4">
+                <div class="container-picto d-flex justify-content-around align-items-center flex-wrap">
+                    {% for picto in module.content_group.pictos_group %}
+                    <img class="img-fluid lazy rounded mb-1"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ picto.image.width }} {{ picto.image.height }}'%3E%3C/svg%3E"
+                        data-src="{{ picto.image.src }}" alt="{{ picto.image.alt }}" />
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

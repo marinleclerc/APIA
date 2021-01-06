@@ -3,8 +3,55 @@
     .container__content--listing {
       display: flex;
       flex-wrap: wrap;
-      a {
-        width: 350px;
+    }
+  }
+}
+
+.anchor-link {
+  color: #000;
+  background-color: rgba(194, 201, 217, 0.15);
+  border: 1px solid rgba(194, 201, 217, 0.3);
+  box-shadow: inset 0 1px 10px 0 rgba(194, 201, 217, 0.35);
+  display: table;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 32%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -22px;
+    top: -20px;
+    background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 21px;
+    transition: all 0.3s;
+    z-index: -5;
+  }
+  & + .anchor-link {
+    margin: 0 0 0 2%;
+  }
+  &:hover {
+    background-color: transparent;
+    overflow: visible !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .global-anchor-listing {
+    .anchor-link {
+      width: 100%;
+      text-align: center;
+      & + .anchor-link {
+        margin: 15px 0 0 0;
       }
     }
   }

@@ -48,6 +48,21 @@
         "locked": false,
         "type": "boolean",
         "default": true
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "secondary"
       }
     ]
   },
@@ -66,7 +81,6 @@
         "type": "image",
         "default": {
           "size_type": "auto",
-          "src": "https://via.placeholder.com/600",
           "alt": "Example of an image used in your module"
         }
       },
@@ -116,6 +130,17 @@
             "default": "3000"
           },
           {
+            "name": "number_unit",
+            "label": "Unité",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "default": "%"
+          },
+          {
             "name": "text_info",
             "label": "Texte",
             "required": false,
@@ -129,8 +154,8 @@
         ]
       },
       {
-        "name": "pdf_content",
-        "label": "Content Download Button",
+        "name": "external_link_title",
+        "label": "Contenu textuel du bouton",
         "required": false,
         "locked": false,
         "validation_regex": "",
@@ -140,16 +165,16 @@
         "default": "Télécharger la brochure"
       },
       {
-        "name": "pdf_url",
-        "label": "PDF Url",
+        "name": "external_link_url",
+        "label": "URL du bouton",
         "required": false,
         "locked": false,
-        "supported_types": ["FILE"],
+        "supported_types": ["EXTERNAL", "CONTENT"],
         "type": "url",
         "default": {
           "content_id": null,
-          "href": "http://example.com",
-          "type": "FILE"
+          "href": "",
+          "type": "EXTERNAL"
         }
       }
     ]

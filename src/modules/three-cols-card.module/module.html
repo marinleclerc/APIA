@@ -1,18 +1,51 @@
 <div id="{{module.module_identity}}"
-    class="global-three-cols-card {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
-    <div class="container">
+    class="global-three-cols-card overflow-hidden {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container position-relative">
+        <div class="container_shape position-absolute bg_shape_col-cards">
+            <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Homepage---Mockup---V5.3" transform="translate(-41.000000, -2205.000000)" fill="#F1F2F5">
+                        <g id="solution" transform="translate(41.000000, 1718.000000)">
+                            <path
+                                d="M107.399566,708.242946 C623.91791,333.590835 1116.3536,494.342472 896.051051,751.755223 C655.642724,1023.3109 -321.274909,1081.93468 107.399566,708.242946 Z"
+                                id="Path"
+                                transform="translate(475.000000, 729.500000) scale(-1, -1) translate(-475.000000, -729.500000) ">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
         <div class="row container__content">
             <div class="col-12">
-                <div class="container__content--title d-flex">
-                    <h2>Les équipements de remplissage BigBags</h2>
-                    <a class="apia_link" href="javascript:;">Tous nos produits</a>
+                <div class="container__content--title d-flex flex-wrap mb-2 mb-md-0">
+                    <h2>{{module.content_group.title}}</h2>
+                    <a class="apia_link" href="{{module.content_group.content_link_url.href}}"><svg width="11px"
+                            height="6px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+                            <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)"
+                                    fill="#d20e43" fill-rule="nonzero">
+                                    <g id="filters" transform="translate(165.000000, 772.000000)">
+                                        <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                                            <path
+                                                d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                                                id="Path"
+                                                transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>{{module.content_group.content_link_title}}</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="single-card">
+                <div class="single-card mb-2 mb-md-0">
                     {% if module.content_group.card_group_one.image.src %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded"
+                        <img class="img-fluid lazy"
                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
                             data-src="{{ module.content_group.card_group_one.image.src }}"
                             alt="{{ module.content_group.card_group_one.image.alt }}" />
@@ -21,63 +54,67 @@
                     <figure class="figure mb-0">
                         <img class="img-fluid lazy rounded"
                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
+                            data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=image">
                     </figure>
                     {% endif %}
                     <h3 class="my-1 mb-0">{{module.content_group.card_group_one.title}}</h3>
                     {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_one.content }}" %}
                     {% if module.content_group.card_group_one.content_link_url %}
-                    <a class="secondary-button"
-                        href="{{activity.activity_link.href}}">{{module.content_group.card_group_one.content_link_title}}<span
+                    <a class="{{module.content_style.button_type}}-button"
+                        href="{{module.content_group.card_group_one.content_link_url.href}}">{{module.content_group.card_group_one.content_link_title}}<span
                             class="icon-arrowright"></span></a>
                     {% endif %}
                 </div>
             </div>
             <div class="col-md-4">
-                {% if module.content_group.card_group_scd.image.src %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                        data-src="{{ module.content_group.card_group_scd.image.src }}"
-                        alt="{{ module.content_group.card_group_scd.image.alt }}" />
-                </figure>
-                {% else %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                        data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
-                </figure>
-                {% endif %}
-                <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>
-                {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_scd.content }}" %}
-                {% if module.content_group.card_group_scd.content_link_url %}
-                <a class="secondary-button"
-                    href="{{activity.activity_link.href}}">{{module.content_group.card_group_scd.content_link_title}}<span
-                        class="icon-arrowright"></span></a>
-                {% endif %}
+                <div class="single-card mb-2 mb-md-0">
+                    {% if module.content_group.card_group_scd.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_scd.image.src }}"
+                            alt="{{ module.content_group.card_group_scd.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=image">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_scd.content }}" %}
+                    {% if module.content_group.card_group_scd.content_link_url %}
+                    <a class="{{module.content_style.button_type}}-button"
+                        href="{{module.content_group.card_group_scd.content_link_url.href}}">{{module.content_group.card_group_scd.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
             </div>
             <div class="col-md-4">
-                {% if module.content_group.card_group_third.image.src %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                        data-src="{{ module.content_group.card_group_third.image.src }}"
-                        alt="{{ module.content_group.card_group_third.image.alt }}" />
-                </figure>
-                {% else %}
-                <figure class="figure mb-0">
-                    <img class="img-fluid lazy rounded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                        data-src="https://via.placeholder.com/350x350/1d3b74/ffffff.png?text=350x350">
-                </figure>
-                {% endif %}
-                <h3 class="my-1 mb-0">{{module.content_group.card_group_third.title}}</h3>
-                {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_third.content }}" %}
-                {% if module.content_group.card_group_third.content_link_url %}
-                <a class="secondary-button"
-                    href="{{activity.activity_link.href}}">{{module.content_group.card_group_third.content_link_title}}<span
-                        class="icon-arrowright"></span></a>
-                {% endif %}
+                <div class="single-card mb-2 mb-md-0">
+                    {% if module.content_group.card_group_third.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ module.content_group.card_group_third.image.src }}"
+                            alt="{{ module.content_group.card_group_third.image.alt }}" />
+                    </figure>
+                    {% else %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
+                            data-src="https://via.placeholder.com/500x500/1d3b74/ffffff.png?text=image">
+                    </figure>
+                    {% endif %}
+                    <h3 class="my-1 mb-0">{{module.content_group.card_group_third.title}}</h3>
+                    {% inline_rich_text field="rich_text" value="{{ module.content_group.card_group_third.content }}" %}
+                    {% if module.content_group.card_group_third.content_link_url %}
+                    <a class="{{module.content_style.button_type}}-button"
+                        href="{{module.content_group.card_group_third.content_link_url.href}}">{{module.content_group.card_group_third.content_link_title}}<span
+                            class="icon-arrowright"></span></a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

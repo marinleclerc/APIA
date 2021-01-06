@@ -1,21 +1,41 @@
 <div id="{{module.module_identity}}"
     class="global-form-module {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
-    <div class="container">
+    <div class="container position-relative">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 mx-auto text-center mb-md-2">
                 {% if module.content_group.subtitle %}
                 <span class="subtitle">{{module.content_group.subtitle}}</span>
                 {% endif %}
                 {{ module.content_group.text }}
-                {% form
-                    form_to_use="{{ {{module.content_group.form_id}} }}"
-                    response_response_type="{{ module.content_group.response_type }}"
-                    response_message="{{ module.content_group.message }}"
-                    response_redirect_id="{{ module.content_group.redirect_id }}"
-                    response_redirect_url="{{ module.content_group.redirect_url}}"
-                    gotowebinar_webinar_key="{{ module.content_group.gotowebinar_webinar_key }}"
-                %}
+            </div>
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <div class="container__form py-2 px-1 px-md-4 rounded-sm">
+                    <h3 class="text-center mt-0">{{module.content_group.form_title}}</h3>
+                    {% form
+                        form_to_use="{{module.content_group.form_id}}"
+                        response_response_type="{{ module.content_group.response_type }}"
+                        response_message="{{ module.content_group.message }}"
+                        response_redirect_id="{{ module.content_group.redirect_id }}"
+                        response_redirect_url="{{ module.content_group.redirect_url}}"
+                        gotowebinar_webinar_key="{{ module.content_group.gotowebinar_webinar_key }}"
+                    %}
+                </div>
             </div>
         </div>
+        <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Homepage---Mockup---V5.3" transform="translate(-446.000000, -3041.000000)" fill="#F1F2F5">
+                    <g id="produits" transform="translate(144.000000, 2714.000000)">
+                        <path
+                            d="M409.399566,548.242946 C925.91791,173.590835 1418.3536,334.342472 1198.05105,591.755223 C957.642724,863.3109 -19.2749092,921.934684 409.399566,548.242946 Z"
+                            id="Path-Copy"
+                            transform="translate(777.000000, 569.500000) scale(1, -1) translate(-777.000000, -569.500000) ">
+                        </path>
+                    </g>
+                </g>
+            </g>
+        </svg>
     </div>
+</div>
 </div>

@@ -80,6 +80,30 @@
         ],
         "type": "choice",
         "default": "bg_show"
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "secondary"
+      },
+      {
+        "name": "picto_choice",
+        "label": "Picto or Not",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": false
       }
     ]
   },
@@ -99,6 +123,16 @@
         "type": "text",
         "help_text": "Title can describe your content properly.",
         "default": "L’ingénierie"
+      },
+      {
+        "name": "introduction",
+        "label": "Introduction",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext"
       },
       {
         "type": "group",
@@ -164,6 +198,30 @@
               "content_id": null,
               "type": "EXTERNAL"
             }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "pictos_group",
+        "label": "Pictos Group",
+        "occurrence": {
+          "min": 0,
+          "default": 1
+        },
+        "children": [
+          {
+            "name": "image",
+            "label": "Image", 
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": true,
+            "type": "image",
+            "default": {
+              "size_type": "auto",
+              "alt": "Example of an image used in your module"
+            } 
           }
         ]
       }

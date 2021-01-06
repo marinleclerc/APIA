@@ -1,0 +1,31 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  label: APIA Email Subscriptions Confirmation Page
+-->
+
+{% extends '../layouts/base-system.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  <section class="content-wrapper">
+    <div class="systems-page subscriptions">
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 mx-auto text-center">
+<!--               {% module "module_16024385375475" path="/APIA-System/email_subscriptions_confirmation_apia", label="email_subscriptions_confirmation_apia" %}
+ -->
+
+              {% module "subscriptions_confirmation" path="@hubspot/email_subscriptions_confirmation" %} -->
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock body %}

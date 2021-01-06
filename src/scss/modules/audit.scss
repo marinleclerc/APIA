@@ -1,6 +1,7 @@
 .global-audit {
   .container__content {
     position: relative;
+    box-shadow: 0 2px 20px rgba(194, 201, 217, 0.25) inset;
     .container__content--text {
       width: 69%;
       h2 {
@@ -9,6 +10,12 @@
       }
       p {
         color: $white;
+        &:last-child {
+          margin-bottom: 30px;
+        }
+      }
+      .secondary-button:hover {
+        border-color: $white;
       }
     }
     .container__content--img {
@@ -33,6 +40,16 @@
           font-family: 'object-fit:cover';
           object-fit: cover;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .global-audit {
+    .container__content {
+      .container__content--text {
+        width: 100%;
       }
     }
   }

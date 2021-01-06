@@ -1,0 +1,182 @@
+[
+  {
+    "name": "module_identity",
+    "label": "Module ID",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "type": "group",
+    "name": "content_style",
+    "label": "Content Style",
+    "children": [
+      {
+        "name": "section_type",
+        "label": "Section Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["none", "None"],
+          ["sm", "Small"],
+          ["md", "Normal"],
+          ["lg", "Big"],
+          ["xl", "Giant"]
+        ],
+        "type": "choice",
+        "default": "none"
+      },
+      {
+        "name": "padding_bottom",
+        "label": "Padding Bottom",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "padding_top",
+        "label": "Padding Top",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "button_type",
+        "label": "Button Type",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["primary", "Primary"],
+          ["secondary", "Secondary"],
+          ["fourth", "Tertiary"]
+        ],
+        "type": "choice",
+        "default": "secondary"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "content_group",
+    "label": "Content Group",
+    "children": [
+      {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "type": "image",
+        "default": {
+          "size_type": "auto",
+          "alt": "Example of an image used in your module"
+        }
+      },
+      {
+        "name": "subtitle",
+        "label": "Sous titre",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "help_text": "Sous titre / catégorie de contenu",
+        "default": "Nos services"
+      },
+      {
+        "name": "text",
+        "label": "Titre + contenu",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "richtext",
+        "help_text": "Titre + contenu",
+        "default": "<h2>28 ans au service des usines agroalimentaires<h2><p>C’est parce que nous intervenons depuis 1993 sur des milliers d’installations de transport des poudres et granulés, exclusivement dans l’industrie alimentaire, que nous savons nous adapter à aux problématiques de différentes filières pour être force de proposition et booster votre la rentabilité de vos ateliers.</p>"
+      },
+      {
+        "type": "group",
+        "name": "data_infos",
+        "label": "Informations chiffrées",
+        "occurrence": {
+          "min": 3,
+          "max": 5,
+          "default": 4
+        },
+        "children": [
+          {
+            "name": "number_info",
+            "label": "Info chiffrée",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "default": "3000"
+          },
+          {
+            "name": "number_unit",
+            "label": "Unité de ",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "default": "3000"
+          },
+          {
+            "name": "text_info",
+            "label": "Texte",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "default": "Installations toujours en services"
+          }
+        ]
+      },
+      {
+        "name": "pdf_content",
+        "label": "Content Download Button",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "default": "Télécharger la brochure"
+      },
+      {
+        "name": "pdf_url",
+        "label": "PDF Url",
+        "required": false,
+        "locked": false,
+        "supported_types": ["FILE"],
+        "type": "url",
+        "default": {
+          "content_id": null,
+          "href": "http://example.com",
+          "type": "FILE"
+        }
+      }
+    ]
+  }
+]

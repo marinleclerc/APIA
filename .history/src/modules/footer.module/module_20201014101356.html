@@ -1,0 +1,99 @@
+<div id="{{module.module_identity}}"
+    class="global-footer {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="container">
+        <div class="row mb-2 md-md-1">
+            <div class="col-12">
+                <img class="logo-footer" src="https://f.hubspotusercontent20.net/hubfs/8191022/apia-logo.png"
+                    alt="logo APIA">
+            </div>
+        </div>
+        <div class="row mb-2 mb-md-0">
+
+
+
+
+            <!-- Dev de la macro -->
+            {%- macro render_link_item(link,depth,looop)-%}
+            {%- if link != [] && link.label -%}
+            {%- if link.children -%}
+            <div class="col-md-3">
+                <span class="subtitle">
+                    {{link.label}}
+                </span>
+                <ul>
+                    {% set depth = depth + 1%}
+                    {%- for sublink in link.children -%}
+                    {{render_link_item(sublink,depth)}}
+                    {%- endfor -%}
+                </ul>
+            </div>
+            {% else %}
+            <li>
+                <a href="{{link.url}}">{{link.label}}</a>
+            </li>
+            {% endif%}
+            {% endif%}
+            {%- endmacro -%}
+
+
+            {% set menu = menu( id= module.content_group.footer_id ).children %}
+
+
+
+
+
+
+            {% for link in menu %}
+            {{render_link_item(link,1,loop.index)}}
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
+            <div class="col-md-3">
+                <span class="subtitle">
+                    Nous suivre
+                </span>
+                <ul class="mt-1 mb-2">
+                    <li>
+                        <a class="social-link" href="https://www.linkedin.com/company/apia-technologie/"
+                            target="_blank">
+                            <div class="social-container d-flex align-items-center">
+                                <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"
+                                    height="20px">
+                                    <path
+                                        d="M21.8,0H2.2C1,0,0,1,0,2.2v19.6C0,23,1,24,2.2,24h19.6c1.2,0,2.2-1,2.2-2.2V2.2C24,1,23,0,21.8,0z M7,20H3V9h4V20z M5,7.7L5,7.7c-1.2,0-2-0.8-2-1.8C3,4.8,3.8,4,5,4c1.2,0,2,0.8,2,1.8C7,6.9,6.2,7.7,5,7.7z M21,20h-4v-6 c0-1.6-1.1-2-1.4-2c-0.3,0-1.6,0.2-1.6,2c0,0.2,0,6,0,6h-4V9h4v1.6C14.6,9.7,15.6,9,17.5,9s3.5,1.5,3.5,5V20z" />
+                                </svg>
+                                <p class="mb-0">Linkedin</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="/telecharger-brochure" class="footer-button">Brochure Entreprise</a>
+            </div>
+        </div>
+        <div class="row no-gutters container-sub-footer pt-2 pb-5 mt-2">
+            <div class="col-12">
+                <div class="copy-wrapper d-md-flex justify-content-between">
+                    <div class="copyright">
+                        <p>© Copyright 2020 APIA technologie</p>
+                    </div>
+                    <div class="sub-footer">
+                        <a class="pl-md-1" href="/mentions-legales">Mentions légales</a>
+                        <a class="pl-md-1"
+                            href="https://f.hubspotusercontent20.net/hubfs/8191022/PDF/CGV3.pdf" target="">Conditions générales de
+                            vente</a>
+                        <a class="pl-md-1" href="/plan-site">Plan du site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

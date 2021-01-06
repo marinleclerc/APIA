@@ -6,31 +6,40 @@
         {% endif %}
         <h2>{{module.content_group.title}}</h2>
     </div>
-    <div class="container container__content my-3">
+    <div class="container container__content my-4">
+
+        {% for item in module.content_group.timeline_group %}
         <div class="row no-gutters">
-            <div class="col-md-6 container__content--timeline left-content">
+            <div
+                class="col-10 offset-1 col-md-6 container__content--timeline {% if item.content_position == false %}offset-md-0 left-content{% else %}offset-md-6 right-content{% endif %}">
                 <div class="timeline--unit">
+                    {% if item.image.src %}
+                    <figure class="figure mb-0">
+                        <img class="img-fluid lazy rounded"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
+                            data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                    </figure>
+                    {% else %}
                     <figure class="figure mb-0">
                         <img class="img-fluid lazy rounded"
                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
                             data-src="https://via.placeholder.com/60x60/1d3b74/ffffff.png?text=60x60">
                     </figure>
+                    {% endif %}
                     <div class="timeline--unit--intro">
-                        <span>étape 1.</span>
-                        <h3>Necessitatibus quaerat et est et sed qui</h3>
+                        <span>{{item.subtitle_list}}</span>
+                        <h3 class="mb-1">{{item.title_list}}</h3>
                     </div>
                     <ul>
-                        <li>
-                            Quam voluptatem harum quas architecto
-                        </li>
-                        <li>
-                            Quam voluptatem harum quas architecto
-                        </li>
+                        {% for list in item.timeline_list %}
+                        <li>{{list.text}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="row no-gutters">
+        {% endfor %}
+        <!--         <div class="row no-gutters">
             <div class="col-md-6 container__content--timeline offset-md-6 right-content">
                 <div class="timeline--unit">
                     <figure class="figure mb-0">
@@ -55,7 +64,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     {% if module.content_group.external_link_url.href %}
     <a class="primary-button mx-auto" href="{{module.content_group.external_link_url.href}}"

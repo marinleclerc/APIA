@@ -66,6 +66,30 @@
         "show_emoji_picker": false,
         "type": "text",
         "default": "Derniers articles de blog"
+      },
+      {
+        "name": "external_link_title",
+        "label": "Contenu textuel du bouton",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "default": "Voir tous les articles"
+      },
+      {
+        "name": "external_link_url",
+        "label": "URL du bouton",
+        "required": false,
+        "locked": false,
+        "supported_types": ["EXTERNAL", "CONTENT"],
+        "type": "url",
+        "default": {
+          "content_id": null,
+          "href": "https://www.apia-sa.com/en/",
+          "type": "EXTERNAL"
+        }
       }
     ]
   }
