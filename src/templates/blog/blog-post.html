@@ -63,7 +63,7 @@
                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
                   data-src="{{ content.blog_post_author.avatar }}" alt="Photo de {{ blog_author.display_name }}" />
               </figure>
-              <div class="container-author-info ml-md-1">
+              <div class="container-author-info ml-1">
                 <p class="h6 m-0">{{ content.blog_post_author.display_name }}</p>
                 <p class="m-0">
                   {{ content.blog_post_author.bio }}
@@ -85,7 +85,8 @@
               <div class="container-share-social my-1">
                 <span class="subtitle">Partager l'article</span>
                 <div class="d-flex mt-1">
-                  <a href="https://www.linkedin.com/shareArticle/?mini=true&url={{content.absolute_url}}"
+                  <a target="_blank"
+                    href="https://www.linkedin.com/shareArticle/?mini=true&url={{content.absolute_url}}"
                     title="Linkedin">
                     <svg class="l-footer__icon" width="20" height="20">
                       <path
@@ -93,21 +94,23 @@
                         fill="currentColor" fill-rule="evenodd"></path>
                     </svg>
                   </a>
-                  <a class="ml-1" href="http://twitter.com/share?url={{content.absolute_url}}" title="Twitter">
+                  <a target="_blank" class="ml-1" href="http://twitter.com/share?url={{content.absolute_url}}"
+                    title="Twitter">
                     <svg class="l-footer__icon" width="20" height="20">
                       <path
                         d="M7.718 16c5.66 0 8.756-4.617 8.756-8.62 0-.132 0-.263-.01-.393A6.198 6.198 0 0018 5.419a6.205 6.205 0 01-1.767.477 3.053 3.053 0 001.353-1.677 6.227 6.227 0 01-1.954.736 3.115 3.115 0 00-4.355-.132 3.004 3.004 0 00-.89 2.896 8.788 8.788 0 01-6.343-3.166 3.004 3.004 0 00.953 4.044A3.091 3.091 0 013.6 8.22v.038c0 1.442 1.033 2.684 2.469 2.97-.453.122-.929.14-1.389.052a3.075 3.075 0 002.875 2.104A6.236 6.236 0 013 14.64a8.815 8.815 0 004.718 1.359"
                         fill="currentColor" fill-rule="evenodd"></path>
                     </svg>
                   </a>
-                  <a class="ml-1" href="http://www.facebook.com/sharer.php?u={{content.absolute_url}}" title="Facebook">
+                  <a target="_blank" class="ml-1" href="http://www.facebook.com/sharer.php?u={{content.absolute_url}}"
+                    title="Facebook">
                     <svg class="l-footer__icon" width="20" height="20">
                       <path
                         d="M11.457 18v-7.2h2.186L14 7.6h-2.543V6.042c0-.824.021-1.642 1.173-1.642h1.166V2.112c0-.034-1.002-.112-2.015-.112-2.117 0-3.442 1.326-3.442 3.76V7.6H6v3.2h2.339V18h3.118z"
                         fill="currentColor" fill-rule="evenodd"></path>
                     </svg>
                   </a>
-                  <a class="ml-1" href="mailto:%20?body={{content.absolute_url}}" title="mail">
+                  <a target="_blank" class="ml-1" href="mailto:%20?body={{content.absolute_url}}" title="mail">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 22 22">
                       <path
                         d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
@@ -135,17 +138,158 @@
       </div>
     </div>
   </div>
-  <div class="blog-post-related">
+
+
+
+  {% macro blog_post_formatter(blog_post) %}
+  <div class="col-md-4">
+    <div class="single-post">
+
+      {% if blog_post.featured_image %}
+      <a class="feat-img" href="{{ blog_post.absolute_url }}">
+        <img class="rounded w-100 lazy"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+          data-src="{{ blog_post.featured_image }}" />
+      </a>
+      {% endif %}
+      <div class="container-tags ml-1">
+        {% for tag in blog_post.tag_list %}
+        {% if loop.index ==1 %}
+        <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <h3 class="mt-1"><a class="post-link" href="{{ blog_post.absolute_url }}">{{ post.name }}</a></h2>
+    </div>
+  </div>
+  {% endmacro %}
+
+  {#	Assign our content.tag_names array to a variable	#}
+  {% set tagNames = content.tag_names %}
+  {#	Add this to the function and use HubSpot's JOIN filter to turn the array into a comma separated string	#}
+  <!--   <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="title-related-posts mt-0 pt-2 pt-md-4">Ces articles peuvent vous intéresser</h2>
+      </div>
+      {% related_blog_posts blog_ids="2718545028" limit="3", tags="{{tagNames|join(',')}}", callback="blog_post_formatter_test" %}
+    </div>
+  </div> -->
+
+  {% related_blog_posts blog_ids="2718545028", tags="{{tagNames|join(',')}}", callback="blog_post_formatter_test" %}
+
+  <script>
+    var blog_post_formatter_test = function (blogposts) {
+      var formatted = "<div class='blog-post-related'><div class='container'><div class='row'><div class='col-12'><h2 class='title-related-posts mt-0 pt-2 pt-md-4'>Ces articles peuvent vous intéresser</h2></div>";
+      for (var i = 0; i < blogposts.length; i++) {
+        var blogpost = blogposts[i];
+        formatted += '<div class="col-md-4">';
+        formatted += '<div class="single-post">';
+        formatted += `<a class="feat-img" href="${blogpost.url}"><img class="rounded w-100"  src="${blogpost.featuredImage}" alt="${blogpost.featuredImageAltText}"></a>`;
+        formatted += '<div class="container-tags ml-1">';
+        if (blogpost.tagList.length > 0) {
+          blogpost.tagList.slice(0, 1)
+          formatted += `<a class='single-tag' href="https://www.apia-sa.com/fr/blog/tag/${blogpost.tagList.slice(0, 1).map(tag => tag.label.toLowerCase().replace(/\s/g, ''))}">${blogpost.tagList.slice(0, 1).map(tag => tag.label).join(", ")}</a>`;
+        }
+        formatted += '</div>';
+        formatted += `<h3 class='mt-1'><a class="post-link" href="${blogpost.url}">${blogpost.name}</a></h3>`;
+
+
+        formatted += '</div>';
+        formatted += '</div>';
+      }
+      formatted += '</div></div></div>';
+      return formatted;
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="blog-post-related">
     <div class="container">
       <div class="row">
+        <div class="col-12">
+          <h2 class="title-related-posts mt-0 pt-2 pt-md-4">Ces articles peuvent vous intéresser</h2>
+          {% for post in related_blog_posts %}
+          {% if my_num < 3 %}
+          {% if
+                content.absolute_url == post.absolute_url %}
+          {% else if %}
+          <div class="col-md-4">
+            <div class="single-post">
+
+              {% if post.featured_image %}
+              <a class="feat-img" href="{{ post.absolute_url }}">
+                <img class="rounded w-100 lazy"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
+                  data-src="{{ post.featured_image }}" />
+              </a>
+              {% endif %}
+              <div class="container-tags ml-1">
+                {% for tag in post.tag_list %}
+                {% if loop.index ==1 %}
+                <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                {% endif %}
+                {% endfor %}
+              </div>
+              <h3 class="mt-1"><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h2>
+            </div>
+          </div>
+          {% set my_num = my_num + 1 %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+  <!-- <div class="blog-post-related">
+    <div class="container">
+      <div class="row">
+
+
+
         {% set topic_array = [] %}
-        {% for topic in content.topic_list %}
+
+
+
+        {% for topic in content.tag_list %}
         {% do topic_array.append( topic.slug ) %}
         {% endfor %}
+
+
+
         {% set related_posts =
-              blog_recent_topic_posts('default', topic_array, 4 ) %}
+          blog_recent_tag_posts('default', topic_array, 4 ) %}
+
+
+
 
         {% set my_num = 0 %}
+
+
         {% if related_posts|length > 1 %}
         <div class="col-12">
           <h2 class="title-related-posts mt-0 pt-2 pt-md-4">Ces articles peuvent vous intéresser</h2>
@@ -167,11 +311,12 @@
             {% endif %}
             <div class="container-tags ml-1">
               {% for tag in post.tag_list %}
-              <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="single-tag">{{ tag.name }}</a>
+              {% if loop.index ==1 %}
+              <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+              {% endif %}
               {% endfor %}
             </div>
             <h3 class="mt-1"><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h2>
-              <!-- {{ post.post_list_content|truncatehtml(20) }} -->
           </div>
         </div>
         {% set my_num = my_num + 1 %}
@@ -181,7 +326,7 @@
         {% endif %}
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="global-newsletter">
     <div class="bg-light-green pattern-light text-white py-5">
       <div class="container">

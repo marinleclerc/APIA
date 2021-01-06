@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-10 offset-md-1">
           <div class="container-header-listing bg-light-white bg_blur text-center p-2">
-            <h1 class="my-1">{{tag|capitalize}}</h1>
+            <h1 class="my-1">{{ page_meta.html_title|split(' | ')|last }}</h1>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
 </div>
 <div class="blog-listing">
   {% for content in contents %}
-  {% if (loop.first && current_page_num == 1) && !blog_author %}
+  {% if loop.first %}
   <div class="categories-menu text-center">
     <div class="container">
       <div class="col-12 menu-wrapper my-4">
@@ -72,7 +72,7 @@
     </div>
     <div class="row">
       {% for content in contents %}
-      {% if (loop.first && current_page_num == 1) %}
+      {% if (loop.first) %}
       <div class="col-md-8 last-post">
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
@@ -84,7 +84,9 @@
           {% endif %}
           <div class="container-tags ml-1">
             {% for tag in content.tag_list %}
+            {% if loop.index == 1 %}
             <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endif %}
             {% endfor %}
           </div>
           <div class="single-post-info p-1">
@@ -106,7 +108,9 @@
           {% endif %}
           <div class="container-tags ml-1">
             {% for tag in content.tag_list %}
+            {% if loop.index == 1 %}
             <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endif %}
             {% endfor %}
           </div>
           <div class="single-post-info p-1">
@@ -144,8 +148,8 @@
   </div>
 </div>
 <div class="blog-listing">
-  {% for content in contents %}
-  {% if (loop.first && current_page_num == 1) && !blog_author %}
+  {# {% for content in contents %}
+  {% if (loop.first && current_page_num == 1) && !blog_author %} #}
   <div class="categories-menu text-center">
     <div class="container">
       <div class="col-12 menu-wrapper my-4">
@@ -153,8 +157,8 @@
       </div>
     </div>
   </div>
-  {% endif %}
-  {% endfor %}
+  {# {% endif %}
+  {% endfor %} #}
 
   <div class="container position-relative">
     <div class="container_shape position-absolute bg-drowdown-first">
@@ -189,7 +193,7 @@
     </div>
     <div class="row">
       {% for content in contents %}
-      {% if (loop.first && current_page_num == 1) %}
+      {% if (loop.first) %}
       <div class="col-md-8 last-post">
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
@@ -201,7 +205,9 @@
           {% endif %}
           <div class="container-tags ml-1">
             {% for tag in content.tag_list %}
+            {% if loop.index == 1 %}
             <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endif %}
             {% endfor %}
           </div>
           <div class="single-post-info p-1">
@@ -223,7 +229,9 @@
           {% endif %}
           <div class="container-tags ml-1">
             {% for tag in content.tag_list %}
+            {% if loop.index == 1 %}
             <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+            {% endif %}
             {% endfor %}
           </div>
           <div class="single-post-info p-1">
@@ -239,6 +247,7 @@
     </div>
   </div>
 </div>
+{% endif %}
 
 {% if contents.total_page_count > 1 %}
 <div class="blog-pagination mt-md-3 mt-md-5 mb-1 mb-md-3">
@@ -301,9 +310,8 @@
       {# {% icon name="chevron-right" style="SOLID", width="13", no_wrapper=True %} #}
     </a>
   </div>
-  {% endif %}
-  {% endif %}
 </div>
+{% endif %}
 
 
 <div class="global-newsletter">

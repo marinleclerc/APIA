@@ -2,7 +2,6 @@ import LazyLoad from 'vanilla-lazyload';
 
 // Global Search
 $(function () {
-  console.log("ici");
   var hsResultsPage = function(_resultsClass) {
     function buildResultsPage(_instance) {
       var resultTemplate = _instance.querySelector('.hs-search-results__template');
@@ -61,7 +60,7 @@ $(function () {
         if (typeof featuredImage !== 'undefined' && isFeaturedImageEnabled()) {
           newResult.querySelector('.hs-search-results__featured-image img').dataset.src = featuredImage;
         }
-
+ 
         function httpRequestCustomTest(portalId, term) {
           return new Promise(function(resolve, reject) {
             var SEARCH_URL =
@@ -192,7 +191,7 @@ $(function () {
         function hasNextPage() {
           return results.offset <= results.total - updatedLimit;
         }
-
+ 
         if (hasPreviousPage()) {
           var prevParams = new URLSearchParams(searchParams.toString());
           prevParams.set('offset', results.page * updatedLimit - parseInt(updatedLimit));
@@ -248,11 +247,9 @@ $(function () {
   };
 
   if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
-    console.log("here");
     var resultsPages = hsResultsPage('.hs-search-results');
   } else {
     document.addEventListener('DOMContentLoaded', function () {
-      console.log('ici ok oui');
       var resultsPages = hsResultsPage('.hs-search-results');
     });
   }

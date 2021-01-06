@@ -7,7 +7,7 @@
                 <div class="container__filter filters d-flex flex-wrap">
 
                     <!-- Variable Nom de Domaine -->
-                    {% set domain = "https://apia-sa-1.hubspotpagebuilder.com" %}
+                    {% set domain = "https://www.apia-sa.com/" %}
 
                     <!-- Début Filtre Besoin -->
 
@@ -107,7 +107,7 @@
 
                     <div class="container__filter--unit mb-1 mb-xl-0">
                         <label for="pet-select">Quel secteur industriel ?</label>
-                        <select class="filter-select" value-group="product">
+                        <select class="filter-select" value-group="sector">
                             <option class="no-value" value="">Non précisé</option>
                             {% set iterations_sector = range(0, array_sector_label|length) %}
                             {% for i in iterations_sector %}
@@ -151,13 +151,13 @@
             <div class="col-md-4">
                 <div class="container-results pt-1">
                     <span class="category-label">
-                        Solutions
+                        Produits
                     </span>
                     <div class="position-relative grid-home">
                         {% for row in table_product %}
                         {% if loop.index < 20 %}
                         <div
-                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %}">
+                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
 
                             <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}"><svg width="11px" height="6px"
                                         viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -193,13 +193,13 @@
             <div class="col-md-4">
                 <div class="container-results pt-1">
                     <span class="category-label">
-                        Produits
+                        Solutions
                     </span>
                     <div class="position-relative grid-home">
                         {% for row in table_solution %}
                         {% if loop.index < 20 %}
                         <div
-                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %}">
+                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
 
                             <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}"><svg width="11px" height="6px"
                                         viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -239,11 +239,11 @@
                     </span>
                     <div class="position-relative grid-home">
                         {% for row in table_blog %}
-                        {% if loop.index < 20 %}
+                        {% if loop.index < 100 %}
                         <div
-                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %}">
+                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
 
-                            <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}"><svg width="11px" height="6px"
+                            <h3 class="mt-0 mb-1"><a href="{{domain}}fr{{ row['url']}}"><svg width="11px" height="6px"
                                         viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
                                         <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -262,7 +262,7 @@
                                                 </g>
                                             </g>
                                         </g>
-                                    </svg>{{ row['name']}}</a></h3>
+                                    </svg>{{ row['name']|truncatehtml(65)}}</a></h3>
                         </div>
                         {% endif %}
                         {% endfor %}

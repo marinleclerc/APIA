@@ -114,7 +114,13 @@
             width: calc(100vh * 0.8 * 0.5625);
             height: 62%;
           }
-          @media screen and (min-width: 576px) and (max-width: 992px) {
+          @media screen and (min-height: 1000px) and (max-width: 1400px) {
+            @media screen and (min-width: 1000px) and (max-width: 1400px) {
+              width: 60%;
+              height: 37.5vw;
+            }
+          }
+          @media screen and (min-width: 576px) and (max-width: 1200px) {
             width: 64%;
             height: 42vw;
           }

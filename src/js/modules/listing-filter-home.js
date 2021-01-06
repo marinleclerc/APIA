@@ -47,8 +47,13 @@ function concatValues(obj) {
 
 $('#get-result').click(function() {
   $('.container-result').removeClass('hide');
+  $('html,body').animate({
+    scrollTop: $(window).scrollTop() + 300
+});
+  
 });
 
 $('#hide_results').click(function() {
   $('.container-result').addClass('hide');
 });
+  

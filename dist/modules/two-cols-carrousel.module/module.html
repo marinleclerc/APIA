@@ -2,15 +2,15 @@
     class="global-two-cols-carrousel {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="container-breadcrumb mb-2">
+            <div class="col-12 order-first">
+                <div class="container-breadcrumb mb-2 mt-0 mt-md-1">
                     <span class="breadcrumb">
                         {% menu "my_menu" id=36098716027, site_map_name='Default', overrideable=False, root_type='site_root', flyouts='true', flow='horizontal', label='Advanced Menu' %}
                     </span>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="container-carousel">
+            <div class="col-md-5 order-last order-md-1">
+                <div class="container-carousel mt-2 mt-md-0">
                     <!-- Flickity HTML init -->
                     <div class="carousel carousel-main mb-1" data-flickity>
                         {% for item in module.content_group.carousel_group %}
@@ -66,7 +66,7 @@
                 </figure>
                 {% endif %} -->
             </div>
-            <div class="col-md-6 offset-md-1 mt-2 mt-md-0 container-text">
+            <div class="col-md-6 offset-md-1 container-text order-2 order-md-3">
                 {% if module.content_group.subtitle %}
                 <span class="subtitle">{{module.content_group.subtitle}}</span>
                 {% endif %}

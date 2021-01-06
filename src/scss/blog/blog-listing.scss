@@ -41,7 +41,7 @@
         }
       }
       li + li {
-        margin: 0 15px;
+        margin: 0 0 0 15px;
       }
     }
   }
@@ -206,6 +206,10 @@
       svg {
         transform: rotate(90deg) scaleX(-1);
       }
+    }
+    .blog-pagination__next-link--disabled,
+    .blog-pagination__prev-link--disabled {
+      display: none;
     }
   }
 }

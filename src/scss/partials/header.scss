@@ -277,6 +277,12 @@
                   padding-left: 30px;
                   border-left: 1px solid rgba(194, 201, 217, 0.5);
                 }
+                & + .nav-first-lvl-link {
+                  display: none;
+                  & + .nav-first-lvl-link {
+                    display: none;
+                  }
+                }
               }
               li {
                 width: 50%;
@@ -544,9 +550,6 @@
     .subnav-apia {
       height: inherit;
       .top-navbar {
-        .container-right {
-          display: none;
-        }
         .container-contact {
           a {
             font-size: 12px;
@@ -794,9 +797,78 @@
                 visibility: visible;
                 z-index: 1;
                 transition: width 0.35s cubic-bezier(0, 0, 0.3, 1);
+                overflow: scroll;
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .global-nav {
+    .subnav-apia {
+      .top-navbar {
+        .container-right {
+          display: none;
+        }
+      }
+    }
+    .container-right {
+      display: flex;
+      padding-left: 15px;
+      .container-search-bar {
+        #search-bar {
+          svg {
+            margin-right: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -15px;
+            width: 11px;
+          }
+          .form-control-container {
+            cursor: pointer;
+            position: relative;
+            .search-group {
+              line-height: 1;
+            }
+            .form-control {
+              background-color: transparent;
+              border: none;
+              color: $black;
+              font-size: 16px;
+              font-weight: 700;
+              letter-spacing: 1px;
+              display: block;
+              outline: 0px;
+              width: 140px;
+              transition: all 0.3s;
+              &::placeholder {
+                color: $black;
+              }
+              &:focus {
+                width: 200px;
+              }
+            }
+            /* temporary */
+            .close-search-bar,
+            .btn-search {
+              display: none;
+            }
+          }
+        }
+      }
+      .switcher-link {
+        span {
+          color: $white;
+          font-size: 16px;
+          font-weight: 700;
+        }
+        svg {
+          margin-left: 5px;
         }
       }
     }

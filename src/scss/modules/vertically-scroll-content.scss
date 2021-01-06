@@ -21,6 +21,11 @@
             margin-left: 30px;
           }
         }
+        @media screen and (max-width: 768px) {
+          img {
+            max-height: 35px;
+          }
+        }
       }
     }
     .container__content--list {

@@ -108,6 +108,7 @@
       li {
         width: auto;
         display: inline-block;
+        margin-top: 0 !important;
         &:not(.active-branch) {
           display: none;
         }
@@ -130,6 +131,15 @@
           &:hover {
             text-decoration: underline;
           }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .hs-menu-wrapper {
+      > ul.active-branch {
+        a {
+          font-size: 12px;
         }
       }
     }

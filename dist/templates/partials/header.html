@@ -10,8 +10,8 @@
           <nav class="top-navbar navbar">
             <div class="container-subnav w-100 d-flex justify-content-between align-items-center">
               <div class="container-contact">
-                <a class="text-white text-decoration-none" href="mailto:contact@apia-sa.com"><svg width="20px"
-                    height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                <a class="text-white text-decoration-none" href="mailto:contact@apia-sa.com">
+                  <svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                       <filter id="filter-1">
@@ -31,8 +31,8 @@
                       </g>
                     </g>
                   </svg>contact@apia-sa.com</a>
-                <a class="text-white text-decoration-none" href="tel:+33299146233"><svg width="20px" height="19px"
-                    viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                <a class="text-white text-decoration-none" href="tel:+33299146233">
+                  <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>icon-tel</title>
                     <defs>
@@ -55,10 +55,11 @@
                   </svg>+33 2 99 14 62
                   33</a>
               </div>
-              <div class="container-right">
+              <div class="container-right d-none d-md-flex pr-0 pr-lg-1 pr-xl-0">
                 <div class="container-search-bar">
                   <!-- Search form -->
-                  <form id="search-bar" class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                  <form action="/{{ site_settings.content_search_results_page_path }}" id="search-bar"
+                    class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
                     <div class="form-control-container d-flex">
                       <label class="search-group mb-0" for="term">
                         <?xml version="1.0" encoding="UTF-8"?>
@@ -133,7 +134,7 @@
       <div class="row">
         <div class="col-12">
           <ul class="nav-mobile m-0">
-            <li><a class="navbar-brand p-0" href="/">
+            <li><a class="navbar-brand p-0" href="https://www.apia-sa.com/fr/">
                 <img src="https://f.hubspotusercontent20.net/hubfs/8191022/logo/logo-baseline-apia.svg" alt="logo APIA">
               </a></li>
             <li class="menu-container">
@@ -162,6 +163,24 @@
 
             <li
               class="has-child nav-first-lvl-link {% if request.full_url is string_containing 'process-poudre-agroalimentaire' or request.full_url is string_containing 'equipements-poudre-alimentaire' %} activ {% endif %}">
+              <div class="arrow right">
+                <svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+                  <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
+                      fill-rule="nonzero">
+                      <g id="filters" transform="translate(165.000000, 772.000000)">
+                        <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                          <path
+                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                            id="Path"
+                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                          </path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg></div>
               <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
               <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}">{{link.label}}</label>
               <svg class="d-none d-lg-block" width="11px" height="8px" viewBox="0 0 11 8" version="1.1"
@@ -181,33 +200,14 @@
                   </g>
                 </g>
               </svg>
-              <div class="arrow right"><svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
-                  <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
-                      fill-rule="nonzero">
-                      <g id="filters" transform="translate(165.000000, 772.000000)">
-                        <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
-                          <path
-                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
-                            id="Path"
-                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
-                          </path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg></div>
               <ul class="hs-menu-children-wrapper menu-sub menu-sub-lvl-{{depth}}" aria-role="menu">
                 <div class="container">
                   <div class="row">
                     <div class="col-12 px-0 px-md-1">
                       <li class="menu-sub-title">
                         Retour
-                        <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}"
-                          class="submenu-toggle">
-                        <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
-                        <div class="arrow left"><svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
+                        <div class="arrow left">
+                          <svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             transform="rotate(90)">
                             <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -225,6 +225,9 @@
                               </g>
                             </g>
                           </svg></div>
+                        <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}"
+                          class="submenu-toggle">
+                        <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
                       </li>
                       {% set depth = depth + 1%}
                       {%- for sublink in link.children -%}
@@ -238,6 +241,24 @@
 
             {% elif depth == 2 %}
             <li class="has-child scd-lvl-listing">
+              <div class="arrow right">
+                <svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+                  <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
+                      fill-rule="nonzero">
+                      <g id="filters" transform="translate(165.000000, 772.000000)">
+                        <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                          <path
+                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                            id="Path"
+                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                          </path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg></div>
               <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
               <label class="submenu-label float-element h3 mb-2"
                 for="{{link.label|lower|replace(' ','-') + depth}}">{{link.label}}</label>
@@ -259,31 +280,12 @@
                     </g>
                   </g>
                 </svg>Tout voir</a>
-              <div class="arrow right"><svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
-                  <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
-                      fill-rule="nonzero">
-                      <g id="filters" transform="translate(165.000000, 772.000000)">
-                        <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
-                          <path
-                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
-                            id="Path"
-                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
-                          </path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg></div>
               <ul class="hs-menu-children-wrapper menu-sub menu-sub-lvl-{{depth}}" aria-role="menu">
                 <li class="menu-sub-title">
                   Retour
-                  <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
-                  <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
-                  <div class="arrow left"><svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
-                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                      transform="rotate(90)">
+                  <div class="arrow left">
+                    <svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(90)">
                       <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
                           fill-rule="nonzero">
@@ -299,6 +301,8 @@
                         </g>
                       </g>
                     </svg></div>
+                  <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
+                  <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
                 </li>
                 {% set depth = depth + 1%}
                 {%- for sublink in link.children -%}
@@ -309,10 +313,9 @@
 
             {% else %}
             <li class="has-child">
-              <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
-              <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}">{{link.label}}</label>
-              <div class="arrow right"><svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+              <div class="arrow right">
+                <svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
                   <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
                       fill-rule="nonzero">
@@ -328,14 +331,14 @@
                     </g>
                   </g>
                 </svg></div>
+              <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
+              <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}">{{link.label}}</label>
               <ul class="hs-menu-children-wrapper menu-sub menu-sub-lvl-{{depth}}" aria-role="menu">
                 <li class="menu-sub-title">
                   Retour
-                  <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
-                  <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
-                  <div class="arrow left"><svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1"
-                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                      transform="rotate(90)">
+                  <div class="arrow left">
+                    <svg width="15px" height="9px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(90)">
                       <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#000"
                           fill-rule="nonzero">
@@ -351,6 +354,8 @@
                         </g>
                       </g>
                     </svg></div>
+                  <input type="checkbox" id="{{link.label|lower|replace(' ','-') + depth}}" class="submenu-toggle">
+                  <label class="submenu-label" for="{{link.label|lower|replace(' ','-') + depth}}"></label>
                 </li>
                 {% set depth = depth + 1%}
                 {%- for sublink in link.children -%}
@@ -366,16 +371,32 @@
 
 
             {% if link.label == "Contact" %}
-            <li class="contact-nav"> <a class="contact-button"
-                href="{{link.url if link.url else '#'}} ">{{link.label}}</a>
+            <li class="contact-nav"> <a class="contact-button" href="{{link.url if link.url else '#'}} ">
+                <svg class="d-md-none" width="11px" height="6px" viewBox="0 0 11 8" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+                  <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#d20e43"
+                      fill-rule="nonzero">
+                      <g id="filters" transform="translate(165.000000, 772.000000)">
+                        <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                          <path
+                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                            id="Path"
+                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                          </path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>{{link.label}}</a>
             </li>
 
             {% elif link.label == "Blog" %}
             <li class="nav-first-lvl-link"> <a
                 class="{% if request.full_url == link.url or request.full_url is string_containing 'blog'  %} activ {% endif %}"
-                href="{{link.url if link.url else '#'}} "> <svg width="11px" height="6px" viewBox="0 0 11 8"
-                  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                  transform="rotate(270)">
+                href="{{link.url if link.url else '#'}} ">
+                <svg width="11px" height="6px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
                   <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#d20e43"
                       fill-rule="nonzero">
@@ -393,9 +414,9 @@
                 </svg>{{link.label}}</a></li>
             {% else%}
             <li class="nav-first-lvl-link"> <a class="{% if request.full_url == link.url %} activ {% endif %}"
-                href="{{link.url if link.url else '#'}} "> <svg width="11px" height="6px" viewBox="0 0 11 8"
-                  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                  transform="rotate(270)">
+                href="{{link.url if link.url else '#'}} ">
+                <svg width="11px" height="6px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
                   <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#d20e43"
                       fill-rule="nonzero">
@@ -436,7 +457,68 @@
               {% for link in menu %}
               {{render_link_item(link,1,loop.index)}}
               {% endfor %}
-
+              <li>
+                <div class="container-right d-md-none pr-0 pr-lg-1 pr-xl-0">
+                  <div class="container-search-bar">
+                    <!-- Search form -->
+                    <form action="/{{ site_settings.content_search_results_page_path }}" id="search-bar"
+                      class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                      <div class="form-control-container d-flex">
+                        <label class="search-group mb-0" for="term">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.56 55.45">
+                            <g id="Calque_2" data-name="Calque 2">
+                              <g id="Calque_1-2" data-name="Calque 1">
+                                <path fill="#d20e43"
+                                  d="M39,28.35c4.9,3.75,9.43,7.78,12.6,13a31.81,31.81,0,0,1,3.74,8c1.1,4.12-2.47,7.29-6.55,5.8A23.11,23.11,0,0,1,41.71,51c-4.06-3.51-7.83-7.36-11.61-11.18a16.36,16.36,0,0,1-2-3.54,24.37,24.37,0,0,1-12,.57C7.59,35.26,1.27,29.07.12,21-.69,15.27,2.68,7.3,8.22,4.05,14,.64,19.67-.84,26.16.48,35.3,2.31,40.76,7.73,42,16a17.51,17.51,0,0,1-1.9,10.44C39.77,27,39.44,27.57,39,28.35ZM25,28.69c9-3.25,11.5-11.2,6.35-17.52-3.73-4.54-9-5.48-14.62-5.16a2.64,2.64,0,0,0-1.1.51,19.84,19.84,0,0,0-6.22,7.3c-2.75,4.88-1.51,10,3.22,13A15,15,0,0,0,25,28.69Z" />
+                              </g>
+                            </g>
+                          </svg>
+                        </label>
+                        <input class="form-control form-control-sm" type="text" placeholder="Rechercher"
+                          aria-label="Search" name="term" id="term">
+                        <input type="hidden" name="type" value="SITE_PAGE">
+                        <button type="submit" class="btn btn-search">
+                          <div class="container-test d-flex align-items-center justify-content-center"><span
+                              class="text-white">Rechercher</span>
+                          </div>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <!--                 {% if content.translated_content|length %}
+                  <div class="header__language-switcher header--element d-flex align-items-center">
+                    <div class="container-current-language">
+                      <span class="language-info">{{ content.language.languageTag }}</span>
+                    </div>
+                    <div class="header__language-switcher--label">
+                      {% module "language-switcher" path="@hubspot/language_switcher", display_mode='localized', label="Language Switcher" %}
+                      <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="switcher-link d-flex align-items-center">
+                    <span>FR</span>
+                    <svg width="11px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#fff"
+                          fill-rule="nonzero">
+                          <g id="filters" transform="translate(165.000000, 772.000000)">
+                            <g id="form/select/filter-copy-2" transform="translate(522.000000, 107.000000)">
+                              <path
+                                d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                                id="Path"
+                                transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                              </path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  {% endif %} -->
+                </div>
+              </li>
 
 
             </ul>
