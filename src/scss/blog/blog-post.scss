@@ -37,6 +37,12 @@
   }
   .blog-post-body {
     .post-content {
+      p a,
+      li a {
+        &:hover {
+          color: $primary-red;
+        }
+      }
       #hs_cos_wrapper_post_body {
         h2:first-child {
           margin-top: 0;

@@ -21,7 +21,7 @@
             <figure class="m-0">
               <img class="img-fluid lazy"
                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-                data-src="{{ content.featured_image }}" />
+                data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}" />
             </figure>
           </div>
         </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="sticky container-sticky" data-margin-top="120">
               <div class="sidebar-cta p-2">
-                {% widget_block rich_text "right_column" overrideable=True, label='Texte CTA'  %}
+                {% widget_block rich_text "right_column" overrideable=True, label='Texte CTA' %}
                 {% widget_attribute "html" %}
                 <h2 class="mt-0">Échangez avec un expert</h2>
                 <p class="mb-2">Vous avez un projet d'optimisation de vos lignes industrielles ? Profitez de
@@ -149,7 +149,7 @@
       <a class="feat-img" href="{{ blog_post.absolute_url }}">
         <img class="rounded w-100 lazy"
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-          data-src="{{ blog_post.featured_image }}" />
+          data-src="{{ blog_post.featured_image }}" alt="{{ content.featured_image_alt_text }}" />
       </a>
       {% endif %}
       <div class="container-tags ml-1">
@@ -164,9 +164,9 @@
   </div>
   {% endmacro %}
 
-  {#	Assign our content.tag_names array to a variable	#}
+  {# Assign our content.tag_names array to a variable #}
   {% set tagNames = content.tag_names %}
-  {#	Add this to the function and use HubSpot's JOIN filter to turn the array into a comma separated string	#}
+  {# Add this to the function and use HubSpot's JOIN filter to turn the array into a comma separated string #}
   <!--   <div class="container">
     <div class="row">
       <div class="col-12">

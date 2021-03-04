@@ -13,7 +13,7 @@
     "type": "group",
     "name": "content_style",
     "label": "Content Style",
-    "children": [
+    "children": [ 
       {
         "name": "section_type",
         "label": "Section Type",
@@ -113,6 +113,62 @@
         "show_emoji_picker": false,
         "type": "text",
         "default": "more-solution"
+      },
+      {
+      "name": "first_title",
+      "label": "Titre première colonne",
+      "required": false,
+      "locked": false,
+      "validation_regex": "",
+      "allow_new_line": false,
+      "show_emoji_picker": false,
+      "type": "text",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Quel est votre besoin ?" 
+      },
+      {
+      "name": "scd_title",
+      "label": "Titre deuxième colonne",
+      "required": false,
+      "locked": false,
+      "validation_regex": "",
+      "allow_new_line": false,
+      "show_emoji_picker": false,
+      "type": "text",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Depuis / Vers quel équipement" 
+      },
+      {
+      "name": "third_title",
+      "label": "Titre troisième colonne",
+      "required": false,
+      "locked": false,
+      "validation_regex": "",
+      "allow_new_line": false,
+      "show_emoji_picker": false,
+      "type": "text",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Quel produit à traiter ?" 
+      },
+      {
+      "name": "default_choice",
+      "label": "Texte par défaut",
+      "required": false,
+      "locked": false,
+      "validation_regex": "",
+      "allow_new_line": false,
+      "show_emoji_picker": false,
+      "type": "text",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": "Non précisé" 
       }
     ]
   }

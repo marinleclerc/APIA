@@ -57,16 +57,171 @@
     "label": "Content Group",
     "children": [
       {
-        "name": "footer_id",
-        "label": "Footer ID",
+      "name": "logo",
+      "label": "Logo",
+      "required": false,
+      "locked": false,
+      "inline_help_text": "",
+      "help_text": "",
+      "responsive": true,
+      "resizable": true,
+      "type": "image",
+      "default": {
+        "src": "",
+        "alt": null } 
+      },
+      {
+      "name": "logo_link",
+      "label": "Lien du logo",
+      "required": false,
+      "locked": false,
+      "inline_help_text": "",
+      "help_text": "",
+      "supported_types": [
+        "EXTERNAL",
+        "CONTENT",
+        "FILE",
+        "EMAIL_ADDRESS",
+        "BLOG"
+      ],
+      "type": "url",
+      "default": {
+        "content_id": null,
+        "href": "",
+        "type": "EXTERNAL"} 
+      },
+      {
+      "name": "footer_navigation",
+      "label": "Footer Navigation",
+      "required": false,
+      "locked": false,
+      "inline_help_text": "",
+      "help_text": "",
+      "type": "menu",
+      "placeholder": "",
+      "default": 35698347271 
+      },
+      {
+      "name": "last_column",
+      "label": "Dernière Colonne",
+      "required": false,
+      "locked": false,
+      "children": [
+        {
+        "name": "title",
+        "label": "Titre",
         "required": false,
         "locked": false,
         "validation_regex": "",
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "text",
-        "help_text": "Title can describe your content properly.",
-        "default": "35698347271"
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Nous suivre" 
+        },
+        {
+          "name": "button_text",
+          "label": "Texte du bouton",
+          "required": false,
+          "locked": false,
+          "validation_regex": "",
+          "allow_new_line": false,
+          "show_emoji_picker": false,
+          "type": "text",
+          "placeholder": "",
+          "inline_help_text": "",
+          "help_text": "",
+          "default": "Brochure d'entreprise" 
+          },
+          {
+          "name": "button_link",
+          "label": "Bouton URL",
+          "required": false,
+          "locked": false,
+          "inline_help_text": "",
+          "help_text": "",
+          "supported_types": [
+            "EXTERNAL",
+            "CONTENT",
+            "FILE",
+            "EMAIL_ADDRESS",
+            "BLOG"
+          ],
+          "type": "url",
+          "default": {
+            "content_id": null,
+            "href": "",
+            "type": "EXTERNAL"} 
+          }
+      ],
+      "type": "group",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": {} 
+      },
+      {
+      "name": "sub_footer_links",
+      "label": "Liens du second footer",
+      "required": false,
+      "locked": false,
+      "occurrence": {
+        "min": null,
+        "max": null,
+        "sorting_label_field": null,
+        "default": null
+      },
+      "children": [
+        {
+          "name": "link_text",
+          "label": "Texte du lien",
+          "required": false,
+          "locked": false,
+          "validation_regex": "",
+          "allow_new_line": false,
+          "show_emoji_picker": false,
+          "type": "text",
+          "placeholder": "",
+          "inline_help_text": "",
+          "help_text": "",
+          "default": "Mentions légales" 
+          },
+          {
+          "name": "item_link",
+          "label": "Lien URL",
+          "required": false,
+          "locked": false,
+          "inline_help_text": "",
+          "help_text": "",
+          "supported_types": [
+            "EXTERNAL",
+            "CONTENT",
+            "FILE",
+            "EMAIL_ADDRESS",
+            "BLOG"
+          ],
+          "type": "url",
+          "default": {
+            "content_id": null,
+            "href": "",
+            "type": "EXTERNAL"} 
+          },
+          {
+          "name": "target_blank",
+          "label": "Ouverture sur une nouvelle page",
+          "required": false,
+          "locked": false,
+          "type": "boolean",
+          "inline_help_text": "",
+          "help_text": "",
+          "default": false 
+          }
+      ],
+      "type": "group",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": null 
       }
     ]
   }

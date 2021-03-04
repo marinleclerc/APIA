@@ -9,6 +9,14 @@ form.hs-form,
   background: rgba(white, 1); //set the color here
 }
 
+.submitted-message {
+  border-radius: 5px;
+  padding: 30px;
+  p {
+    margin: 0;
+  }
+}
+
 form.hs-form fieldset {
   max-width: none;
   width: 100%;

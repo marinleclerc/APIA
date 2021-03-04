@@ -31,7 +31,7 @@
       display: flex;
       .container-search-bar {
         #search-bar {
-          svg {
+          img {
             margin-right: 5px;
           }
           .form-control-container {
@@ -438,6 +438,9 @@
                       margin-bottom: 15px;
                       text-transform: uppercase;
                       cursor: default;
+                    }
+                    & + .nav-first-lvl-link {
+                      display: none;
                     }
                   }
                   li.has-child {
