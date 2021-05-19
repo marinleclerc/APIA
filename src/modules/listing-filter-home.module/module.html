@@ -11,22 +11,24 @@
 
                     <!-- Début Filtre Besoin -->
 
-                    {% set needs_label_column = hubdb_table_column(module.content_group.hubdb_id, "needs_label").options %}
+                    {% set needs_label_column = hubdb_table_column(module.content_group.hubdb_id, "needs_label").options
+                    %}
                     {% set array_needs_label = [] %}
                     {% for choice in needs_label_column %}
                     {% do array_needs_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set needs_name_column  = hubdb_table_column(module.content_group.hubdb_id, "needs_name").options %}
+                    {% set needs_name_column = hubdb_table_column(module.content_group.hubdb_id, "needs_name").options
+                    %}
                     {% set array_needs_name = [] %}
-                    {% for choice_2 in needs_name_column  %}
+                    {% for choice_2 in needs_name_column %}
                     {% do array_needs_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class="container__filter--unit mb-1 mb-xl-0">
-                        <label for="need-select">Quel est votre besoin ?</label>
+                        <label for="need-select">{{module.content_group.first_title}}</label>
                         <select class="filter-select" value-group="needs">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations = range(0, array_needs_label|length) %}
                             {% for i in iterations %}
                             <option value=".{{array_needs_name[i]}}">{{array_needs_label[i]}}</option>
@@ -34,26 +36,29 @@
                         </select>
                     </div>
 
+
                     <!-- Fin Filtre Besoin -->
 
                     <!-- Début Filtre Equipement -->
 
-                    {% set equipment_label_column = hubdb_table_column(module.content_group.hubdb_id, "equipment_label").options %}
+                    {% set equipment_label_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "equipment_label").options %}
                     {% set array_equipment_label = [] %}
                     {% for choice in equipment_label_column %}
                     {% do array_equipment_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set equipment_name_column  = hubdb_table_column(module.content_group.hubdb_id, "equipment_name").options %}
+                    {% set equipment_name_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "equipment_name").options %}
                     {% set array_equipment_name = [] %}
-                    {% for choice_2 in equipment_name_column  %}
+                    {% for choice_2 in equipment_name_column %}
                     {% do array_equipment_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class=" container__filter--unit mb-1 mb-xl-0">
-                        <label for="pet-select">Depuis / Vers quel équipement</label>
+                        <label for="pet-select">{{module.content_group.scd_title}}</label>
                         <select class="filter-select" value-group="equipment">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations_equipment = range(0, array_equipment_label|length) %}
                             {% for i in iterations_equipment %}
                             <option value=".{{array_equipment_name[i]}}">{{array_equipment_label[i]}}</option>
@@ -66,22 +71,24 @@
 
                     <!-- Début Filtre Product -->
 
-                    {% set product_label_column = hubdb_table_column(module.content_group.hubdb_id, "product_label").options %}
+                    {% set product_label_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "product_label").options %}
                     {% set array_product_label = [] %}
                     {% for choice in product_label_column %}
                     {% do array_product_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set product_name_column  = hubdb_table_column(module.content_group.hubdb_id, "product_name").options %}
+                    {% set product_name_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "product_name").options %}
                     {% set array_product_name = [] %}
-                    {% for choice_2 in product_name_column  %}
+                    {% for choice_2 in product_name_column %}
                     {% do array_product_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class="container__filter--unit mb-1 mb-xl-0">
-                        <label for="pet-select">Quel produit à traiter ?</label>
+                        <label for="pet-select">{{module.content_group.third_title}}</label>
                         <select class="filter-select" value-group="product">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations_product = range(0, array_product_label|length) %}
                             {% for i in iterations_product %}
                             <option value=".{{array_product_name[i]}}">{{array_product_label[i]}}</option>
@@ -93,22 +100,24 @@
 
                     <!-- Début Filtre Sector -->
 
-                    {% set sector_label_column = hubdb_table_column(module.content_group.hubdb_id, "sector_label").options %}
+                    {% set sector_label_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "sector_label").options %}
                     {% set array_sector_label = [] %}
                     {% for choice in sector_label_column %}
                     {% do array_sector_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set sector_name_column  = hubdb_table_column(module.content_group.hubdb_id, "sector_name").options %}
+                    {% set sector_name_column = hubdb_table_column(module.content_group.hubdb_id, "sector_name").options
+                    %}
                     {% set array_sector_name = [] %}
-                    {% for choice_2 in sector_name_column  %}
+                    {% for choice_2 in sector_name_column %}
                     {% do array_sector_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class="container__filter--unit mb-1 mb-xl-0">
-                        <label for="pet-select">Quel secteur industriel ?</label>
+                        <label for="pet-select">{{module.content_group.fourth_title}}</label>
                         <select class="filter-select" value-group="sector">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations_sector = range(0, array_sector_label|length) %}
                             {% for i in iterations_sector %}
                             <option value=".{{array_sector_name[i]}}">{{array_sector_label[i]}}</option>
@@ -139,11 +148,11 @@
             </div>
         </div>
         <div class="row container-result hide">
-            {% set table_product = hubdb_table_rows(2691186) %}
+            {% set table_product = hubdb_table_rows(module.content_group.hubdbtable_product) %}
 
-            {% set table_solution = hubdb_table_rows(2691076) %}
+            {% set table_solution = hubdb_table_rows(module.content_group.hubdbtable_solution) %}
 
-            {% set table_blog = hubdb_table_rows(2695948) %}
+            {% set table_blog = hubdb_table_rows(module.content_group.hubdbtable_blog) %}
 
             {% if table_product == [] %}
             <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
@@ -151,12 +160,15 @@
             <div class="col-md-4">
                 <div class="container-results pt-1">
                     <span class="category-label">
+                        {% if content.language.languageTag == "en" %}
+                        Products
+                        {% else %}
                         Produits
+                        {% endif %}
                     </span>
                     <div class="position-relative grid-home">
                         {% for row in table_product %}
-                        {% if loop.index < 20 %}
-                        <div
+                        {% if loop.index < 20 %} <div
                             class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
 
                             <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}"><svg width="11px" height="6px"
@@ -179,112 +191,110 @@
                                             </g>
                                         </g>
                                     </svg>{{ row['name']}}</a></h3>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-            {% endif %}
-
-            {% if table_solution == [] %}
-            <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
-            {% else %}
-            <div class="col-md-4">
-                <div class="container-results pt-1">
-                    <span class="category-label">
-                        Solutions
-                    </span>
-                    <div class="position-relative grid-home">
-                        {% for row in table_solution %}
-                        {% if loop.index < 20 %}
-                        <div
-                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
-
-                            <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}"><svg width="11px" height="6px"
-                                        viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
-                                        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <g id=" Homepage---Mockup---V6.1"
-                                                transform="translate(-891.000000, -903.000000)" fill="#d20e43"
-                                                fill-rule="nonzero">
-                                                <g id="filters" transform="translate(165.000000, 772.000000)">
-                                                    <g id="form/select/filter-copy-2"
-                                                        transform="translate(522.000000, 107.000000)">
-                                                        <path
-                                                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
-                                                            id="Path"
-                                                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>{{ row['name']}}</a></h3>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            {% if table_blog == [] %}
-            <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
-            {% else %}
-            <div class="col-md-4">
-                <div class="container-results pt-1">
-                    <span class="category-label">
-                        Blog
-                    </span>
-                    <div class="position-relative grid-home">
-                        {% for row in table_blog %}
-                        {% if loop.index < 100 %}
-                        <div
-                            class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
-
-                            <h3 class="mt-0 mb-1"><a href="{{domain}}fr{{ row['url']}}"><svg width="11px" height="6px"
-                                        viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
-                                        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <g id=" Homepage---Mockup---V6.1"
-                                                transform="translate(-891.000000, -903.000000)" fill="#d20e43"
-                                                fill-rule="nonzero">
-                                                <g id="filters" transform="translate(165.000000, 772.000000)">
-                                                    <g id="form/select/filter-copy-2"
-                                                        transform="translate(522.000000, 107.000000)">
-                                                        <path
-                                                            d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
-                                                            id="Path"
-                                                            transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>{{ row['name']|truncatehtml(65)}}</a></h3>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <div class="col-12">
-                <div class="container-transition text-center mt-2">
-                    <button id="hide_results">Masquer les résultats</button>
-                </div>
-            </div>
-
-
         </div>
-        <!-- <div class="row">
+        {% endif %}
+
+        {% if table_solution == [] %}
+        <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
+        {% else %}
+        <div class="col-md-4">
+            <div class="container-results pt-1">
+                <span class="category-label">
+                    Solutions
+                </span>
+                <div class="position-relative grid-home">
+                    {% for row in table_solution %}
+                    {% if loop.index < 20 %} <div
+                        class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
+
+                        <h3 class="mt-0 mb-1"><a href="{{domain}}{{ row['url']}}"><svg width="11px" height="6px"
+                                    viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+                                    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id=" Homepage---Mockup---V6.1"
+                                            transform="translate(-891.000000, -903.000000)" fill="#d20e43"
+                                            fill-rule="nonzero">
+                                            <g id="filters" transform="translate(165.000000, 772.000000)">
+                                                <g id="form/select/filter-copy-2"
+                                                    transform="translate(522.000000, 107.000000)">
+                                                    <path
+                                                        d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                                                        id="Path"
+                                                        transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>{{ row['name']}}</a></h3>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if table_blog == [] %}
+    <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
+    {% else %}
+    <div class="col-md-4">
+        <div class="container-results pt-1">
+            <span class="category-label">
+                Blog
+            </span>
+            <div class="position-relative grid-home">
+                {% for row in table_blog %}
+                {% if loop.index < 100 %} <div
+                    class="solution-unit-home {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %} {% for foreign_row_sector in row.sector_name %}{{ foreign_row_sector.name }} {% endfor %}">
+
+                    <h3 class="mt-0 mb-1"><a href="{{domain}}fr{{ row['url']}}"><svg width="11px" height="6px"
+                                viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" transform="rotate(270)">
+                                <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)"
+                                        fill="#d20e43" fill-rule="nonzero">
+                                        <g id="filters" transform="translate(165.000000, 772.000000)">
+                                            <g id="form/select/filter-copy-2"
+                                                transform="translate(522.000000, 107.000000)">
+                                                <path
+                                                    d="M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z"
+                                                    id="Path"
+                                                    transform="translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) ">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>{{ row['name']|truncatehtml(65)}}</a></h3>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="col-12">
+    <div class="container-transition text-center mt-2">
+        <button id="hide_results">{% if content.language.languageTag == "en" %}Hide results{% else %}Masquer les
+            résultats{% endif %}</button>
+    </div>
+</div>
+
+
+</div>
+<!-- <div class="row">
             <div class="col-12">
                 <div class="container-transition text-center">
                     <button id="{{module.content_group.button_id}}">{{module.content_group.button_content}}</button>
                 </div>
             </div>
         </div> -->
-    </div>
+</div>
 </div>

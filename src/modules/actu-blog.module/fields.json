@@ -83,13 +83,24 @@
         "label": "URL du bouton",
         "required": false,
         "locked": false,
-        "supported_types": ["EXTERNAL", "CONTENT"],
+        "supported_types": ["EXTERNAL", "CONTENT", "BLOG"],
         "type": "url",
         "default": {
           "content_id": null,
           "href": "https://www.apia-sa.com/en/",
           "type": "EXTERNAL"
         }
+      },
+      {
+      "name": "blog_field",
+      "label": "Blog field",
+      "required": false,
+      "locked": false,
+      "type": "blog",
+      "placeholder": "",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": null 
       }
     ]
   }

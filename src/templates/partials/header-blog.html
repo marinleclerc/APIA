@@ -55,7 +55,7 @@
                       <input type="hidden" name="type" value="SITE_PAGE">
                       <button type="submit" class="btn btn-search">
                         <div class="container-test d-flex align-items-center justify-content-center"><span
-                            class="text-white">Rechercher</span>
+                            class="text-white">Recherche</span>
                         </div>
                       </button>
                     </div>
@@ -75,7 +75,8 @@
                     <span class="language-info">{{ content.language.languageTag }}</span>
                   </div>
                   <div class="header__language-switcher--label">
-                    {% module "language-switcher" path="@hubspot/language_switcher", display_mode='localized', label="Language Switcher" %}
+                    {% module "language-switcher" path="@hubspot/language_switcher", display_mode='localized',
+                    label="Language Switcher" %}
                     <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
                   </div>
                 </div>

@@ -14,7 +14,7 @@ if ($('#fixed_el').length & window.matchMedia('(min-width: 767px)').matches) {
       var $footerOffsetTop = $('.global-content-three-cols').offset().top - 90;
 
       var $targetElementTop = $('.target_scroll').offset().top;
-
+ 
       var $innerFixedElHeight = $innerFixedEl.innerHeight();
 
       var $endFixedPos = $footerOffsetTop - $innerFixedElHeight;

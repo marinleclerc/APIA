@@ -31,7 +31,7 @@
       display: flex;
       .container-search-bar {
         #search-bar {
-          svg {
+          img {
             margin-right: 5px;
           }
           .form-control-container {
@@ -64,14 +64,65 @@
           }
         }
       }
-      .switcher-link {
-        span {
-          color: $white;
-          font-size: 16px;
-          font-weight: 700;
+      .header__language-switcher {
+        .container-current-language {
+          span {
+            color: $white;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+          }
         }
-        svg {
-          margin-left: 5px;
+        .header__language-switcher--label {
+          .globe_class {
+            background-size: 13px;
+            background: url('https://f.hubspotusercontent20.net/hubfs/8191022/SVG/down-arrow-white.svg');
+            background-repeat: no-repeat;
+            background-position: 4px 8px;
+            .lang_list_class {
+              z-index: 11111;
+              background-color: transparent;
+              &:before {
+                border-bottom-color: #e9e9e9;
+              }
+              &:after {
+                top: -7px;
+                border: 12px solid transparent;
+                border-bottom-color: #fff;
+                margin-bottom: -1px;
+              }
+              li {
+                width: 100%;
+                padding: 10px;
+                border-color: rgb(233, 233, 233);
+                &:hover {
+                  a {
+                    color: $primary-red;
+                  }
+                }
+                a {
+                  font-size: 0;
+                  &:after {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+            .lang_list_class li:first-child {
+              border-top-right-radius: 5px;
+              border-top-left-radius: 5px;
+            }
+            .lang_list_class li:last-child {
+              border-bottom-right-radius: 5px;
+              border-bottom-left-radius: 5px;
+            }
+            .lang_switcher_link[data-language='en']:after {
+              content: 'EN';
+            }
+            .lang_switcher_link[data-language='fr']:after {
+              content: 'FR';
+            }
+          }
         }
       }
     }
@@ -438,6 +489,9 @@
                       margin-bottom: 15px;
                       text-transform: uppercase;
                       cursor: default;
+                    }
+                    & + .nav-first-lvl-link {
+                      display: none;
                     }
                   }
                   li.has-child {

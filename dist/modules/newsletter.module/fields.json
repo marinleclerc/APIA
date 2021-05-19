@@ -81,6 +81,17 @@
         "default": "<p class='h2'>Rejoignez-nous,</p><p class='h3'>en vous abonnant à notre newsletter</p>"
       },
       {
+      "name": "form_field",
+      "label": "Form field",
+      "required": false,
+      "locked": false,
+      "inline_help_text": "",
+      "help_text": "",
+      "type": "form",
+      "default": {
+        "form_id": "9e2d1b16-443c-4fa1-8342-af8fb54f317e" } 
+      },
+      {
         "name": "image",
         "label": "Image",
         "required": false,

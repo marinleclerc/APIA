@@ -1,14 +1,9 @@
 {
-  "css_assets": [],
-  "external_js": [],
-  "global": false,
-  "help_text": "",
+  "global": true,
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "icon": "",
   "label": "Footer",
-  "host_template_types": ["PAGE"],
-  "js_assets": [],
-  "other_assets": [],
-  "smart_type": "CONTACT_LIST",
-  "tags": [],
-  "is_available_for_new_content": true
+  "smart_type": "NOT_SMART",
+  "is_available_for_new_content": true,
+  "inline_help_text": ""
 }
- 

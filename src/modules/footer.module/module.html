@@ -3,10 +3,12 @@
     <div class="container">
         <div class="row mb-2 md-md-1">
             <div class="col-12">
-                <a class="navbar-brand p-0" href="https://www.apia-sa.com/fr/">
-                    <img class="logo-footer"
-                        src="https://f.hubspotusercontent20.net/hubfs/8191022/logo/logo-baseline-apia.svg"
-                        alt="logo APIA">
+                <a class="navbar-brand p-0" href="{{module.content_group.logo_link.href}}">
+                    {% if module.content_group.logo.src %}
+                    <img class="logo-footer lazy"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.logo.width }} {{ module.content_group.logo.height }}'%3E%3C/svg%3E"
+                        data-src="{{ module.content_group.logo.src }}" alt="{{ module.content_group.logo.alt }}" />
+                    {% endif %}
                 </a>
             </div>
         </div>
@@ -39,7 +41,7 @@
             {%- endmacro -%}
 
 
-            {% set menu = menu( id= module.content_group.footer_id ).children %}
+            {% set menu = menu( id= module.content_group.footer_navigation ).children %}
 
 
 
@@ -61,7 +63,7 @@
 
             <div class="col-md-3">
                 <span class="subtitle">
-                    Nous suivre
+                    {{module.content_group.last_column.title}}
                 </span>
                 <ul class="mt-1 mb-2">
                     <li>
@@ -79,21 +81,21 @@
                     </li>
                 </ul>
 
-                <a href="/fr/telecharger-brochure" class="footer-button d-inline-block">Brochure Entreprise</a>
+                <a href="{{module.content_group.last_column.button_link.href}}"
+                    class="footer-button d-inline-block">{{module.content_group.last_column.button_text}}</a>
             </div>
         </div>
         <div class="row no-gutters container-sub-footer pt-2 pb-5 mt-2">
             <div class="col-12">
                 <div class="copy-wrapper d-md-flex justify-content-between">
                     <div class="copyright">
-                        <p>© Copyright 2020 APIA technologie</p>
+                        <p>© Copyright {{year}} APIA technologie</p>
                     </div>
                     <div class="sub-footer">
-                        <a class="pl-md-1" href="https://www.apia-sa.com/fr/mentions-legales">Mentions légales</a>
-                        <a class="pl-md-1" href="https://www.apia-sa.com/hubfs/PDF/CGV-apia-technologie.pdf"
-                            target="_blank">Conditions générales de
-                            vente</a>
-                        <a class="pl-md-1" href="https://www.apia-sa.com/fr/plan-site">Plan du site</a>
+                        {% for item in module.content_group.sub_footer_links %}
+                        <a class="pl-md-1" href="{{item.item_link.href}}" {% if item.target_blank %}target="_blank" {%
+                            endif %}>{{item.link_text}}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

@@ -17,7 +17,8 @@
 <body>
   <div class="body-wrapper {{ builtin_body_classes }}">
     {% block header %}
-    {% global_partial path="../partials/header.html" %}
+    {# {% global_partial path="../partials/header.html" %} #}
+    {% module "module_16148743081392" path="/APIA/modules/navigation", label="navigation" %}
     {% endblock header %}
 
     {% block body %}

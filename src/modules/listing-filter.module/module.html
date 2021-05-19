@@ -27,22 +27,24 @@
 
                     <!-- Début Filtre Besoin -->
 
-                    {% set needs_label_column = hubdb_table_column(module.content_group.hubdb_id, "needs_label").options %}
+                    {% set needs_label_column = hubdb_table_column(module.content_group.hubdb_id, "needs_label").options
+                    %}
                     {% set array_needs_label = [] %}
                     {% for choice in needs_label_column %}
                     {% do array_needs_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set needs_name_column  = hubdb_table_column(module.content_group.hubdb_id, "needs_name").options %}
+                    {% set needs_name_column = hubdb_table_column(module.content_group.hubdb_id, "needs_name").options
+                    %}
                     {% set array_needs_name = [] %}
-                    {% for choice_2 in needs_name_column  %}
+                    {% for choice_2 in needs_name_column %}
                     {% do array_needs_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class="container__filter--unit mb-1 mb-xl-0">
-                        <label for="need-select">Quel est votre besoin ?</label>
+                        <label for="need-select">{{module.content_group.first_title}}</label>
                         <select class="filter-select" value-group="needs">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations = range(0, array_needs_label|length) %}
                             {% for i in iterations %}
                             <option value=".{{array_needs_name[i]}}">{{array_needs_label[i]}}</option>
@@ -54,22 +56,24 @@
 
                     <!-- Début Filtre Equipement -->
 
-                    {% set equipment_label_column = hubdb_table_column(module.content_group.hubdb_id, "equipment_label").options %}
+                    {% set equipment_label_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "equipment_label").options %}
                     {% set array_equipment_label = [] %}
                     {% for choice in equipment_label_column %}
                     {% do array_equipment_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set equipment_name_column  = hubdb_table_column(module.content_group.hubdb_id, "equipment_name").options %}
+                    {% set equipment_name_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "equipment_name").options %}
                     {% set array_equipment_name = [] %}
-                    {% for choice_2 in equipment_name_column  %}
+                    {% for choice_2 in equipment_name_column %}
                     {% do array_equipment_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class=" container__filter--unit mb-1 mb-xl-0">
-                        <label for="pet-select">Depuis / Vers quel équipement</label>
+                        <label for="pet-select">{{module.content_group.scd_title}}</label>
                         <select class="filter-select" value-group="equipment">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations_equipment = range(0, array_equipment_label|length) %}
                             {% for i in iterations_equipment %}
                             <option value=".{{array_equipment_name[i]}}">{{array_equipment_label[i]}}</option>
@@ -82,22 +86,24 @@
 
                     <!-- Début Filtre Product -->
 
-                    {% set product_label_column = hubdb_table_column(module.content_group.hubdb_id, "product_label").options %}
+                    {% set product_label_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "product_label").options %}
                     {% set array_product_label = [] %}
                     {% for choice in product_label_column %}
                     {% do array_product_label.append(choice.name) %}
                     {% endfor %}
 
-                    {% set product_name_column  = hubdb_table_column(module.content_group.hubdb_id, "product_name").options %}
+                    {% set product_name_column = hubdb_table_column(module.content_group.hubdb_id,
+                    "product_name").options %}
                     {% set array_product_name = [] %}
-                    {% for choice_2 in product_name_column  %}
+                    {% for choice_2 in product_name_column %}
                     {% do array_product_name.append(choice_2.name) %}
                     {% endfor %}
 
                     <div class="container__filter--unit mb-1 mb-xl-0">
-                        <label for="pet-select">Quel produit à traiter ?</label>
+                        <label for="pet-select">{{module.content_group.third_title}}</label>
                         <select class="filter-select" value-group="product">
-                            <option class="no-value" value="">Non précisé</option>
+                            <option class="no-value" value="">{{module.content_group.default_choice}}</option>
                             {% set iterations_product = range(0, array_product_label|length) %}
                             {% for i in iterations_product %}
                             <option value=".{{array_product_name[i]}}">{{array_product_label[i]}}</option>
@@ -114,14 +120,14 @@
             <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
             {% else %}
             {% for row in table %}
-            {% if loop.index < 20 %}
-            <div
+            {% if loop.index < 20 %} <div
                 class="solution-unit {% for foreign_row in row.needs_name %}{{ foreign_row.name }} {% endfor %} {% for foreign_row_equipment in row.equipment_name %}{{ foreign_row_equipment.name }} {% endfor %} {% for foreign_row_product in row.product_name %}{{ foreign_row_product.name }} {% endfor %}col-lg-6">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <a href="{{ row['url']}}">
                             <figure class="mb-0">
-                                <img class="w-100 rounded-flex" src="{{ row['image'].url}}" alt="" />
+                                <img class="w-100 rounded-flex" src="{{ row['image'].url}}"
+                                    alt="Image représentant une solution ou un produit proposé par APIA" />
                             </figure>
                         </a>
                     </div>
@@ -132,19 +138,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-
-
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="container-transition text-center">
-                    <button id="{{module.content_group.button_id}}">{{module.content_group.button_content}}</button>
-                </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="container-transition text-center">
+                <button id="{{module.content_group.button_id}}">{{module.content_group.button_content}}</button>
             </div>
         </div>
     </div>
 </div>
+</div> 
