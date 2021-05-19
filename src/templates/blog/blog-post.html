@@ -22,6 +22,8 @@
               <img class="img-fluid lazy"
                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
                 data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}" />
+              {% module "module_16153038156342" path="/APIA/modules/blog-figcaption", label="blog-figcaption",
+              no_wrapper=true %}
             </figure>
           </div>
         </div>
@@ -55,8 +57,13 @@
         </div>
         <div class="col-md-4 offset-md-1" data-sticky-container>
           <div class="post-sidebar">
+            {% if group.language.languageTag == "en" %}
+            <span class="subtitle">
+              {{ content.publish_date|datetimeformat('%B %d, %Y') }} by :</span>
+            {% else %}
             <span class="subtitle">Article écrit le
               {{ content.publish_date|datetimeformat('%e/%m/%y') }} par</span>
+            {% endif %}
             <div class="container-author d-flex mt-1 mb-2 mb-md-4 align-items-center">
               <figure class="m-0 h-100">
                 <img class="author-photo img-fluid lazy"
@@ -83,7 +90,11 @@
                 {% end_widget_block %}
               </div>
               <div class="container-share-social my-1">
+                {% if group.language.languageTag == "en" %}
+                <span class="subtitle">Share this article on</span>
+                {% else %}
                 <span class="subtitle">Partager l'article</span>
+                {% endif %}
                 <div class="d-flex mt-1">
                   <a target="_blank"
                     href="https://www.linkedin.com/shareArticle/?mini=true&url={{content.absolute_url}}"
@@ -118,7 +129,11 @@
                   </a>
                 </div>
               </div>
+              {% if group.language.languageTag == "en" %}
+              <span class="subtitle">Visit us on</span>
+              {% else %}
               <span class="subtitle">Nous suivre sur les réseaux</span>
+              {% endif %}
               <div class="container-social-link mt-1">
                 <a class="social-link" href="https://www.linkedin.com/company/apia-technologie/" target="_blank">
                   <div class="social-container d-flex align-items-center">
@@ -176,6 +191,12 @@
     </div>
   </div> -->
 
+
+
+  {% if group.language.languageTag == "en" %}
+
+  {% else %}
+
   {% related_blog_posts blog_ids="2718545028", tags="{{tagNames|join(',')}}", callback="blog_post_formatter_test" %}
 
   <script>
@@ -202,6 +223,8 @@
       return formatted;
     }
   </script>
+  {% endif %}
+
 
 
 
@@ -332,9 +355,15 @@
       <div class="container">
         <div class="row no-gutters container__content p-1 p-md-2 py-lg-2 px-lg-4">
           <div class="col-md-6">
+            {% if group.language.languageTag == "en" %}
+            <span class="subtitle">Trends</span>
+            <p class="h2">Connect width us,</p>
+            <p class="h3">By subscribing to our newsletter</p>
+            {% else %}
             <span class="subtitle">Actualités</span>
             <p class="h2">Rejoignez-nous,</p>
             <p class="h3">en vous abonnant à notre newsletter</p>
+            {% endif %}
           </div>
           <div class="col-md-6">
             <div class="subscribe-form">

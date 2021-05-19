@@ -148,11 +148,11 @@
             </div>
         </div>
         <div class="row container-result hide">
-            {% set table_product = hubdb_table_rows(2691186) %}
+            {% set table_product = hubdb_table_rows(module.content_group.hubdbtable_product) %}
 
-            {% set table_solution = hubdb_table_rows(2691076) %}
+            {% set table_solution = hubdb_table_rows(module.content_group.hubdbtable_solution) %}
 
-            {% set table_blog = hubdb_table_rows(2695948) %}
+            {% set table_blog = hubdb_table_rows(module.content_group.hubdbtable_blog) %}
 
             {% if table_product == [] %}
             <p class='align-center'>Désolé, aucun résultat ne correspond à votre recherche.</p>
@@ -160,7 +160,11 @@
             <div class="col-md-4">
                 <div class="container-results pt-1">
                     <span class="category-label">
+                        {% if content.language.languageTag == "en" %}
+                        Products
+                        {% else %}
                         Produits
+                        {% endif %}
                     </span>
                     <div class="position-relative grid-home">
                         {% for row in table_product %}
@@ -278,7 +282,8 @@
 
 <div class="col-12">
     <div class="container-transition text-center mt-2">
-        <button id="hide_results">Masquer les résultats</button>
+        <button id="hide_results">{% if content.language.languageTag == "en" %}Hide results{% else %}Masquer les
+            résultats{% endif %}</button>
     </div>
 </div>
 

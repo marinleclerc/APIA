@@ -25,7 +25,8 @@
             </div>
         </div>
         <div class="row container__content">
-            {% set blog_posts = blog_recent_posts('default', limit=3) %}
+            {% set blog_posts = blog_recent_posts(module.content_group.blog_field, limit=3) %}
+
             {% for post in blog_posts %}
             <div class="col-md-4 container__content--post">
                 <div class="single-post">
@@ -37,7 +38,18 @@
                         <span class="single-tag">{{ tag.name }}</span>
                         {% endfor %}
                     </div>
-                    <h3><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+                    <h3>
+                        {% set blog_content = rec_post.translated_content[content.language.languageTag] %}
+                        {% if blog_content is defined %}
+                        <a class="post-link" href="{{ blog_content.url }}">{{ blog_content.name }}</a>
+                        {% else %}
+                        <a class="post-link" href="{{ rec_post.url }}">{{ rec_post.name }}</a>
+                        {% endif %}
+
+
+                        <a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a>
+
+                    </h3>
                 </div>
             </div>
             {% endfor %}

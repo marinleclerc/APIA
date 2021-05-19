@@ -33,8 +33,13 @@
   <div class="categories-menu text-center">
     <div class="container">
       <div class="col-12 menu-wrapper my-4">
+        {% if group.language.languageTag == "en" %}
+        {% menu "cat_menu" id="43426872323", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
+        flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+        {% else %}
         {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
         flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -139,17 +144,8 @@
               {% menu "my_menu" id=36098716027, site_map_name='Default', overrideable=False, root_type='site_root',
               flyouts='true', flow='horizontal', label='Advanced Menu' %}
             </span>
-            {% if group.language.languageTag == "en" %}
-            <h1 class="mt-2">The APIA Technologie blog</h1>
-            <p>The food industry and the artisan footer sector are constantly changing: new consumer expectations, food
-              safety, occupational risks and ergonomics. Here, you'll find our case studies, sector news and also shared
-              experiences.</p>
-            {% else %}
-            <h1 class="mt-2">Le blog APIA Technologie</h1>
-            <p>L'industrie et l'artisanat alimentaires sont en perpétuel mouvement : nouvelles attentes consommateurs,
-              sécurité alimentaire, pénibilité et risques professionnels. Retrouvez ici nos cas d'études, les actualités
-              de la filière ou encore nos partages d'expérience.</p>
-            {% endif %}
+            <h1 class="mt-2">{{group.public_title}}</h1>
+            <p>{{group.description}}</p>
           </div>
         </div>
       </div>
@@ -162,8 +158,13 @@
   <div class="categories-menu text-center">
     <div class="container">
       <div class="col-12 menu-wrapper my-4">
+        {% if group.language.languageTag == "en" %}
+        {% menu "cat_menu" id="43426872323", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
+        flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+        {% else %}
         {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
         flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -328,6 +329,18 @@
   <div class="bg-light-green pattern-light text-white py-5">
     <div class="container">
       <div class="row no-gutters container__content p-1 p-md-2 py-lg-2 px-lg-4">
+        {% if group.language.languageTag == "en" %}
+        <div class="col-md-6">
+          <span class="subtitle">Trends</span>
+          <p class="h2">Connect with us,</p>
+          <p class="h3">by subscribing to our newsletter</p>
+        </div>
+        <div class="col-md-6">
+          <div class="subscribe-form">
+            {% form "my_form" form_to_use='8d3b36b6-e38b-4976-9064-82dca70c37e5', title='My Form' %}
+          </div>
+        </div>
+        {% else %}
         <div class="col-md-6">
           <span class="subtitle">Actualités</span>
           <p class="h2">Rejoignez-nous,</p>
@@ -338,6 +351,7 @@
             {% form "my_form" form_to_use='9e2d1b16-443c-4fa1-8342-af8fb54f317e', title='My Form' %}
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

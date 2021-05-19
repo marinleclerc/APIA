@@ -93,6 +93,39 @@
         "default": ""
       },
       {
+      "name": "hubdbtable_product",
+      "label": "HubDB Produits",
+      "required": false,
+      "locked": false,
+      "inline_help_text": "",
+      "help_text": "",
+      "type": "hubdbtable",
+      "placeholder": "",
+      "default": 2691186 
+      },
+      {
+        "name": "hubdbtable_solution",
+        "label": "HubDB Solutions",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "hubdbtable",
+        "placeholder": "",
+        "default": 2691076 
+      },
+      {
+        "name": "hubdbtable_blog",
+        "label": "HubDB Blog",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "hubdbtable",
+        "placeholder": "",
+        "default": 2695948 
+      },
+      {
         "name": "button_content",
         "label": "Contenu du bouton",
         "required": false,

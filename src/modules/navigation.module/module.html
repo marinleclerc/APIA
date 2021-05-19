@@ -65,13 +65,14 @@
                                                 <img src="https://www.apia-sa.com/hubfs/SVG/magnifying-glass.svg"
                                                     alt="magnifying glass">
                                             </label>
-                                            <input class="form-control form-control-sm" type="text" placeholder="{% if content.language.languageTag == 'en' %}Search{% else %}Rechercher{% endif
+                                            <input class="form-control form-control-sm" type="text" placeholder="{% if content.language.languageTag == 'en' || group.language.languageTag == 'en' %}Search{% else %}Rechercher{% endif
                                                         %}" aria-label="Search" name="term" id="term">
                                             <input type="hidden" name="type" value="SITE_PAGE">
                                             <button type="submit" class="btn btn-search">
                                                 <div
                                                     class="container-test d-flex align-items-center justify-content-center">
                                                     <span class="text-white">{% if content.language.languageTag == 'en'
+                                                        || group.language.languageTag == 'en'
                                                         %}Search{% else %}Rechercher{% endif
                                                         %}</span>
                                                 </div>
@@ -79,6 +80,39 @@
                                         </div>
                                     </form>
                                 </div>
+                                {% if group.language %}
+                                <div
+                                    class="header__language-switcher header--element d-flex align-items-center ml-1 ml-sm-0">
+                                    <div class="container-current-language d-flex ml-2">
+                                        {% if group.language.languageTag == "en" %}
+                                        <span class="language-info">{{ group.language.languageTag }}</span>
+                                        {% else if group.language.languageTag == "fr" %}
+                                        <span class="language-info">{{ group.language.languageTag }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="header__language-switcher--label">
+                                        {% if content.language || group.language %}
+                                        {% language_switcher "language_switcher" %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% elif content.language %}
+                                <div
+                                    class="header__language-switcher header--element d-flex align-items-center ml-1 ml-sm-0">
+                                    <div class="container-current-language d-flex ml-2">
+                                        {% if content.language.languageTag == "en" %}
+                                        <span class="language-info">{{ content.language.languageTag }}</span>
+                                        {% else if content.language.languageTag == "fr" %}
+                                        <span class="language-info">{{ content.language.languageTag }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="header__language-switcher--label">
+                                        {% if content.language || group.language %}
+                                        {% language_switcher "language_switcher" %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </nav>
@@ -262,7 +296,8 @@
                                             </g>
                                         </g>
                                     </g>
-                                </svg>{% if content.language.languageTag == "en" %}View all{% else %}Tout voir{% endif
+                                </svg>{% if content.language.languageTag == "en" || group.language.languageTag == "en"
+                                %}View all{% else %}Tout voir{% endif
                                 %}</a>
                             <ul class="hs-menu-children-wrapper menu-sub menu-sub-lvl-{{depth}}" aria-role="menu">
                                 <li class="menu-sub-title">
@@ -485,14 +520,15 @@
                                                         </g>
                                                     </svg>
                                                 </label>
-                                                <input class="form-control form-control-sm" type="text" placeholder="{% if content.language.languageTag == 'en' %}Search{% else %}Rechercher{% endif
+                                                <input class="form-control form-control-sm" type="text" placeholder="{% if content.language.languageTag == 'en' || group.language.languageTag == 'en' %}Search{% else %}Rechercher{% endif
                                                         %}" aria-label="Search" name="term" id="term">
                                                 <input type="hidden" name="type" value="SITE_PAGE">
                                                 <button type="submit" class="btn btn-search">
                                                     <div
                                                         class="container-test d-flex align-items-center justify-content-center">
                                                         <span class="text-white">{% if content.language.languageTag ==
-                                                            'en' %}Search{% else %}Rechercher{% endif
+                                                            'en' || group.language.languageTag == 'en' %}Search{% else
+                                                            %}Rechercher{% endif
                                                             %}</span>
                                                     </div>
                                                 </button>
