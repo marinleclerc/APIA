@@ -1,0 +1,129 @@
+<div
+    class="glossary position-relative overflow-hidden{% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class="accordion position-relative py-10" id="accordion_{{ name }}">
+        <div class="container">
+            <div class="search-wrapper d-flex flex-wrap mb-4">
+                <h2 class="mr-2 my-0">Rechercher</h2>
+                <input type="text" class="quicksearch" placeholder="Ex : Mélangeur, Tamisage, Hydrophyle, ..." />
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="category mb-8">
+                        {% set categories_column = hubdb_table_column(module.hubdbtable_field, "categories").options
+                        %}
+
+                        <h2 class="mt-0">Trier par catégorie</h2>
+
+                        {% set array_categories_name = [] %}
+                        {% for category in categories_column %}
+                        {% do array_categories_name.append(category.name) %}
+                        {% endfor %}
+
+                        <select class="filters-select">
+                            <label for="need-select">Sélectionner</label>
+                            <option value="*">show all</option>
+                            {% for category in array_categories_name %}
+                            <option value=".{{category|lower|replace(' ','-')}}">{{category}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-7 offset-md-1">
+                    <div class="letter-filter">
+                        <h2 class="mt-0">Trier par catégorie</h2>
+                        <div class="filters">
+                            <div class="button-group filters-button-group js-radio-button-group"
+                                data-filter-group="letter">
+                                {% set alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
+                                "o",
+                                "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] %}
+                                {% for letter in alphabet %}
+                                <button class="button" data-filter=".{{letter}}">{{ letter }}</button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="alphabet">
+                        <div class="alpha">
+                            <div class="alp">
+
+                                {% set table = hubdb_table_rows(module.hubdbtable_field) %}
+
+
+                                {% set activ_letters = [] %}
+
+
+                                {% for row in hubdb_table_rows(module.hubdbtable_field, 'orderBy=title_fr') %}
+
+
+                                {% do activ_letters.append(row['title_fr']|truncate(1, True, '')) %}
+
+                                {% endfor %}
+
+                                {% set activ_letters = activ_letters|unique %}
+
+
+                                {% for letter in activ_letters %}
+                                <div class="letter-row {{letter|lower}}">
+                                    <p class="h2 mb-1 ">{{letter}}</p>
+                                    {% for row in table %}
+                                    {% if row['title_fr']|truncate(1, True, '') == letter %}
+                                    <div
+                                        class="card card-test {% for category in row.categories %}{{ category.name|lower|replace(' ','-') }} {% endfor %}">
+                                        <ul class="nav nav-tabs card-header align-items-center position-relative mb-1"
+                                            id="heading_{{ name }}_{{ loop.index }}" role="tablist">
+                                            <li class="mr-2">
+                                                <p class="name m-0">{{row['title_fr']}}</p>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="glossary-link active" data-toggle="tab"
+                                                    href="#tabs-{{loop.index}}-{{row['title_fr']|lower|replace(' ','-')}}"
+                                                    role="tab">FR</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="glossary-link" data-toggle="tab"
+                                                    href="#tabs-{{loop.index}}-{{row['title_en']|lower|replace(' ','-')}}"
+                                                    role="tab">EN</a>
+                                            </li>
+                                            <li class="arrow">
+                                                <div class="card-toggle d-flex justify-content-between align-items-center position-relative collapsed"
+                                                    data-toggle="collapse"
+                                                    data-target="#collapse_{{ name }}_{{ loop.index }}">
+                                                    <svg width="23" height="14" viewBox="0 0 23 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1.82178 2L11.4109 11.1193L21 2" stroke="#1F2735"
+                                                            stroke-width="3" />
+                                                    </svg>
+                                                </div>
+                                            </li>
+                                        </ul><!-- Tab panes -->
+                                        <div id="collapse_{{ name }}_{{ loop.index }}" class="tab-content collapse"
+                                            data-parent="#accordion_{{ name }}">
+                                            <div class="tab-pane active"
+                                                id="tabs-{{loop.index}}-{{row['title_fr']|lower|replace(' ','-')}}"
+                                                role="tabpanel">
+                                                {{row['definition_fr']}}
+                                            </div>
+                                            <div class="tab-pane"
+                                                id="tabs-{{loop.index}}-{{row['title_en']|lower|replace(' ','-')}}"
+                                                role="tabpanel">
+                                                {{row['definition_en']}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

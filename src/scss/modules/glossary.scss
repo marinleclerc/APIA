@@ -1,0 +1,132 @@
+.glossary {
+  .alphabet {
+    height: 100% !important;
+  }
+  .search-wrapper {
+    align-items: center;
+    input {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 3px;
+      border: 1px solid rgba(194, 201, 217, 0.5);
+      box-shadow: 0 5px 5px rgba(194, 201, 217, 0.3);
+      padding: 18px 42px 18px 15px;
+      outline: 0px;
+      -webkit-appearance: none;
+      background: url('https://f.hubspotusercontent00.net/hubfs/2659857/APIA/searcj-apia.png');
+      background-repeat: no-repeat;
+      background-position: calc(100% - 15px);
+      background-size: 12px;
+    }
+  }
+  .letter-row {
+    position: relative !important;
+    top: inherit !important;
+    left: inherit !important;
+    + .letter-row {
+      margin-top: 75px;
+    }
+  }
+  select.filters-select {
+    width: 100%;
+    max-width: 275px;
+    border-radius: 3px;
+    border: 1px solid rgba(194, 201, 217, 0.5);
+    box-shadow: 0 5px 5px rgba(194, 201, 217, 0.3);
+    padding: 18px 42px 18px 15px;
+    outline: 0px;
+    -webkit-appearance: none;
+    background: url('https://f.hubspotusercontent20.net/hubfs/8191022/SVG/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px);
+    background-size: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+    option {
+      &.no-value {
+        color: $primary-grey;
+      }
+    }
+  }
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    button {
+      border-radius: 2px;
+      border: 1px solid #dce3ef;
+      width: 39px;
+      height: 39px;
+      font-size: 20px;
+      line-height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      margin: 0 9px 10px 0;
+      background-color: white;
+      outline: 0;
+      &.is-checked {
+        background-color: #dce3ef;
+      }
+    }
+  }
+
+  .card {
+    border-bottom: 1px solid $black;
+    position: relative !important;
+    top: inherit !important;
+    left: inherit !important;
+    p.name {
+      font-weight: 600;
+      line-height: 30px;
+    }
+    .nav-item {
+      + .nav-item {
+        margin-left: 5px;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        &:not(.active) {
+          color: #b6b6b6;
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+    .arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    + .card {
+      margin-top: 30px;
+    }
+  }
+  .tab-content {
+    margin-bottom: 30px;
+    .tab-pane:not(.active) {
+      display: none;
+    }
+    &.collapse {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      -webkit-box-orient: vertical;
+      will-change: height;
+      &.show {
+        -webkit-line-clamp: 15; /* number of lines to show */
+      }
+    }
+    &.collapsing {
+      height: auto !important;
+    }
+  }
+}
