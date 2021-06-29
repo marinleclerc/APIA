@@ -75,7 +75,7 @@
     "help_text": "",
     "type": "hubdbtable",
     "placeholder": "",
-    "default": 5245013 
+    "default": null
     },
             {
                 "id": "collapses",

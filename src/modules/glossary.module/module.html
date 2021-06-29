@@ -68,7 +68,8 @@
 
 
                                 {% for letter in activ_letters %}
-                                <div class="letter-row {{letter|lower}}">
+                                <div
+                                    class="letter-row {{letter|lower}} {% for row in table %}{% if row['title_fr']|truncate(1, True, '') == letter %}{% for category in row.categories %}{{ category.name|lower|replace(' ','-') }} {% endfor %}{% endif %}{% endfor %}">
                                     <p class="h2 mb-1 ">{{letter}}</p>
                                     {% for row in table %}
                                     {% if row['title_fr']|truncate(1, True, '') == letter %}
