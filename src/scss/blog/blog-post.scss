@@ -59,6 +59,84 @@
         }
       }
       #hs_cos_wrapper_post_body {
+        .hs-cta-wrapper {
+          a.cta_button {
+            text-decoration: none;
+            margin: 45px 0;
+            &.white-book {
+              display: block;
+              border-radius: 10px;
+              background-color: $primary-blue;
+              padding: 50px 260px 50px 50px;
+              background-image: url("data:image/svg+xml,%3Csvg width='1076' height='1108' viewBox='0 0 1076 1108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='100' y='0' width='788' height='513'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M772.499 214.804C444.04 576.648 49.9833 532.687 174.826 305.05C312.523 63.6594 1035.29 -132.628 772.499 214.804Z' fill='%23E9ECF2'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3Crect x='44.2734' y='169.877' width='524' height='392' rx='9' transform='rotate(-11.7518 44.2734 169.877)' fill='%23E9ECF2'/%3E%3C/g%3E%3Cpath d='M573.141 426.929C573.141 426.929 798.483 591.477 806.757 728.124C806.757 728.124 812.592 808.904 661.998 779.812C511.427 750.622 349.138 642.41 277.261 549.649C205.361 456.985 192.052 375.619 256.15 333.5C320.127 291.456 462.193 338.643 573.141 426.929Z' stroke='white'/%3E%3Cpath d='M599.046 447.757C599.046 447.757 824.387 612.304 832.661 748.951C832.661 748.951 838.497 829.731 687.902 800.639C537.332 771.45 375.042 663.237 303.166 570.476C231.265 477.813 217.956 396.446 282.054 354.328C346.031 312.283 488.001 359.446 599.046 447.757Z' stroke='white'/%3E%3Cpath d='M619.931 464.684C619.931 464.684 845.272 629.232 853.546 765.879C853.546 765.879 859.382 846.658 708.787 817.567C558.217 788.377 395.927 680.165 324.051 587.404C252.15 494.74 238.841 413.374 302.939 371.255C366.94 329.114 509.007 376.301 619.931 464.684Z' stroke='white'/%3E%3C/svg%3E%0A");
+              background-repeat: no-repeat;
+              background-position-x: -42%;
+              background-position-y: 35%;
+              transition: all 0.3s;
+              &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 5px 20px rgba($color: #000000, $alpha: 0.18);
+              }
+              p {
+                color: $white;
+                &:first-child {
+                  font-weight: 700;
+                  font-family: 'Oswald', sans-serif;
+                  font-size: 45px;
+                  line-height: 45px;
+                  margin-bottom: 30px;
+                }
+                &:last-child {
+                  background-color: #d20e43;
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 16px;
+                  font-weight: 700;
+                  border-radius: 3px;
+                  border: none;
+                  color: #fff;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  text-align: center;
+                  padding-left: 30px;
+                  padding-right: 30px;
+                  padding-top: 15px;
+                  padding-bottom: 15px;
+                  transition: all 0.4s ease;
+                  cursor: pointer;
+                  box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0.5);
+                  display: inline-block;
+                  position: relative;
+                  transition: 0.4s ease;
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    right: -22px;
+                    top: -20px;
+                    background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 30px;
+                    height: 21px;
+                    transition: all 0.2s;
+                    z-index: auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+        div span,
+        p {
+          font-size: 18px;
+          line-height: 26px;
+          a {
+            color: $primary-red;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
         h2:first-child {
           margin-top: 0;
         }
@@ -68,9 +146,35 @@
           margin-top: 30px;
           margin-bottom: 30px;
         }
+        h3 {
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 700;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
         img {
           max-width: 100%;
           border-radius: 5px;
+        }
+        ol {
+          list-style: none;
+          counter-reset: my-awesome-counter;
+          padding-left: 0;
+        }
+        ol li {
+          counter-increment: my-awesome-counter;
+          font-size: 18px;
+          p {
+            display: initial;
+          }
+          + li {
+            margin-top: 15px;
+          }
+        }
+        ol li::before {
+          content: counter(my-awesome-counter) ' • ';
+          color: $primary-red;
         }
         ul {
           list-style-type: none;
@@ -79,12 +183,16 @@
             padding-left: 15px;
             position: relative;
             line-height: 30px;
+            font-size: 18px;
             &:before {
               content: '-';
               color: #ffc100;
               position: absolute;
               left: 0;
             }
+          }
+          &.circle li:before {
+            content: '•';
           }
         }
         blockquote {
@@ -306,5 +414,19 @@
         font-size: 20px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .global-blog-post .blog-post-body .post-content #hs_cos_wrapper_post_body .hs-cta-wrapper a.cta_button.white-book {
+    padding: 50px 100px 50px 50px;
+    background-position-x: -25%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .global-blog-post .blog-post-body .post-content #hs_cos_wrapper_post_body .hs-cta-wrapper a.cta_button.white-book {
+    padding: 30px;
+    background-image: none;
   }
 }

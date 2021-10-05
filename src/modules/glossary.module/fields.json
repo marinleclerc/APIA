@@ -1,0 +1,118 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    {
+    "name": "hubdbtable_field",
+    "label": "HubDB",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "type": "hubdbtable",
+    "placeholder": "",
+    "default": null
+    },
+            {
+                "id": "collapses",
+                "name": "collapses",
+                "label": "Collapses",
+                "required": false,
+                "locked": false,
+                "occurrence": {
+                    "min": 1,
+                    "max": null,
+                    "sorting_label_field": "collapses.card_title",
+                    "default": 5
+                },
+                "children": [
+                    {
+                        "id": "collapses.card_title",
+                        "name": "card_title",
+                        "label": "Card Title",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "default": "À qui est destinée la carte C2A ?"
+                    },
+                    {
+                        "id": "collapses.card_rich_text",
+                        "name": "card_rich_text",
+                        "label": "Card Description",
+                        "required": false,
+                        "locked": false,
+                        "type": "richtext",
+                        "default": "<p>Avec la carte C2A, votre chauffeur peut payer son carburant partout où la carte Mastercard® est acceptée. Vous avez accès à toutes les stations-service d’Europe. En évitant les détours, vous faites des économies de carburant, de temps et d’argent.</p>"
+                    }
+                ],
+                "tab": "CONTENT",
+                "type": "group"
+            }
+]

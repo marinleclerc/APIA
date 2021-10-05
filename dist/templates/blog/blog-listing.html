@@ -94,6 +94,7 @@
             <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
             {% endif %}
             {% endfor %}
+            {{content.tag_list|first}}
           </div>
           <div class="single-post-info p-1">
             <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
