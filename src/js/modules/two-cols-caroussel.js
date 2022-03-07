@@ -8,7 +8,7 @@ require('flickity-fullscreen');
 Flickity.setJQuery($);
 jQueryBridget('flickity', Flickity, $);
 
-$('.carousel-main').flickity({
+$('.carousel-main').flickity({ 
   pageDots: false,
   prevNextButtons: true,
   fullscreen: true,
