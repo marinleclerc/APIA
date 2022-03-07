@@ -124,6 +124,68 @@
                 }
               }
             }
+            &.white-book-second {
+              display: block;
+              border-radius: 10px;
+              background-color: $primary-blue;
+              padding: 50px 260px 50px 50px;
+              background-image: url('https://www.apia-sa.com/hubfs/Livres%20Blancs/white-book-2.png');
+              background-repeat: no-repeat;
+              background-position-x: -23%;
+              background-position-y: 44%;
+              top: 50%;
+              transition: all 0.3s;
+              &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 5px 20px rgba($color: #000000, $alpha: 0.18);
+              }
+              p {
+                color: $white;
+                &:first-child {
+                  font-weight: 700;
+                  font-family: 'Oswald', sans-serif;
+                  font-size: 45px;
+                  line-height: 45px;
+                  margin-bottom: 30px;
+                }
+                &:last-child {
+                  background-color: #d20e43;
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 16px;
+                  font-weight: 700;
+                  border-radius: 3px;
+                  border: none;
+                  color: #fff;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  text-align: center;
+                  padding-left: 30px;
+                  padding-right: 30px;
+                  padding-top: 15px;
+                  padding-bottom: 15px;
+                  transition: all 0.4s ease;
+                  cursor: pointer;
+                  box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0.5);
+                  display: inline-block;
+                  position: relative;
+                  transition: 0.4s ease;
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    right: -22px;
+                    top: -20px;
+                    background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/hover-primary-button.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 30px;
+                    height: 21px;
+                    transition: all 0.2s;
+                    z-index: auto;
+                  }
+                }
+              }
+            }
           }
         }
         div span,
@@ -418,15 +480,27 @@
 }
 
 @media screen and (max-width: 991px) {
-  .global-blog-post .blog-post-body .post-content #hs_cos_wrapper_post_body .hs-cta-wrapper a.cta_button.white-book {
-    padding: 50px 100px 50px 50px;
-    background-position-x: -25%;
+  .global-blog-post .blog-post-body .post-content #hs_cos_wrapper_post_body .hs-cta-wrapper {
+    a.cta_button.white-book {
+      padding: 50px 100px 50px 50px;
+      background-position-x: -25%;
+    }
+    a.cta_button.white-book-second {
+      padding: 50px 100px 50px 50px;
+      background-image: none;
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
-  .global-blog-post .blog-post-body .post-content #hs_cos_wrapper_post_body .hs-cta-wrapper a.cta_button.white-book {
-    padding: 30px;
-    background-image: none;
+  .global-blog-post .blog-post-body .post-content #hs_cos_wrapper_post_body .hs-cta-wrapper {
+    a.cta_button.white-book {
+      padding: 30px;
+      background-image: none;
+    }
+    a.cta_button.white-book-second {
+      padding: 30px;
+      background-image: none;
+    }
   }
 }
