@@ -4,9 +4,9 @@
  * @since 1.0.0 
  */
 import 'bootstrap';
+import 'jquery.toc';
+import AOS from 'aos';
 
-
-var $ = require('jquery');
 var Isotope = require('isotope-layout');
 var InfiniteScroll = require('infinite-scroll');
 var Sticky = require('sticky-js');
@@ -19,14 +19,19 @@ const lazyLoadInstance = new LazyLoad({
   elements_selector: '.lazy',
 });
 
-
-import AOS from 'aos';
-
 AOS.init();
 
-$('.menu-button').click(function() {
+$('.menu-button').click(function () {
   $('body').toggleClass('no-scroll');
 });
+
+if ($("#toc").length > 0) {
+  $("#toc").toc({ content: "div.post-content", headings: "h2,h3" });
+}
+
+if ($("#toc2").length > 0) {
+  $("#toc2").toc({ content: "div.post-content", headings: "h2" });
+}
 
 
 /* $("#search-bar").click(function(){

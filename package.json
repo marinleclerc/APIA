@@ -16,7 +16,7 @@
     "gen:module": "yarn plop; yarn gen:fields",
     "hs:auth": "hs auth personalaccesskey",
     "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=apia  dist APIA",
-    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-lab-1  dist APIA",
+    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-william  dist APIA",
     "hs:module": "yarn plop; yarn gen:fields",
     "hs:watch": "hs watch --portal=mtg-lab-1 dist APIA",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
@@ -85,6 +85,7 @@
     "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",
     "jquery-bridget": "^2.0.1",
+    "jquery.toc": "^0.4.0",
     "popper.js": "^1.16.1",
     "sticky-js": "^1.2.2",
     "vanilla-lazyload": "^14.0.0"
