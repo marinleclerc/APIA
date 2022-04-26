@@ -2,14 +2,14 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
   $('#solutions img.solutioncontent')
     .not(':first')
     .hide();
   $('#solutions .global-dropdown-solutions img')
     .not(':first')
     .hide();
-  $('#solutions a.apia_link').bind('mouseover', function() {
+  $('#solutions a.apia_link').bind('mouseover', function () {
     $('#solutions img.solutioncontent').hide();
     $('#solutions #' + $(this).attr('id') + 'content').show();
   });
@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
   $('#products .global-dropdown-solutions img')
     .not(':first')
     .hide();
-  $('#products a.apia_link').bind('mouseover', function() {
+  $('#products a.apia_link').bind('mouseover', function () {
     $('#products img.solutioncontent').hide();
     $('#products #' + $(this).attr('id') + 'content').show();
   });
@@ -47,12 +47,12 @@ function productsdropdown() {
     var element = $('#products_1.test_class');
     let heightEl = $('#products_1.test_class .dropdown-body-list').height() + 60;
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.removeClass('collapsing');
       element.css('height', heightEl + 'px');
     }, 300);
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.addClass('collapse show');
     }, 300);
 
@@ -78,12 +78,12 @@ function solutionsdropdown() {
     var element = $('#solutions_1.test_class');
     let heightEl = $('#solutions_1.test_class .dropdown-body-list').height() + 60;
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.removeClass('collapsing');
       element.css('height', heightEl + 'px');
     }, 300);
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.addClass('collapse show');
     }, 300);
 
@@ -96,3 +96,26 @@ function solutionsdropdown() {
   } else {
   }
 }
+
+function tocdropdown() {
+
+  var element = $('#solutions_1.test_class');
+  let heightEl = $('#solutions_1.test_class .dropdown-body-list').height() + 60;
+
+  setTimeout(function () {
+    element.removeClass('collapsing');
+    element.css('height', heightEl + 'px');
+  }, 300);
+
+  setTimeout(function () {
+    element.addClass('collapse show');
+  }, 300);
+
+  $('#solutions_1.test_class')
+    .delay(2800)
+    .removeClass('test_class');
+  $('#solutions .container__content--dropdown .card.first')
+    .delay(3800)
+    .removeClass('first');
+}
+

@@ -101,7 +101,7 @@
       "help_text": "",
       "type": "hubdbtable",
       "placeholder": "",
-      "default": 2691186 
+      "default": null 
       },
       {
         "name": "hubdbtable_solution",
@@ -112,7 +112,7 @@
         "help_text": "",
         "type": "hubdbtable",
         "placeholder": "",
-        "default": 2691076 
+        "default": null 
       },
       {
         "name": "hubdbtable_blog",
@@ -123,7 +123,7 @@
         "help_text": "",
         "type": "hubdbtable",
         "placeholder": "",
-        "default": 2695948 
+        "default": null 
       },
       {
         "name": "button_content",

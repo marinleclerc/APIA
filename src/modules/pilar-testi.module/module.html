@@ -1,0 +1,11 @@
+<div id="{{module.module_identity}}"
+    class="pilar-testi {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+    <div class='testi'>
+        <div class="testi-text">
+            {{module.testi}}
+        </div>
+        <div class="author">
+            <p>{{module.author}}</p>
+        </div>
+    </div>
+</div>

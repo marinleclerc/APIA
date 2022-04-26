@@ -5883,6 +5883,11 @@ jquery-bridget@^2.0.1:
   dependencies:
     jquery ">=1.4.2 <4"
 
+jquery.toc@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/jquery.toc/-/jquery.toc-0.4.0.tgz#55e9f04700ba3d38065b358a0d3e2bdc7ba9eec7"
+  integrity sha512-Cx9z5zsSYnOX+nFRfgqKgcCnIZYMIP7oFxCq+IXCo6rtcNiSis2zmIUL/iG5o+eCYmeoJnmz/xlSqPDyJXps4Q==
+
 "jquery@>=1.4.2 <4":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"

@@ -1,0 +1,134 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "tab": "STYLE",
+        "children": [
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "button_background",
+                "label": "Button Background",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "color",
+                "default": {
+                    "color": null,
+                    "opacity": 100
+                }
+            },
+            {
+                "name": "button_color",
+                "label": "Button color",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "type": "color",
+                "default": {
+                    "color": null,
+                    "opacity": 100
+                }
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "name": "content_group",
+        "label": "Content Group",
+        "children": [
+            {
+                "name": "iframe_source",
+                "label": "Iframe source",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "https://www.youtube.com/embed/ZUG9qYTJMsI?autoplay=1&mute=1&showinfo=0&rel=0"
+            },
+            {
+            "name": "image_field",
+            "label": "Image field",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "responsive": true,
+            "resizable": true,
+            "show_loading" : false,
+            "type": "image",
+            "default": {
+              "size_type" : "auto",
+              "src": "",
+              "alt": null,
+              "loading": "disabled"}
+            }
+        ]
+    }
+]
