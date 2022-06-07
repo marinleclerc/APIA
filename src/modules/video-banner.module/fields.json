@@ -90,6 +90,20 @@
                     "color": null,
                     "opacity": 100
                 }
+            },
+            {
+                "name": "video_width",
+                "label": "Taille en px de la vidéo",
+                "required": false,
+                "locked": false,
+                "display": "slider",
+                "step": 1,
+                "type": "number",
+                "min": 0,
+                "max": 825,
+                "inline_help_text": "La taille maximale est de 825px",
+                "help_text": "",
+                "default": 825
             }
         ]
     },
@@ -110,24 +124,25 @@
                 "placeholder": "",
                 "inline_help_text": "",
                 "help_text": "",
-                "default": "https://www.youtube.com/embed/ZUG9qYTJMsI?autoplay=1&mute=1&showinfo=0&rel=0"
+                "default": "https://www.youtube.com/embed/ZUG9qYTJMsI"
             },
             {
-            "name": "image_field",
-            "label": "Image field",
-            "required": false,
-            "locked": false,
-            "inline_help_text": "",
-            "help_text": "",
-            "responsive": true,
-            "resizable": true,
-            "show_loading" : false,
-            "type": "image",
-            "default": {
-              "size_type" : "auto",
-              "src": "",
-              "alt": null,
-              "loading": "disabled"}
+                "name": "image_field",
+                "label": "Image field",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "responsive": true,
+                "resizable": true,
+                "show_loading": false,
+                "type": "image",
+                "default": {
+                    "size_type": "auto",
+                    "src": "",
+                    "alt": null,
+                    "loading": "disabled"
+                }
             }
         ]
     }
