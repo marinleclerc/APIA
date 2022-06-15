@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
                 } else {
                     answer.style.maxHeight = 0;
-                }
+                } 
             })
         })
 

@@ -8,11 +8,11 @@ export const toggleActiveClick = () => {
   });
 };
 
-document.querySelectorAll('a[href^="#"]:not(.glossary-link)').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+/* document.querySelectorAll('a[href^="#"]:not(.glossary-link)').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth',
     });
   });
-});
+}); */
