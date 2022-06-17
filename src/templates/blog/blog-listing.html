@@ -203,8 +203,42 @@
       </svg>
     </div>
     <div class="row">
+
+      {% set blog_posts = blog_recent_posts('71971165881', limit=1) %}
+      {% for post in blog_posts %}
+      <div class="col-md-8 last-post">
+        <div class="single-post p-1 mb-2">
+          <a class="feat-img m-0" href="{{ post.absolute_url }}">
+
+
+            <img class="img-fluid lazy rounded"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ post.featured_image.width }} {{ post.featured_image.height }}'%3E%3C/svg%3E"
+              data-src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}">
+
+
+          </a>
+          <div class="container-tags ml-1">
+            {% for tag in post.tag_list %}
+            <span class="single-tag">{{ tag.name }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="single-post-info p-1">
+            <h3><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+            <p>
+              {{post.post_list_content|striptags|truncatehtml(85)}}</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      {% endfor %}
+
+
       {% for content in contents %}
-      {% if (loop.first) %}
+      {# {% if (loop.first) %}
       <div class="col-md-8 last-post">
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
@@ -228,7 +262,7 @@
           </div>
         </div>
       </div>
-      {% else %}
+      {% else %} #}
       <div class="col-md-4 classic-post">
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
@@ -253,7 +287,7 @@
           </div>
         </div>
       </div>
-      {% endif %}
+      {# {% endif %} #}
       {% endfor %}
     </div>
   </div>
