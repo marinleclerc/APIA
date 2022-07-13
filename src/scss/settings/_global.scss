@@ -14,6 +14,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-wrap: break-word;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -48,7 +49,7 @@ a.primary-link {
 }
 
 .primary-red {
-  color: $primary-red; 
+  color: $primary-red;
 }
 
 .primary-grey {
@@ -75,4 +76,36 @@ p a {
 
 .no-scroll {
   overflow: hidden;
+}
+
+#button-top {
+  background-color: $primary-red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 200px;
+  box-shadow: 0 3px 6px 0 rgba(210, 14, 67, 0.5);
+  transition: all 0.3s ease-in-out;
+
+  svg {
+    transform: rotate(-180deg);
+
+    path {
+      fill: white;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
 }

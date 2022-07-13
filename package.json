@@ -16,9 +16,9 @@
     "gen:module": "yarn plop; yarn gen:fields",
     "hs:auth": "hs auth personalaccesskey",
     "hs:sync-prod": "yarn gen:fields; hs upload --overwrite --portal=apia  dist APIA",
-    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-william  dist APIA",
+    "hs:sync-dev": "yarn gen:fields;  hs upload --overwrite --portal=mtg-dev-marin  dist APIA",
     "hs:module": "yarn plop; yarn gen:fields",
-    "hs:watch": "hs watch --portal=mtg-lab-1 dist APIA",
+    "hs:watch": "hs watch --portal=mtg-dev-marin dist APIA",
     "deploy:prod": "yarn build && yarn hs:sync-prod",
     "deploy:dev": "yarn build && yarn hs:sync-dev"
   },

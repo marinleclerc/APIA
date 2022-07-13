@@ -36,4 +36,4 @@ if ($("#toc2").length > 0) {
 
 /* $("#search-bar").click(function(){
   $("#search-bar .form-control").addClass("expand");
-}); */
+}); */ 
