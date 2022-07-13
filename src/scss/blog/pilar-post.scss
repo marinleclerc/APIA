@@ -248,11 +248,11 @@
             line-height: 25px;
             /* identical to box height */
             color: rgba(#1D3B74, .5);
-
             position: relative;
             text-transform: uppercase;
             margin-bottom: 5px;
             padding-left: 18px;
+            white-space: break-spaces;
 
             &::before {
               content: "";
@@ -363,10 +363,14 @@
               padding: 50px 260px 50px 50px;
               background-image: url("https://www.apia-sa.com/hubfs/Livres%20Blancs/white-book-2.png");
               background-repeat: no-repeat;
-              background-position-x: -23%;
+              background-position-x: -93%;
               background-position-y: 44%;
               top: 50%;
               transition: all 0.3s;
+
+              @media screen and (max-width: 767px) {
+                padding: 50px;
+              }
 
               &:hover {
                 transform: translateY(-4px);
@@ -431,6 +435,16 @@
           font-size: 18px;
           line-height: 26px;
 
+          a {
+            color: $primary-red;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        ul {
           a {
             color: $primary-red;
 

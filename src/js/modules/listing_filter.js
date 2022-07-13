@@ -12,7 +12,7 @@ var $grid = $('.grid').isotope({
 // store filter for each group
 var filters = {};
 
-$('.filters').on('change', function(event) {
+$('.filters').on('change', function (event) {
   var $select = $(event.target);
   // get group key
   var filterGroup = $select.attr('value-group');
@@ -33,8 +33,8 @@ function concatValues(obj) {
   return value;
 }
 
-$('#more-solution').click(function() {
-  $('#more-solution').fadeOut(function() {
+$('#more-solution').click(function () {
+  $('#more-solution').fadeOut(function () {
     $('#more-solution')
       .text(
         $('#more-solution').text() == 'Afficher moins de solutions'
@@ -47,8 +47,8 @@ $('#more-solution').click(function() {
   $('.container-transition').addClass('d-none');
 });
 
-$('#more-product').click(function() {
-  $('#more-product').fadeOut(function() {
+$('#more-product').click(function () {
+  $('#more-product').fadeOut(function () {
     $('#more-product')
       .text(
         $('#more-product').text() == 'Afficher moins de produits'
@@ -57,6 +57,6 @@ $('#more-product').click(function() {
       )
       .fadeIn();
   });
-  $('.grid').removeClass('hide'); 
+  $('.grid').removeClass('hide');
   $('.container-transition').addClass('d-none');
 });

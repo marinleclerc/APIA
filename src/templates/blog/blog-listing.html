@@ -203,7 +203,7 @@
       </svg>
     </div>
     <div class="row">
-
+      {% if group.language.languageTag != "en" %}
       {% set blog_posts = blog_recent_posts('71971165881', limit=1) %}
       {% for post in blog_posts %}
       <div class="col-md-8 last-post">
@@ -230,40 +230,13 @@
           </div>
         </div>
       </div>
-
-
-
-
       {% endfor %}
+      {% endif %}
 
 
       {% for content in contents %}
-      {# {% if (loop.first) %}
-      <div class="col-md-8 last-post">
-        <div class="single-post p-1 mb-2">
-          {% if content.featured_image %}
-          <a class="feat-img m-0" href="{{ content.absolute_url }}">
-            <img class="img-fluid lazy rounded"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-              data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}">
-          </a>
-          {% endif %}
-          <div class="container-tags ml-1">
-            {% for tag in content.tag_list %}
-            {% if loop.index == 1 %}
-            <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-            {% endif %}
-            {% endfor %}
-          </div>
-          <div class="single-post-info p-1">
-            <h2><a class="post-link" href="{{ content.absolute_url }}">{{ content.name|truncatehtml(68) }}</a></h2>
-            <p>
-              {{ content.post_list_content|striptags|truncatehtml(85) }}</p>
-          </div>
-        </div>
-      </div>
-      {% else %} #}
-      <div class="col-md-4 classic-post">
+      <div
+        class="{% if group.language.languageTag == 'en' %}{% if loop.index == 1 || loop.index == 6%}col-md-8 last-post{% else %}col-md-4 classic-post{% endif %}{% else %}col-md-4 classic-post{% endif %}">
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
           <a class="feat-img m-0" href="{{ content.absolute_url }}">
