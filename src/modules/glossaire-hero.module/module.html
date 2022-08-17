@@ -1,0 +1,14 @@
+<div id="{{module.module_identity}}" class="section-glossaire-hero {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+
+    <img src="{{ module.content_group.bg_img.src }}" class="fit-cover img-fluid" alt="{{ module.content_group.bg_img.alt }}">
+
+    <div class="container">
+        <div class="wrapper">
+
+            <div class="text-center">
+                {{ module.content_group.richtext }}
+            </div>
+
+        </div>
+    </div>
+</div>

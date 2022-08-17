@@ -81,6 +81,12 @@
     p.name {
       font-weight: 600;
       line-height: 30px;
+      display: block;
+
+      &.clos{
+        display: none;
+      }
+
     }
     .nav-item {
       + .nav-item {
@@ -128,6 +134,16 @@
     }
     &.collapsing {
       height: auto !important;
+    }
+  }
+
+  .sidebar-cta{
+    border-radius: 10px;
+    background-color: #1d3b74;
+
+    h2,
+    p {
+      color: $white;
     }
   }
 }

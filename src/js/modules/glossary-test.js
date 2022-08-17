@@ -36,6 +36,38 @@ $('.button-group').each( function( i, buttonGroup ) {
   });
 });
 
+$('.glossary .card .nav-item a').on('click', function(){
+  
+  var index = $(this).data("index");
+  console.log(index);
+
+  var card_father = $(this).closest('.card').find('p.name');
+
+  card_father.each(function(){
+    index_title = $(this).data('index');
+
+    if(index_title == index){
+      
+      if($(this).hasClass('clos')){
+        $(this).removeClass('clos');
+      } else{
+        
+      }
+
+    } else{
+      
+      if($(this).hasClass('clos')){
+
+      } else{
+        $(this).addClass('clos');
+      }
+
+    }
+
+  })
+
+})
+
 
 var buttonFilters = {};
 var buttonFilter;
@@ -58,14 +90,80 @@ $('.filters-select').on( 'change', function( event ) {
   var $select = $( event.target );
   // get group key
   var filterGroup = $select.attr('value');
+
   // set filter for group
   buttonFilters[ filterGroup ] = event.target.value;
   // combine filters
   buttonFilter = concatValues( buttonFilters );
   console.log(buttonFilter);
+
+  console.log("Maxime bis : ", buttonFilter);
   // set filter for Isotope
-  $grid.isotope();
+  $rows.isotope({ filter: buttonFilter });
+
 });
+
+/* $('.card').each(function(index){
+  var glossary_links = $(this).find('.glossary-link');
+  
+  glossary_links.each(function(index){
+    $(this).on('click', function(){
+      glossary_links.removeClass('active');
+      $(this).addClass('active');
+    })
+  })
+
+}) */
+
+$('.quicksearch').on('input', function(e){
+  
+  var input = $(this);
+  var val = input.val();
+
+/*   console.log("Lettre maxime : ", val);
+
+  $(".letter-row").each(function (index){
+    $(this).children('.card').each(function (index){
+      var legend = $(this).children('.tab-pane').text();
+      console.log(legend);
+    });
+  }) */
+
+  $('.card .nav li:first-child p.name:first-child').each(function(index){
+    
+    var text = $(this).text().toUpperCase();
+    var father = $(this).closest('.card');
+
+    if(text.includes(val.toUpperCase())){
+      father.css('display', 'block');
+    } else{
+      father.css('display', 'none');
+    }
+
+  });
+
+  $('.letter-row').each(function(index){
+    
+    var visible = 'no';
+    var cards = $(this).find('.card');
+
+    for(var i = 0; i < cards.length; i++){
+
+      if(cards[i].style.display == 'block'){
+        visible = 'yes'
+      }
+
+    }
+
+    if(visible == 'no'){
+      $(this).css('display', 'none');
+    } else {
+      $(this).css('display', 'block');
+    }
+
+  })
+
+})
 
 // flatten object by concatting values
 /* function concatValues( obj ) {
@@ -76,9 +174,11 @@ $('.filters-select').on( 'change', function( event ) {
   return value;
 } */
 
-var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+/* var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+
   qsRegex = new RegExp( $quicksearch.val(), 'gi' );
   console.log(qsRegex);
+
   $(".letter-row").each(function (index) {
     console.log("// ----- Lettre ----- //");
     console.log("Nombre de card cachés : ", $(this).children('.card:hidden').length);
@@ -100,8 +200,10 @@ var $quicksearch = $('.quicksearch').keyup( debounce( function() {
       $(this).removeClass("caché");
     }
   });
+
   $grid.isotope();
-}) );
+
+}) ); */
   
 // flatten object by concatting values
 function concatValues( obj ) {
