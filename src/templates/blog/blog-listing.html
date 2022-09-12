@@ -218,6 +218,11 @@
 
           </a>
           <div class="container-tags ml-1">
+            {% if group.language.languageTag != "en" %}
+            <span class="single-tag">populaire</span>
+            {% else %}
+            <span class="single-tag">popular</span>
+            {% endif %}
             {% for tag in post.tag_list %}
             <span class="single-tag">{{ tag.name }}</span>
             {% endfor %}
@@ -246,6 +251,13 @@
           </a>
           {% endif %}
           <div class="container-tags ml-1">
+            {% if loop.index == 1 && current_page_num == 1 %}
+            {% if group.language.languageTag != "en" %}
+            <span class="single-tag">dernier article</span>
+            {% else %}
+            <span class="single-tag">last article</span>
+            {% endif %}
+            {% endif %}
             {% for tag in content.tag_list %}
             {% if loop.index == 1 %}
             <a class="single-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>

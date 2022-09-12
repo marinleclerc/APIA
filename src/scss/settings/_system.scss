@@ -1,4 +1,5 @@
 .systems-page {
+
   &.container-404,
   &.container-500,
   &.password-prompt {
@@ -8,7 +9,9 @@
       margin-top: 0;
     }
   }
+
   &.password-prompt {
+
     input[type='password'],
     input[type='email'] {
       border-color: rgba(194, 201, 217, 0.5) !important;
@@ -23,6 +26,7 @@
       margin-bottom: 15px;
       max-width: 100%;
     }
+
     input[type='submit'] {
       color: #fff;
       background: #d20e43;
@@ -35,7 +39,9 @@
       margin: 0;
     }
   }
+
   &.backup {
+
     input[type='password'],
     input[type='email'] {
       border-color: rgba(194, 201, 217, 0.5) !important;
@@ -50,6 +56,7 @@
       margin-bottom: 15px;
       max-width: 100%;
     }
+
     input[type='submit'] {
       color: #fff;
       background: #d20e43;
@@ -63,29 +70,36 @@
       font-size: 16px;
     }
   }
+
   &.backup,
   &.subscriptions {
     h1 {
       margin-bottom: 15px;
     }
+
     h2 {
       margin-bottom: 15px;
     }
+
     #content {
       margin-top: 15px;
     }
   }
+
   &.subscriptions-preferences {
     .page-header {
       h1 {
         margin-bottom: 15px;
       }
+
       h2 {
         margin-top: 15px;
       }
     }
+
     #content {
       text-align: left;
+
       .item {
         width: 100% !important;
         color: #006fff;
@@ -94,16 +108,19 @@
         text-align: left;
         cursor: pointer;
         margin: 30px 0;
+
         .item-inner {
           padding: 18px 19px;
           transition: margin-top 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, -webkit-margin-top 0.3s ease;
           background: #fff;
           border: 1px solid rgba(29, 59, 116, 0.2);
           border-radius: 15px;
+
           &:hover {
             box-shadow: 0 0 1.25rem rgba(29, 59, 116, 0.2);
             transform: translateY(-5px);
           }
+
           span {
             color: #1d3b74;
             font-family: Oswald, sans-serif;
@@ -111,12 +128,14 @@
             font-size: 20px;
             line-height: 20px;
           }
+
           p {
             margin-bottom: 0;
           }
         }
       }
     }
+
     input[type='submit'] {
       display: block;
       color: #fff;
@@ -132,5 +151,106 @@
       margin: 0 auto;
       display: block;
     }
+  }
+}
+
+.hs-search-results {
+  float: none;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1140px;
+
+  .hs-search-results__pagination {
+    margin-top: 45px;
+    float: none;
+
+    a {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+      padding-bottom: 2px;
+      position: relative;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-size: 8px 14px;
+      background-repeat: no-repeat;
+
+
+      &:after {
+        background-image: linear-gradient(90deg, #c2c9d9 50%, transparent 0);
+        background-size: 18px 1px;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+
+  .hs-search-results__next-page {
+    background-position: 100% 50%;
+    padding-right: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14px' height='8px' viewBox='0 0 11 8' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' transform='rotate(270)'%3E%3Cg id='Homepage' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id=' Homepage---Mockup---V6.1' transform='translate(-891.000000, -903.000000)' fill='%23d20e43' fill-rule='nonzero'%3E%3Cg id='filters' transform='translate(165.000000, 772.000000)'%3E%3Cg id='form/select/filter-copy-2' transform='translate(522.000000, 107.000000)'%3E%3Cpath d='M206.041787,32.9124031 C205.994281,33.0448399 205.987104,33.188388 206.021162,33.3249031 C206.108026,33.5162584 206.289932,33.6471265 206.498975,33.6686531 C207.093662,33.7614656 207.6471,33.3764656 208.12835,33.0086531 C209.610434,31.9332811 211.011019,30.7498498 212.318662,29.4680281 C212.827412,28.9455281 213.349912,28.2511531 213.129912,27.5499031 C212.967905,27.1578517 212.697156,26.8203093 212.3496,26.5770906 C210.950537,25.3911531 209.537725,24.1983406 207.925537,23.3320906 C207.68156,23.1775202 207.411227,23.0691541 207.128037,23.0124031 C206.843701,22.9658143 206.55368,23.0519339 206.34085,23.2461531 C206.122905,23.4817415 206.038837,23.8115436 206.117412,24.1227156 C206.19951,24.4260632 206.337034,24.7115997 206.523037,24.9649031 C206.901189,25.5361321 207.310887,26.0858388 207.750225,26.6114656 C208.124912,27.0549031 208.894912,27.5945906 209.056475,28.1583406 C209.218037,28.7220906 208.654287,29.2411531 208.313975,29.6192781 C207.891162,30.0970906 207.444287,30.5749031 207.048975,31.0630281 C206.594991,31.6073192 206.252739,32.2357541 206.041787,32.9124031 Z' id='Path' transform='translate(209.590795, 28.341333) rotate(90.000000) translate(-209.590795, -28.341333) '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  }
+
+  .hs-search-results__prev-page {
+    background-position: 0% 50%;
+    padding-left: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_108_642)'%3E%3Cpath d='M7.20772 2.51973C7.25523 2.38729 7.26241 2.24374 7.22835 2.10723C7.14149 1.91587 6.95958 1.785 6.75054 1.76348C6.15585 1.67066 5.60241 2.05566 5.12116 2.42348C3.63907 3.49885 2.23849 4.68228 0.930851 5.9641C0.422101 6.4866 -0.100398 7.18098 0.119602 7.88223C0.281609 8.27428 0.552365 8.61182 0.899921 8.85504C2.29898 10.041 3.71179 11.2338 5.32398 12.1C5.56796 12.2546 5.83829 12.363 6.12148 12.4197C6.40582 12.4663 6.69583 12.3802 6.90866 12.186C7.12661 11.9504 7.21067 11.6206 7.1321 11.3094C7.05 11.0061 6.91248 10.7205 6.72647 10.4672C6.34832 9.896 5.93862 9.34629 5.49929 8.82066C5.1246 8.37723 4.35461 7.83754 4.19304 7.27379C4.03148 6.71004 4.59522 6.19098 4.93554 5.81285C5.35835 5.33504 5.80522 4.85723 6.20053 4.3691C6.65452 3.82481 6.99677 3.19637 7.20772 2.51973Z' fill='%23D20E43'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_108_642'%3E%3Crect width='14' height='8' fill='white' transform='translate(8) rotate(90)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  }
+}
+
+.hs-search-results__listing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  li {
+    padding: 15px !important;
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(194, 201, 217, 0.5);
+    box-shadow: 0 5px 5px 0 rgba(194, 201, 217, 0.3);
+    background-color: #fff;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    a {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      display: block;
+      text-decoration: none;
+      position: initial;
+
+      background-repeat: no-repeat;
+      background-image: linear-gradient(transparent 95%, #000 0);
+      background-size: 0 100%;
+      will-change: background-size;
+      transition: background-size 0.3s;
+      color: #1f2735;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 11;
+      }
+    }
+
   }
 }

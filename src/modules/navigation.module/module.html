@@ -58,17 +58,45 @@
                             <div class="container-right d-none d-md-flex pr-0 pr-lg-1 pr-xl-0">
                                 <div class="container-search-bar">
                                     <!-- Search form -->
-                                    <form action="/{{ site_settings.content_search_results_page_path }}" id="search-bar"
+                                    <!--                                     <form action="/{{ site_settings.content_search_results_page_path }}" id="search-bar"
                                         class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
                                         <div class="form-control-container d-flex">
                                             <label class="search-group mb-0" for="term">
                                                 <img src="https://www.apia-sa.com/hubfs/SVG/magnifying-glass.svg"
                                                     alt="magnifying glass">
                                             </label>
-                                            <input class="form-control form-control-sm" type="text" placeholder="{% if content.language.languageTag == 'en' || group.language.languageTag == 'en' %}Search{% else %}Rechercher{% endif
-                                                        %}" aria-label="Search" name="term" id="term">
+                                            <input type="hidden" name="type" value="BLOG_POST">
                                             <input type="hidden" name="type" value="SITE_PAGE">
+                                            <input class="form-control form-control-sm" type="text"
+                                                placeholder="Rechercher" aria-label="{{ module.field_label || " Search"
+                                                }}" name="term" autocomplete="off">
+
+
                                             <button type="submit" class="btn btn-search">
+                                                <div
+                                                    class="container-test d-flex align-items-center justify-content-center">
+                                                    <span class="text-white">{% if content.language.languageTag == 'en'
+                                                        || group.language.languageTag == 'en'
+                                                        %}Search{% else %}Rechercher{% endif
+                                                        %}</span>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </form> -->
+                                    <form id="search-bar" action="/{{ site_settings.content_search_results_page_path }}"
+                                        class="form-inline d-flex align-items-center md-form form-sm active-cyan-2">
+                                        <div class="form-control-container d-flex">
+                                            <label class="search-group mb-0" for="term">
+                                                <img src="https://www.apia-sa.com/hubfs/SVG/magnifying-glass.svg"
+                                                    alt="magnifying glass">
+                                            </label>
+                                            <input class="form-control form-control-sm" type="text"
+                                                placeholder="Rechercher" aria-label="Search" name="term" id="term"
+                                                data-dashlane-rid="6b976e71d3fd477e" data-form-type="">
+                                            <input type="hidden" name="type" value="BLOG_POST">
+                                            <input type="hidden" name="type" value="SITE_PAGE">
+
+                                            <button type="submit" class="btn btn-search" aria-label="search">
                                                 <div
                                                     class="container-test d-flex align-items-center justify-content-center">
                                                     <span class="text-white">{% if content.language.languageTag == 'en'
@@ -537,8 +565,6 @@
                                     </div>
                                 </div>
                             </li>
-
-
                         </ul>
                         </li>
                     </ul>

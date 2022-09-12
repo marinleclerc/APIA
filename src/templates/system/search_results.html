@@ -6,15 +6,9 @@
 {% extends "../layouts/base.html" %}
 
 {% block body %}
-<!-- <div class="content-wrapper">
-  <div class="systems-page">
-    <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
-    {% module "search_results" path="@hubspot/search_results" %}
-  </div>
-</div> -->
 
 <!-- module html  -->
-<div class="hs-search-results">
+<div class="hs-search-results-clean">
   <div class="header-blog-listing">
     <div class="section">
       <div class="container container__content">
@@ -22,45 +16,29 @@
           <div class="col-md-10 offset-md-1">
             <div class="container-header-listing bg-light-white bg_blur text-center p-2">
               <h3 class="title-semi-bold">Recherche</h3>
-              <h1 class="mt-0 hs-search-results__term">Vous recherchez : </h1>
+              <h1 class="mt-0 hs-search-results__term">Vous recherchez : {{ request.query_dict.term|escape }}</h1>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <template class="hs-search-results__template">
-    <div class="col-md-4 classic-post">
-      <div class="single-post search-result p-1 mb-2">
-        <!--                 <a class="feat-img m-0 hs-search-results__featured-image">
-                  <img class="img-fluid lazy w-100 loaded"
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-                      data-src="" alt="" />
-              </a> -->
-        <div class="single-post-info p-1">
-          <h2 class="my-1">
-            <a class="hs-search-results__title" href=""></a>
-          </h2>
-          <p class="hs-search-results__description"></p>
-        </div>
-      </div>
-    </div>
-  </template>
-  <div class="blog-listing">
+  <div class="blog-listing py-6">
     <div class="container">
-      <div class="row hs-search-results__listing py-4">
-        <!-- Here come the blog post -->
-      </div>
+      <!-- Here come the blog post -->
+
+      {% module "module_16624716628673" path="/search_results_custom", label="search_results_custom" %}
     </div>
   </div>
+  {#
   <!-- Pagination -->
   <div data-search-path="{{ request.full_url }}" class="blog-pagination mt-2 mb-4">
     <div class="container-fluid">
       <div class="container-pagination container__content--pagination d-flex justify-content-center align-items-center">
         <div class="d-flex justify-content-center align-items-center search-results-pagination">
           <a class="previous-button mr-2 blog-pagination__link blog-pagination__prev-link blog-pagination__prev-link--disabled"
-            href=""> <svg width="14px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            href="">
+            <svg width="14px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id=" Homepage---Mockup---V6.1" transform="translate(-891.000000, -903.000000)" fill="#d20e43"
@@ -100,6 +78,7 @@
       </div>
     </div>
   </div>
+  #}
 </div>
 
 <div id="{{module.module_identity}}"
