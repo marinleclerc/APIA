@@ -1,5 +1,4 @@
-<!-- module html  -->
-<div class="hs-search-results">
+{# <div class="hs-search-results">
     <div class="header-blog-listing">
         <div class="section">
             <div class="container container__content">
@@ -13,19 +12,14 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
     <template class="hs-search-results__template">
         <div class="col-md-4 classic-post">
             <div class="single-post search-result p-1 mb-2">
-                <!--                 <a class="feat-img m-0 hs-search-results__featured-image">
-                    <img class="img-fluid lazy w-100 loaded"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-                        data-src="" alt="" />
-                </a> -->
                 <div class="single-post-info p-1">
                     <h2 class="my-1">
-                        <a class="hs-search-results__title" href=""></a> 
+                        <a class="hs-search-results__title" href=""></a>
                     </h2>
                     <p class="hs-search-results__description"></p>
                 </div>
@@ -35,11 +29,9 @@
     <div class="blog-listing">
         <div class="container">
             <div class="row hs-search-results__listing py-4">
-                <!-- Here come the blog post -->
             </div>
         </div>
     </div>
-    <!-- Pagination -->
     <div data-search-path="{{ request.full_url }}" class="blog-pagination mt-2 mb-4">
         <div class="container-fluid">
             <div
@@ -102,7 +94,6 @@
 
 
 
-            <!-- Dev de la macro -->
             {%- macro render_link_item(link,depth,looop)-%}
             {%- if link != [] && link.label -%}
             {%- if link.children -%}
@@ -183,4 +174,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> #}
