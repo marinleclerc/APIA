@@ -26,6 +26,23 @@ function buildScss() {
     .pipe(dest(config.dest.scss));
 }
 
+function buildScssModules() {
+  const postcssPlugins = [
+    autoprefixer(),
+    postcssObjectFitImages(),
+    postcssPresetEnv({
+      stage: 0,
+    }),
+    cssnano(),
+  ];
+
+  return src('src/scss/modules/*.scss', { sourcemaps: true })
+    .pipe(plugins.sassGlobImport())
+    .pipe(plugins.sass())
+    .pipe(plugins.postcss(postcssPlugins))
+    .pipe(dest(config.dest.scss, { sourcemaps: true }));
+}
+
 function buildTheme() {
   return src(['src/fields.json', 'src/theme.json']).pipe(dest(config.dest.theme));
 }
@@ -47,14 +64,14 @@ function buildModuleFields(cb) {
   const jsonPath = path.join(__dirname, 'src', 'modules');
 
   //Try to read the directory...
-  fs.readdir(jsonPath, function(err, files) {
+  fs.readdir(jsonPath, function (err, files) {
     //If no directory found...
     if (err) {
       process.exit(1);
     }
 
     //Loop through all folders in the directory
-    files.forEach(function(file) {
+    files.forEach(function (file) {
       //Get path to /src/modules/{module}/fields/fields.js
       const fieldsFile = path.join(__dirname, 'src', 'modules', file, 'fields', 'fields.js');
 
@@ -80,11 +97,11 @@ function buildModuleFields(cb) {
 function buildMacros() {
   return src(config.src.macros).pipe(dest(config.dest.macros));
 }
-const Build = series(buildScss, buildMacros, buildTheme, addThemeCss, buildModules, buildTemplates);
+const Build = series(buildScss, buildMacros, buildTheme, addThemeCss, buildModules, buildScssModules, buildTemplates);
 
 
 const GenerateFields = series(buildModuleFields);
-const Watch = function() {
+const Watch = function () {
   watch(['src/modules/**/fields/fields.js'], GenerateFields);
   watch(['src/**/*.scss', 'src/**/*.html', 'src/**/*.js', '!src/modules/**/fields/fields.js'], Build);
 };

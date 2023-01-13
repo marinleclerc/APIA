@@ -1,6 +1,11 @@
-<div id="{{module.module_identity}}" class="section-glossaire-hero {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
+{% require_css %}
+{{ require_css(get_asset_url("../../css/glossaire-hero.css"), { async: true }) }}
+{% end_require_css %}
+<div id="{{module.module_identity}}"
+    class="section-glossaire-hero {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
 
-    <img src="{{ module.content_group.bg_img.src }}" class="fit-cover img-fluid" alt="{{ module.content_group.bg_img.alt }}">
+    <img loading="lazy" src="{{ module.content_group.bg_img.src }}" class="fit-cover img-fluid"
+        alt="{{ module.content_group.bg_img.alt }}">
 
     <div class="container">
         <div class="wrapper">

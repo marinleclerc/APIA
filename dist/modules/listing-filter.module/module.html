@@ -1,4 +1,7 @@
 {% if portal_id == '8191022' %}
+{% require_css %}
+{{ require_css(get_asset_url("../../css/listing-filter.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-listing-filter overflow-hidden {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container position-relative">
@@ -127,7 +130,7 @@
                     <div class="col-md-4">
                         <a href="{{ row['url']}}">
                             <figure class="mb-0">
-                                <img class="w-100 rounded-flex" src="{{ row['image'].url}}"
+                                <img class="w-100 rounded-flex" loading="lazy" src="{{ row['image'].url}}"
                                     alt="Image représentant une solution ou un produit proposé par APIA" />
                             </figure>
                         </a>
@@ -154,6 +157,6 @@
         </div>
     </div>
 </div>
-</div> 
+</div>
 
 {% endif %}

@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/blog-figcaption.css"), { async: true }) }}
+{% end_require_css %}
 {% if module.figcaption_text %}
 <figcaption>
     {{module.figcaption_text}}

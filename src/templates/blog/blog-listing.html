@@ -83,9 +83,8 @@
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
           <a class="feat-img m-0" href="{{ content.absolute_url }}">
-            <img class="img-fluid lazy rounded"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-              data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}">
+            <img class="img-fluid rounded" loading="lazy" src="{{ content.featured_image }}"
+              alt="{{ content.featured_image_alt_text }}">
           </a>
           {% endif %}
           <div class="container-tags ml-1">
@@ -107,9 +106,8 @@
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
           <a class="feat-img m-0" href="{{ content.absolute_url }}">
-            <img class="img-fluid lazy rounded"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-              data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}">
+            <img class="img-fluid rounded" loading="lazy" src="{{ content.featured_image }}"
+              alt="{{ content.featured_image_alt_text }}">
           </a>
           {% endif %}
           <div class="container-tags ml-1">
@@ -209,13 +207,8 @@
       <div class="col-md-8 last-post">
         <div class="single-post p-1 mb-2">
           <a class="feat-img m-0" href="{{ post.absolute_url }}">
-
-
-            <img class="img-fluid lazy rounded"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ post.featured_image.width }} {{ post.featured_image.height }}'%3E%3C/svg%3E"
-              data-src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}">
-
-
+            <img class="img-fluid rounded" loading="lazy" src="{{ post.featured_image }}"
+              alt="{{ post.featured_image_alt_text }}">
           </a>
           <div class="container-tags ml-1">
             {% if group.language.languageTag != "en" %}
@@ -245,9 +238,8 @@
         <div class="single-post p-1 mb-2">
           {% if content.featured_image %}
           <a class="feat-img m-0" href="{{ content.absolute_url }}">
-            <img class="img-fluid lazy rounded"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-              data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}">
+            <img class="img-fluid rounded" loading="lazy" src="{{ content.featured_image }}"
+              alt="{{ content.featured_image_alt_text }}">
           </a>
           {% endif %}
           <div class="container-tags ml-1">

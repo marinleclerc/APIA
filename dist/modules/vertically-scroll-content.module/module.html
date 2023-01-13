@@ -1,10 +1,13 @@
 {% set url = request.query %}
+{% require_css %}
+{{ require_css(get_asset_url("../../css/vertically-scroll-content.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-vertically-scroll-content {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container target_scroll">
         <div class="row container__content position-relative">
             <div id="fixed_el" class="col-md-6 container__content--intro mb-2 mb-md-0">
-                <div class="inner_fixed_el"> 
+                <div class="inner_fixed_el">
                     {% if module.content_group.subtitle %}
                     <span class="subtitle">{{module.content_group.subtitle}}</span>
                     {% endif %}
@@ -16,23 +19,16 @@
                     {% endif %}
                     <div class="container-pictos d-flex align-items-center flex-wrap mt-2">
 
-                        <img class="img-fluid lazy rounded loaded"
-                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_4.png"
-                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_4.png" alt="picto_4"
-                            data-ll-status="loaded">
-                        <img class="img-fluid lazy rounded loaded"
-                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_3.png"
-                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_3.png" alt="picto_3"
-                            data-ll-status="loaded">
+                        <img loading="lazy" class="img-fluid rounded loaded"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_4.png" alt="picto_4">
+                        <img class="img-fluid rounded" loading="lazy"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_3.png" alt="picto_3">
 
-                        <img class="img-fluid lazy rounded loaded"
-                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_2.png"
-                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_2.png" alt="picto_2"
-                            data-ll-status="loaded">
-                        <img class="img-fluid lazy rounded loaded"
-                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_1.png"
-                            data-src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_1.png" alt="picto_1"
-                            data-ll-status="loaded">
+                        <img class="img-fluid rounded"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_2.png" loading="lazy"
+                            alt="picto_2">
+                        <img class="img-fluid rounded" loading="lazy"
+                            src="https://f.hubspotusercontent20.net/hubfs/8191022/pictos/picto_1.png" alt="picto_1">
 
                     </div>
                 </div>
@@ -42,15 +38,14 @@
                 <div class="list-unit">
                     {% if item.image.src %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
-                            data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                        <img loading="lazy" class="img-fluid rounded" src="{{ item.image.src }}"
+                            width="{{ item.image.width }}" height="{{ item.image.height }}"
+                            alt="{{ item.image.alt }}" />
                     </figure>
                     {% else %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/65x65/1d3b74/ffffff.png?text=image">
+                        <img class="img-fluid rounded" loading="lazy" width="65" height="65"
+                            src="https://via.placeholder.com/65x65/1d3b74/ffffff.png?text=image">
                     </figure>
                     {% endif %}
                     {% inline_rich_text field="rich_text" value="{{ item.text_content }}" %}

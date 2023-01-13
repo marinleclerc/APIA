@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/footer.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-footer {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
@@ -5,9 +8,9 @@
             <div class="col-12">
                 <a class="navbar-brand p-0" href="{{module.content_group.logo_link.href}}">
                     {% if module.content_group.logo.src %}
-                    <img class="logo-footer lazy"
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.logo.width }} {{ module.content_group.logo.height }}'%3E%3C/svg%3E"
-                        data-src="{{ module.content_group.logo.src }}" alt="{{ module.content_group.logo.alt }}" />
+                    <img class="logo-footer" loading="lazy" src="{{ module.content_group.logo.src }}"
+                        width="{{module.content_group.logo.width}}" height="{{module.content_group.logo.height}}"
+                        alt="{{ module.content_group.logo.alt }}" />
                     {% endif %}
                 </a>
             </div>

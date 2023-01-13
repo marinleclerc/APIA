@@ -5,21 +5,11 @@
  */
 import 'bootstrap';
 import 'jquery.toc';
-import AOS from 'aos';
 
-var Isotope = require('isotope-layout');
-var InfiniteScroll = require('infinite-scroll');
 var Sticky = require('sticky-js');
 var Isotope = require('isotope-layout');
 
 var sticky = new Sticky('.sticky');
-
-import LazyLoad from 'vanilla-lazyload';
-const lazyLoadInstance = new LazyLoad({
-  elements_selector: '.lazy',
-});
-
-AOS.init();
 
 $('.menu-button').click(function () {
   $('body').toggleClass('no-scroll');

@@ -23,15 +23,16 @@
   }
   &::before {
     content: '';
-    background-image: url('https://f.hubspotusercontent00.net/hubfs/2659857/APIA/svg/arrow_apia.png');
-    background-size: 8px 8px;
+    mask-image: url("data:image/svg+xml,%3Csvg width='11' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.02.792a.712.712 0 0 0-.413-.02.591.591 0 0 0-.344.478c-.092.594.293 1.148.66 1.629a37.166 37.166 0 0 0 3.541 4.19c.523.509 1.217 1.031 1.918.811.392-.162.73-.432.973-.78C8.541 5.701 9.734 4.288 10.6 2.676c.155-.244.263-.514.32-.797a.942.942 0 0 0-.234-.788.949.949 0 0 0-.877-.223c-.303.082-.588.22-.842.406-.571.378-1.12.787-1.646 1.227-.444.374-.983 1.144-1.547 1.306-.564.162-1.083-.402-1.461-.742-.478-.423-.956-.87-1.444-1.265A5.393 5.393 0 0 0 1.02.792z' fill='%231F2735' fill-rule='nonzero'/%3E%3C/svg%3E");    mask-size: 8px 8px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: $primary-red;
     height: 8px;
-    width: 8px;
+    width: 11px;
     display: inline-block;
     margin-right: 8px;
     transform: rotate(270deg);
     margin-bottom: 2px;
-    display: none;
   }
   &::after {
     content: '';

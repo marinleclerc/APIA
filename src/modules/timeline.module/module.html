@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/timeline.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-timeline {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="text-center">
@@ -15,15 +18,14 @@
                 <div class="timeline--unit">
                     {% if item.image.src %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ item.image.width }} {{ item.image.height }}'%3E%3C/svg%3E"
-                            data-src="{{ item.image.src }}" alt="{{ item.image.alt }}" />
+                        <img class="img-fluid rounded" loading="lazy" src="{{ item.image.src }}"
+                            width="{{ item.image.width }}" height="{{ item.image.height }}"
+                            alt="{{ item.image.alt }}" />
                     </figure>
                     {% else %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/60x60/1d3b74/ffffff.png?text=60x60">
+                        <img class="img-fluid rounded" loading="lazy" width="60" height="60"
+                            src="https://via.placeholder.com/60x60/1d3b74/ffffff.png?text=60x60">
                     </figure>
                     {% endif %}
                     <div class="timeline--unit--intro">

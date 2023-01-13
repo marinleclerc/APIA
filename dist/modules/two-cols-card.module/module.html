@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/two-cols-card.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-two-cols-card {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container-lg">
@@ -12,16 +15,16 @@
                 <div class="single-card pr-md-3 mb-2">
                     {% if module.content_group.card_group_one.image.src %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded-sm"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                            data-src="{{ module.content_group.card_group_one.image.src }}"
+                        <img class="img-fluid rounded-sm" loading="lazy"
+                            width="{{ module.content_group.card_group_one.image.width }}"
+                            height="{{ module.content_group.card_group_one.image.height }}"
+                            src="{{ module.content_group.card_group_one.image.src }}"
                             alt="{{ module.content_group.card_group_one.image.alt }}" />
                     </figure>
                     {% else %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded-sm"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/615x250/1d3b74/ffffff.png?text=image">
+                        <img class="img-fluid rounded-sm" loading="lazy" width="615" height="250"
+                            src="https://via.placeholder.com/615x250/1d3b74/ffffff.png?text=image">
                     </figure>
                     {% endif %}
                     <h3 class="my-1 mb-0">{{module.content_group.card_group_one.title}}</h3>
@@ -37,16 +40,16 @@
                 <div class="single-card pl-md-3 mb-2 mb-md-0">
                     {% if module.content_group.card_group_scd.image.src %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded-sm"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                            data-src="{{ module.content_group.card_group_scd.image.src }}"
+                        <img class="img-fluid rounded-sm" loading="lazy"
+                            width="{{ module.content_group.card_group_scd.image.width }}"
+                            height="{{ module.content_group.card_group_scd.image.height }}"
+                            src="{{ module.content_group.card_group_scd.image.src }}"
                             alt="{{ module.content_group.card_group_scd.image.alt }}" />
                     </figure>
                     {% else %}
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded-sm"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                            data-src="https://via.placeholder.com/615x250/1d3b74/ffffff.png?text=image">
+                        <img loading="lazy" class="img-fluid rounded-sm" width="615" height="250"
+                            src="https://via.placeholder.com/615x250/1d3b74/ffffff.png?text=image">
                     </figure>
                     {% endif %}
                     <h3 class="my-1 mb-0">{{module.content_group.card_group_scd.title}}</h3>

@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/content-img-two-cols-text.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-content-img-txt-cols {{module.content_style.background_type}} {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container-{{module.content_style.container_type}}">
@@ -13,10 +16,9 @@
                 {% if module.content_group.image.src %}
                 <div class="container__content--img mb-2">
                     <figure class="figure mb-0">
-                        <img class="img-fluid lazy rounded-sm"
-                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                            data-src="{{ module.content_group.image.src }}"
-                            alt="{{ module.content_group.image.alt }}" />
+                        <img class="img-fluid rounded-sm" loading="lazy" src="{{ module.content_group.image.src }}"
+                            width="{{ module.content_group.image.width }}"
+                            height="{{module.content_group.image.height}}" alt="{{ module.content_group.image.alt }}" />
                     </figure>
                 </div>
                 {% endif %}

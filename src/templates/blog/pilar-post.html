@@ -17,9 +17,8 @@
           </div>
           <div class="container-featured-img">
             <figure class="m-0">
-              <img class="img-fluid lazy"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-                data-src="{{ content.featured_image }}" alt="{{ content.featured_image_alt_text }}" />
+              <img class="img-fluid" loading="lazy" src="{{ content.featured_image }}"
+                alt="{{ content.featured_image_alt_text }}" />
               {% module "module_16153038156342" path="/APIA/modules/blog-figcaption", label="blog-figcaption",
               no_wrapper=true %}
             </figure>
@@ -86,9 +85,8 @@
 
         {% if blog_post.featured_image %}
         <a class="feat-img" href="{{ blog_post.absolute_url }}">
-          <img class="rounded w-100 lazy"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 240'%3E%3C/svg%3E"
-            data-src="{{ blog_post.featured_image }}" alt="{{ content.featured_image_alt_text }}" />
+          <img class="rounded w-100" loading="lazy" src="{{ blog_post.featured_image }}"
+            alt="{{ content.featured_image_alt_text }}" />
         </a>
         {% endif %}
         <div class="container-tags ml-1">

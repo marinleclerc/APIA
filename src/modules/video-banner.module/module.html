@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/video-banner.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="video-modal {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="video-play-icon" data-toggle="modal" data-target="#video-modal"
@@ -23,9 +26,9 @@
                 </defs>
             </svg>
 
-            <img class="img-fluid lazy rounded"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{module.content_group.image_field.width}} {{module.content_group.image_field.height}}'%3E%3C/svg%3E"
-                data-src="{{module.content_group.image_field.src}}" alt="{{module.content_group.image_field.alt}}">
+            <img class="img-fluid rounded" loading="lazy" src="{{module.content_group.image_field.src}}"
+                width="{{module.content_group.image_field.width}}" height="{{module.content_group.image_field.height}}"
+                alt="{{module.content_group.image_field.alt}}">
         </figure>
     </div>
 

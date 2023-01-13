@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/audit.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-audit {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container">
@@ -17,16 +20,15 @@
                     <div class="container__content--img d-none d-md-block">
                         {% if module.content_group.image.src %}
                         <figure class="figure">
-                            <img class="img-fluid lazy"
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
-                                data-src="{{ module.content_group.image.src }}"
+                            <img class="img-fluid" loading="lazy" src="{{ module.content_group.image.src }}"
+                                width="{{ module.content_group.image.width }}"
+                                height="{{ module.content_group.image.height }}"
                                 alt="{{ module.content_group.image.alt }}" />
                         </figure>
                         {% else %}
                         <figure class="figure">
-                            <img class="img-fluid lazy"
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                                data-src="https://via.placeholder.com/600x600/919388/ffffff.png?text=image">
+                            <img class="img-fluid" loading="lazy" width="600" height="600"
+                                src="https://via.placeholder.com/600x600/919388/ffffff.png?text=image">
                         </figure>
                         {% endif %}
                     </div>

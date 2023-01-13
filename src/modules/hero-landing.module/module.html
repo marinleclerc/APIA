@@ -1,18 +1,21 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/hero-landing.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-hero-landing {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="global-intro pt-4 pb-8">
         <div class="container__bg">
             {% if module.content_group.image.src %}
             <figure class="figure h-100">
-                <img class="img-fluid lazy"
+                <img class="img-fluid" loading="lazy" width="{{module.content_group.image.width}}"
+                    height="{{module.content_group.image.height}}"
                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ module.content_group.image.width }} {{ module.content_group.image.height }}'%3E%3C/svg%3E"
                     data-src="{{ module.content_group.image.src }}" alt="{{ module.content_group.image.alt }}" />
             </figure>
             {% else %}
             <figure class="figure h-100">
-                <img class="img-fluid lazy"
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 640'%3E%3C/svg%3E"
-                    data-src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
+                <img loading="lazy" class="img-fluid" width="600" height="600"
+                    src="https://via.placeholder.com/600x600/919388/ffffff.png?text=600x600">
             </figure>
             {% endif %}
         </div>

@@ -1,3 +1,6 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/form.css"), { async: true }) }}
+{% end_require_css %}
 <div id="{{module.module_identity}}"
     class="global-form-module {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container position-relative">
@@ -12,12 +15,12 @@
                 <div class="container__form py-2 px-1 px-md-4 rounded-sm">
                     <h3 class="text-center mt-0">{{module.content_group.form_title}}</h3>
                     {% form
-                        form_to_use="{{module.content_group.form_id}}"
-                        response_response_type="{{ module.content_group.response_type }}"
-                        response_message="{{ module.content_group.message }}"
-                        response_redirect_id="{{ module.content_group.redirect_id }}"
-                        response_redirect_url="{{ module.content_group.redirect_url}}"
-                        gotowebinar_webinar_key="{{ module.content_group.gotowebinar_webinar_key }}"
+                    form_to_use="{{module.content_group.form_id}}"
+                    response_response_type="{{ module.content_group.response_type }}"
+                    response_message="{{ module.content_group.message }}"
+                    response_redirect_id="{{ module.content_group.redirect_id }}"
+                    response_redirect_url="{{ module.content_group.redirect_url}}"
+                    gotowebinar_webinar_key="{{ module.content_group.gotowebinar_webinar_key }}"
                     %}
                 </div>
             </div>

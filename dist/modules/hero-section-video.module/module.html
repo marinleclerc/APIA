@@ -1,3 +1,9 @@
+{% require_css %}
+{{ require_css(get_asset_url("../../css/hero-section-video.css"), { async: true }) }}
+{% end_require_css %}
+
+
+
 <div id="{{module.module_identity}}"
     class="global-hero-video-section {% if module.content_style.section_type != 'none' %} section-{{module.content_style.section_type}} {% endif %}{% if module.content_style.padding_bottom == false %} pb-0 {% endif %}{% if module.content_style.padding_top == false %} pt-0 {% endif %}">
     <div class="container-lg">
@@ -15,12 +21,45 @@
             <div class="container__hero--img d-none d-md-block">
                 <div id="section_module_1536743783061160" class="hero">
                     <div class="hero-background">
-                        <video autoplay="" loop="" muted="" preload="none" poster="{{module.content_group.image.src}}">
-                            <source src="{{module.content_group.url_video}}" type="video/mp4">
+                        <video autoplay="false" muted loop playsinline width="100%" height="auto"
+                            data-poster="{{module.content_group.image.src}}" class="lazy">
+                            <source data-src="{{module.content_group.url_video}}" type="video/mp4">
                         </video>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> 
+</div>
+
+{% require_js %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+        if ("IntersectionObserver" in window) {
+            var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (video) {
+                    if (video.isIntersecting) {
+                        for (var source in video.target.children) {
+                            var videoSource = video.target.children[source];
+                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                videoSource.src = videoSource.dataset.src;
+                            }
+                        }
+
+                        video.target.load();
+                        video.target.classList.remove("lazy");
+                        lazyVideoObserver.unobserve(video.target);
+                    }
+                });
+            });
+
+            lazyVideos.forEach(function (lazyVideo) {
+                lazyVideoObserver.observe(lazyVideo);
+            });
+        }
+    });
+</script>
+{% end_require_js %}

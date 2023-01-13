@@ -14,27 +14,14 @@ figure,
         }
     }
 }
-img.lazy {
-    display: inline;
-    border: 0;
-    opacity: 0;
-}
 img:not(.initial) {
     transition-property: opacity;
     transition-duration: .3s;
     transition-timing-function: linear;
 }
-img.initial,
-img.loaded,
-img.error {
-    opacity: 1;
-}
-
 img:not([src]) {
     visibility: hidden;
 }
-
-
 img.fit-cover{
     position: absolute;
     width: 100%;
