@@ -1,7 +1,7 @@
 <!--
   templateType: blog
   isAvailableForNewContent: true
-  label: APIA Blog Listing
+  label: APIA - Case Studies
 -->
 {% require_css %}
 {{ require_css(get_asset_url("../../css/newsletter.css"), { async: true }) }}
@@ -156,19 +156,8 @@
 <div class="blog-listing">
   {# {% for content in contents %}
   {% if (loop.first && current_page_num == 1) && !blog_author %} #}
-  <div class="categories-menu text-center">
-    <div class="container">
-      <div class="col-12 menu-wrapper my-4">
-        {% if group.language.languageTag == "en" %}
-        {% menu "cat_menu" id="43426872323", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
-        flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
-        {% else %}
-        {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
-        flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
+
+
   {# {% endif %}
   {% endfor %} #}
 

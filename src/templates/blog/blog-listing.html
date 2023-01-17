@@ -3,6 +3,9 @@
   isAvailableForNewContent: true
   label: APIA Blog Listing
 -->
+{% require_css %}
+{{ require_css(get_asset_url("../../css/newsletter.css"), { async: true }) }}
+{% end_require_css %}
 {% extends "../layouts/base-blog.html" %}
 {% block body %}
 

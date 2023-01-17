@@ -506,6 +506,7 @@
                                                 </label>
                                                 <input class="form-control form-control-sm" type="text" placeholder="{% if content.language.languageTag == 'en' || group.language.languageTag == 'en' %}Search{% else %}Rechercher{% endif
                                                         %}" aria-label="Search" name="term" id="term">
+                                                <input type="hidden" name="type" value="BLOG_POST">
                                                 <input type="hidden" name="type" value="SITE_PAGE">
                                                 <button type="submit" class="btn btn-search">
                                                     <div
