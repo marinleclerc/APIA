@@ -37,10 +37,10 @@
     <div class="container">
       <div class="col-12 menu-wrapper my-4">
         {% if group.language.languageTag == "en" %}
-        {% menu "cat_menu" id="43426872323", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
+        {% menu "cat_menu" id="99023666481", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
         flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
         {% else %}
-        {% menu "cat_menu" id="36003382784", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
+        {% menu "cat_menu" id="99022528799", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
         flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
         {% endif %}
       </div>
@@ -154,13 +154,19 @@
   </div>
 </div>
 <div class="blog-listing">
-  {# {% for content in contents %}
-  {% if (loop.first && current_page_num == 1) && !blog_author %} #}
-
-
-  {# {% endif %}
-  {% endfor %} #}
-
+  <div class="categories-menu text-center">
+    <div class="container">
+      <div class="col-12 menu-wrapper my-4">
+        {% if group.language.languageTag == "en" %}
+        {% menu "cat_menu" id="99023666481", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
+        flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+        {% else %}
+        {% menu "cat_menu" id="99022528799", site_map_name="APIA Blog", overrideable=False, root_type="site_root",
+        flyouts="false", max_levels="1", flow="horizontal", label="Blog Categories Menu" %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
   <div class="container position-relative">
     <div class="container_shape position-absolute bg-drowdown-first">
       <svg width="950px" height="485px" viewBox="0 0 950 485" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -193,37 +199,6 @@
       </svg>
     </div>
     <div class="row">
-      {% if group.language.languageTag != "en" %}
-      {% set blog_posts = blog_recent_posts('71971165881', limit=1) %}
-      {% for post in blog_posts %}
-      <div class="col-md-8 last-post">
-        <div class="single-post p-1 mb-2">
-          <a class="feat-img m-0" href="{{ post.absolute_url }}">
-            <img class="img-fluid rounded" loading="lazy" src="{{ post.featured_image }}"
-              alt="{{ post.featured_image_alt_text }}">
-          </a>
-          <div class="container-tags ml-1">
-            {% if group.language.languageTag != "en" %}
-            <span class="single-tag">populaire</span>
-            {% else %}
-            <span class="single-tag">popular</span>
-            {% endif %}
-            {% for tag in post.tag_list %}
-            <span class="single-tag">{{ tag.name }}</span>
-            {% endfor %}
-          </div>
-
-          <div class="single-post-info p-1">
-            <h3><a class="post-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
-            <p>
-              {{post.post_list_content|striptags|truncatehtml(85)}}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      {% endif %}
-
-
       {% for content in contents %}
       <div
         class="{% if group.language.languageTag == 'en' %}{% if loop.index == 1 || loop.index == 6%}col-md-8 last-post{% else %}col-md-4 classic-post{% endif %}{% else %}col-md-4 classic-post{% endif %}">

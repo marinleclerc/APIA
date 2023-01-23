@@ -21,13 +21,12 @@
                         <div class="carousel-cell">
                             {% if item.image.src %}
                             <figure class="figure {% if item.portrait == true %} full-h {% endif %}">
-                                <img class="img-fluid rounded" loading="lazy" src="{{ item.image.src }}"
-                                    width="{{ item.image.width }}" height="{{ item.image.height }}"
-                                    alt="{{ item.image.alt }}" />
+                                <img class="img-fluid rounded" src="{{ item.image.src }}" width="{{ item.image.width }}"
+                                    height="{{ item.image.height }}" alt="{{ item.image.alt }}" />
                             </figure>
                             {% else %}
                             <figure class="figure {% if item.portrait == true %} full-h {% endif %}">
-                                <img class="img-fluid rounded" loading="lazy" width="445" height="445"
+                                <img class="img-fluid rounded" width="445" height="445"
                                     src="https://via.placeholder.com/445x445/919388/ffffff.png?text=image">
                             </figure>
                             {% endif %}
@@ -39,13 +38,13 @@
                         <div class="carousel-cell">
                             {% if item.image.src %}
                             <figure class="figure">
-                                <img class="img-fluid rounded" loading="lazy" width="{{ item.image.width }}"
+                                <img class="img-fluid rounded" width="{{ item.image.width }}"
                                     height="{{ item.image.width }}" src="{{ item.image.src }}"
                                     alt="{{ item.image.alt }}" />
                             </figure>
                             {% else %}
                             <figure class="figure">
-                                <img class="img-fluid rounded" loading="lazy" width="445" height="445"
+                                <img class="img-fluid rounded" width="445" height="445"
                                     src="https://via.placeholder.com/445x445/919388/ffffff.png?text=image">
                             </figure>
                             {% endif %}

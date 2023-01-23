@@ -2,6 +2,17 @@
 @import '../settings/fonts';
 
 .global-hero-landing {
+
+  @media screen and (max-width: 767px) {
+    .row {
+      flex-direction: column-reverse;
+      .container__form {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  
   .global-intro {
     position: relative;
     .container__bg {

@@ -72,6 +72,7 @@
       margin-bottom: 40px;
       border: 0px;
       outline: 0px;
+      position: relative;
       button {
         background-color: transparent;
         border: 0;
@@ -110,7 +111,6 @@
           width: 40%;
           margin: 0 auto;
           height: calc(100vw * 0.4 * 0.5625);
-          top: 50%;
           transform: translateY(-50%);
           &.full-h {
             width: calc(100vh * 0.8 * 0.5625);
@@ -125,10 +125,12 @@
           @media screen and (min-width: 576px) and (max-width: 1200px) {
             width: 64%;
             height: 42vw;
+            top: auto;
           }
           @media screen and (max-width: 576px) {
             width: 80%;
             height: 50vw;
+            top: auto;
             &.full-h {
               width: 80%;
             }
