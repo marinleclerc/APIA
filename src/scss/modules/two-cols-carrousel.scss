@@ -1,35 +1,44 @@
 @import '../settings/colors';
 @import '../settings/fonts';
+
 .global-two-cols-carrousel {
   br {
     display: none;
   }
-  li + li {
+
+  li+li {
     margin-top: 15px;
   }
+
   &.scrolled-fixed {
     margin-top: 86px;
   }
+
   .carousel-nav {
     .flickity-prev-next-button {
       background-position: center;
       background-repeat: no-repeat;
       background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/SVG/down-arrow.svg');
       cursor: pointer;
+
       &:hover {
         background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/SVG/down-arrow_red.svg');
       }
+
       &.previous {
         transform: translateY(-50%) rotate(270deg) scaleY(-1) !important;
       }
+
       &.next {
         transform: translateY(-50%) rotate(270deg) !important;
       }
+
       svg {
         display: none;
       }
     }
   }
+
   .carousel-main {
     .flickity-prev-next-button {
       width: 20px;
@@ -39,23 +48,28 @@
       background-position: center;
       background-repeat: no-repeat;
       background-image: url('https://f.hubspotusercontent20.net/hubfs/8191022/SVG/down-arrow-white.svg');
+
       &.previous {
         transform: translate(-50%, -50%) rotate(270deg) scaleY(-1) !important;
       }
+
       &.next {
         transform: translate(-50%, -50%) rotate(270deg) !important;
       }
+
       svg {
         display: none;
       }
     }
   }
+
   figure {
     position: relative;
     width: 100%;
     height: 100%;
     border: 0px;
     outline: 0px;
+
     img {
       height: 100%;
       width: 100%;
@@ -66,6 +80,7 @@
       outline: 0px;
     }
   }
+
   .container-carousel {
     .carousel {
       background: #fafafa;
@@ -73,9 +88,11 @@
       border: 0px;
       outline: 0px;
       position: relative;
+
       button {
         background-color: transparent;
         border: 0;
+
         &.flickity-fullscreen-button-view {
           position: absolute;
           bottom: 8px;
@@ -89,9 +106,11 @@
           border-radius: 5px;
           height: 40px;
           transition: all 0.2s;
+
           svg {
             display: none;
           }
+
           &:hover {
             background-color: rgba(255, 255, 255, 1);
           }
@@ -103,44 +122,54 @@
       button {
         width: 40px;
       }
+
       &.is-fullscreen {
         border: 0px;
         outline: 0px;
+
         figure {
           display: inherit;
           width: 40%;
           margin: 0 auto;
           height: calc(100vw * 0.4 * 0.5625);
           transform: translateY(-50%);
+          top: 50%;
+
           &.full-h {
             width: calc(100vh * 0.8 * 0.5625);
             height: 62%;
           }
+
           @media screen and (min-height: 1000px) and (max-width: 1400px) {
             @media screen and (min-width: 1000px) and (max-width: 1400px) {
               width: 60%;
               height: 37.5vw;
             }
           }
+
           @media screen and (min-width: 576px) and (max-width: 1200px) {
             width: 64%;
             height: 42vw;
-            top: auto;
+            //top: auto;
           }
+
           @media screen and (max-width: 576px) {
             width: 80%;
             height: 50vw;
-            top: auto;
+            //top: auto;
+
             &.full-h {
               width: 80%;
             }
           }
         }
+
         .carousel-cell {
           height: 100%;
           width: 100%;
           border: 0px;
           outline: 0px;
+
           img {
             /* max-width: 700px; */
             position: absolute;
@@ -151,15 +180,19 @@
           }
         }
       }
+
       .flickity-prev-next-button,
       .flickity-fullscreen-button-exit {
         display: none;
       }
+
       &.is-fullscreen {
+
         .flickity-prev-next-button,
         .flickity-fullscreen-button-exit {
           width: 32px;
           display: inherit;
+
           svg {
             path {
               fill: white;
@@ -178,20 +211,24 @@
     /* is-nav-selected class added to nav cells */
     .carousel-nav {
       outline: none;
+
       .flickity-viewport {
         outline: none;
         cursor: grab;
       }
+
       .carousel-cell {
         width: 31% !important;
         margin-right: 0 !important;
         height: 138px !important;
         opacity: 0.5;
         margin-left: 3.5% !important;
+
         &.is-selected {
           opacity: 1;
         }
       }
+
       .flickity-prev-next-button {
         position: absolute;
         top: 50%;
@@ -200,9 +237,11 @@
         height: 20px;
         padding: 0;
         background-size: contain;
+
         &.previous {
           left: -30px;
         }
+
         &.next {
           right: -30px;
         }
@@ -226,37 +265,46 @@
       background: hsla(0, 0%, 0%, 0.9);
       padding-bottom: 35px;
       z-index: 200;
+
       .flickity-slider {
         position: absolute;
         width: 100%;
         height: 100%;
       }
+
       .carousel-cell {
         top: 50%;
         transform: translate(0%, -50%);
       }
+
       .carousel-cell.is-selected {
         top: 50%;
         transform: translate(0%, -50%);
       }
+
       .flickity-prev-next-button {
         position: absolute;
         transform: translate(-50%, -50%);
         z-index: 3000;
         top: 85%;
+
         svg path {
           fill: white;
         }
+
         &.next {
           left: calc(50% + 100px);
         }
+
         &.previous {
           left: calc(50% - 100px);
         }
       }
+
       .flickity-fullscreen-button-view {
         display: none;
       }
+
       .flickity-fullscreen-button-exit {
         position: absolute;
         transform: translate(-50%, -50%);
@@ -287,17 +335,21 @@
       line-height: 80px;
     }
   }
+
   h1 {
     margin-top: 0;
   }
+
   .container-text {
     ul {
       list-style-type: none;
       padding-left: 0;
+
       li {
         padding-left: 15px;
         position: relative;
         line-height: 30px;
+
         &::before {
           content: '-';
           color: $primary-yellow;

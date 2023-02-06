@@ -21,8 +21,9 @@
                         <div class="carousel-cell">
                             {% if item.image.src %}
                             <figure class="figure {% if item.portrait == true %} full-h {% endif %}">
-                                <img class="img-fluid rounded" src="{{ item.image.src }}" width="{{ item.image.width }}"
-                                    height="{{ item.image.height }}" alt="{{ item.image.alt }}" />
+                                <img loading="lazy" class="img-fluid rounded" src="{{ item.image.src }}"
+                                    width="{{ item.image.width }}" height="{{ item.image.height }}"
+                                    alt="{{ item.image.alt }}" />
                             </figure>
                             {% else %}
                             <figure class="figure {% if item.portrait == true %} full-h {% endif %}">
@@ -38,7 +39,7 @@
                         <div class="carousel-cell">
                             {% if item.image.src %}
                             <figure class="figure">
-                                <img class="img-fluid rounded" width="{{ item.image.width }}"
+                                <img loading="lazy" class="img-fluid rounded" width="{{ item.image.width }}"
                                     height="{{ item.image.width }}" src="{{ item.image.src }}"
                                     alt="{{ item.image.alt }}" />
                             </figure>

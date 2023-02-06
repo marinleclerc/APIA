@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
   .container-header-listing {
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(194, 201, 217, 0.25);
@@ -14,14 +15,33 @@
 .blog-listing {
   overflow: hidden;
 
+  @media screen and (max-width: 767px) {
+    .menu-wrapper {
+      padding: 0;
+
+      ul.active-branch {
+        justify-content: flex-start;
+        padding: 0;
+
+        li {
+          margin: 15px 15px 0 0;
+        }
+      }
+    }
+  }
+
   .categories-menu {
     ul {
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       margin: 0;
+
       li {
         text-align: center;
+        margin-top: 15px;
+
         a {
           font-weight: 700;
           text-decoration: none;
@@ -36,17 +56,20 @@
           font-size: 12px;
           text-transform: uppercase;
           transition: all 0.3s ease;
+
           &:hover {
             background-color: $primary-red;
             color: $white;
           }
         }
       }
-      li + li {
-        margin: 0 0 0 15px;
+
+      li+li {
+        margin: 15px 0 0 15px;
       }
     }
   }
+
   .last-post {
     a.feat-img {
       position: relative;
@@ -55,6 +78,7 @@
       margin-bottom: 15px;
       border-radius: 5px;
       overflow: hidden;
+
       img {
         object-fit: cover;
         position: absolute;
@@ -68,6 +92,7 @@
       }
     }
   }
+
   .classic-post {
     a.feat-img {
       position: relative;
@@ -75,6 +100,7 @@
       height: 200px;
       border-radius: 5px;
       overflow: hidden;
+
       img {
         object-fit: cover;
         position: absolute;
@@ -88,6 +114,7 @@
       }
     }
   }
+
   .single-post {
     position: relative;
     border-radius: 5px;
@@ -96,6 +123,7 @@
     background-color: white;
     transition: all 0.3s ease;
     cursor: pointer;
+
     h2 a {
       text-decoration: none;
       background-repeat: no-repeat;
@@ -105,22 +133,28 @@
       transition: background-size 0.3s;
       color: #1f2735;
     }
+
     &.search-result {
       height: 275px;
     }
+
     &:hover {
       box-shadow: none;
+
       img {
         transform: scale(0.97);
       }
+
       h2 a {
         background-size: 100% 100%;
       }
     }
+
     .container-tags {
       z-index: 10;
       position: relative;
       margin-top: -17px;
+
       .single-tag {
         background-color: $primary-red;
         padding: 5px;
@@ -134,10 +168,12 @@
         z-index: 100;
       }
     }
+
     .single-post-info {
       a {
         text-decoration: none;
       }
+
       h2 {
         font-size: 20px;
         line-height: 24px;
@@ -151,6 +187,7 @@
     a {
       text-decoration: none;
     }
+
     .blog-pagination__number-link {
       width: 54px;
       height: 54px;
@@ -163,19 +200,23 @@
       font-weight: 700;
       color: $black;
       transition: all 0.3s ease;
+
       &:hover {
         background-color: $primary-red;
         border-color: $primary-red;
         color: $white;
       }
-      & + .blog-pagination__number-link {
+
+      &+.blog-pagination__number-link {
         margin-left: 15px;
       }
     }
+
     .blog-pagination__link--active {
       border-color: $primary-red;
       color: $primary-red;
     }
+
     .blog-pagination__prev-link,
     .blog-pagination__next-link {
       margin: 0 30px;
@@ -184,6 +225,7 @@
       font-size: 16px;
       position: relative;
       padding-bottom: 2px;
+
       &::after {
         content: '';
         position: absolute;
@@ -194,21 +236,26 @@
         background-image: linear-gradient(90deg, #c2c9d9 50%, transparent 0);
         background-size: 18px 1px;
       }
+
       &:hover {
         color: $primary-red;
+
         &::after {
           background-image: linear-gradient(90deg, $primary-red 50%, transparent 0);
         }
       }
+
       svg {
         margin-bottom: 2px;
       }
     }
+
     .blog-pagination__prev-link {
       svg {
         transform: rotate(90deg) scaleX(-1);
       }
     }
+
     .blog-pagination__next-link--disabled,
     .blog-pagination__prev-link--disabled {
       display: none;
