@@ -8,6 +8,9 @@ require('flickity-fullscreen');
 Flickity.setJQuery($);
 jQueryBridget('flickity', Flickity, $);
 
+window.addEventListener("DOMContentLoaded", (event) => {
+  console.log("fonctionne")
+})
 
 
 
