@@ -23,9 +23,11 @@ $('.carousel-main').flickity({
   on: {
     fullscreenChange: function () {
       console.log('Flickity changed');
-      $('.carousel-main').flickity('resize');
-      $('.carousel-nav').flickity('resize');
 
+      setTimeout(() => {
+        $('.carousel-main').flickity('resize');
+        $('.carousel-nav').flickity('resize');
+      }, "1000")
     }
   }
 });
@@ -39,6 +41,10 @@ $('.carousel-nav').flickity({
     fullscreenChange: function () {
       $('.carousel-main').flickity('resize');
       $('.carousel-nav').flickity('resize');
+      setTimeout(() => {
+        $('.carousel-main').flickity('resize');
+        $('.carousel-nav').flickity('resize');
+      }, "1000")
     }
   }
 });

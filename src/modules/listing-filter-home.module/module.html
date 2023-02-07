@@ -233,7 +233,11 @@
     <div class="col-md-4">
         <div class="container-results pt-1">
             <span class="category-label">
-                Blog
+                {% if content.language.languageTag == "en" %}
+                Articles / Case Studies
+                {% else %}
+                Articles / Cas Clients
+                {% endif %}
             </span>
             <div class="position-relative grid-home">
                 {% for row in table_blog %}
