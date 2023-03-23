@@ -23,6 +23,20 @@ if ($("#toc2").length > 0) {
   $("#toc2").toc({ content: "div.post-content", headings: "h2" });
 }
 
+if (window.location.href.indexOf('cas-clients') > -1 || window.location.href.indexOf('case-studies') > -1) {
+  console.log("new push")
+  const links = document.getElementsByTagName('a');
+  const regex = /Cas clients|Case[\s\-]studies/i;
+  for (let i = 0; i < links.length; i++) {
+    if (regex.test(links[i].textContent)) {
+      links[i].classList.add('yellow-link');
+    }
+  }
+}
+
+
+/*  */
+
 
 /* $("#search-bar").click(function(){
   $("#search-bar .form-control").addClass("expand");

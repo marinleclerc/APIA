@@ -251,7 +251,9 @@
             letter-spacing: 1px;
             position: relative;
 
-            &.activ {
+
+            &.activ,
+            &.yellow-link {
               color: $primary-yellow !important;
 
               svg {
